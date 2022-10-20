@@ -1,37 +1,41 @@
-// import './djd_icon.svg'
 import './App.css';
 
 function App() {
   return (
     <>
       <header>
-        <img src="./djd_icon.svg" alt="DJD icon" />
+        <img className="logo" src="./djd_icon.svg" alt="DJD icon" />
       </header>
       <main className="App">
-        <section></section>
-          <button className="toggle-mode">
-            <img src="./sun.png" alt="sun icon" width="40px" />
-          </button>
+        <button className="toggle-mode">
+          <img className="weather" src="./sun.svg" alt="sun icon" />
+        </button>
         <section className="projects">
           <h2>
           Projects
           </h2>
+          <p>details</p>
         </section>
         <section className="experience">
           <h2>
             Experience
           </h2>
+          <p>details</p>
         </section>
         <section className="contact">
           <h2>
           Contact
           </h2>
+          <p>details</p>
         </section>
         <section className="about">
           <h2>
           About
           </h2>
+          <p>details</p>
         </section>
+        <section></section>
+        <section></section>
         <section></section>
       </main>
     </>

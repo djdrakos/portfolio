@@ -2,9 +2,18 @@ header {
   background: var(--light-cc);
   position: fixed;
   width: 100%;
-  padding: 8px;
-  border-bottom: 2px solid var(--light-mc);
+  padding: .5rem;
+  border-bottom: .125rem solid var(--light-mc);
   z-index: 10;
+  height: 4rem;
+}
+
+.logo {
+  width: 3rem;
+}
+
+.weather {
+  width: 2.5rem;
 }
 
 button, button:hover {
@@ -12,72 +21,76 @@ button, button:hover {
   width: fit-content;
   top: 0;
   z-index: 10;
-  padding-top:12px;
+  padding-top:.5rem;
   border: none;
+
 }
 
 main {
   padding-left: 100px;
   display: flex;
   flex-direction: column;
-  gap: 200px;
+  gap: 10rem;
 }
 
 main section h2 {
-  padding-left: 36px;
+  padding-left: 3rem;
   position: sticky; 
+  font-weight: 700;
 }
 
 main section {
-  min-height: 400px;
+  min-height: 20rem;
 }
 
 .projects h2 {
-  top: 72px;
+  top: 4rem;
 }
 
 .experience h2 {
-  top: 108px;
+  top: 5.75rem;
 }
 
 .contact h2 {
-  top: 144px;
+  top: 7.5rem;
 }
 
 .about h2 {
-  top: 180px;
+  top: 8.75rem;
 }
+
 .projects {
   background-color: hsl(216, 73%, 67%, 0.5);
+  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 1rem;
   position: sticky;
-  top: -292px;
+  top: -14.5rem;
   z-index: 4;
-  border-bottom-left-radius: 30px;
-  border-top-left-radius: 30px;
 }
 
 .experience {
   background-color: hsl(94, 15%, 60%, 0.5);
+  border-bottom-left-radius: 1.5rem;
+  border-top-left-radius: 1.5rem;
   position: sticky;
-  top: -256px;
+  top: -13rem;
   z-index: 3;
-  border-bottom-left-radius: 33px;
-  border-top-left-radius: 33px;
 }
 
 .contact {
-  border-bottom-left-radius: 39px;
-  border-top-left-radius: 39px;
   background-color: rgba(232, 211, 118, 0.5);
+  border-bottom-left-radius: 1.75rem;
+  border-top-left-radius: 1.75rem;
   position: sticky;
-  top: -184px;
+  top: -11.5rem;
+  z-index: 2;
 }
 
 .about {
-  border-top-left-radius: 33px;
-  border-bottom-left-radius: 33px;
   background-color: rgba(221, 146, 100, 0.3);
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
   position: sticky;
-  top: 180px;
+  top: -10rem;
 }
 
