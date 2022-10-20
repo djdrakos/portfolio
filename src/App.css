@@ -1,0 +1,83 @@
+header {
+  background: var(--light-cc);
+  position: fixed;
+  width: 100%;
+  padding: 8px;
+  border-bottom: 2px solid var(--light-mc);
+  z-index: 10;
+}
+
+button, button:hover {
+  position: sticky;
+  width: fit-content;
+  top: 0;
+  z-index: 10;
+  padding-top:12px;
+  border: none;
+}
+
+main {
+  padding-left: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+}
+
+main section h2 {
+  padding-left: 36px;
+  position: sticky; 
+}
+
+main section {
+  min-height: 400px;
+}
+
+.projects h2 {
+  top: 72px;
+}
+
+.experience h2 {
+  top: 108px;
+}
+
+.contact h2 {
+  top: 144px;
+}
+
+.about h2 {
+  top: 180px;
+}
+.projects {
+  background-color: hsl(216, 73%, 67%, 0.5);
+  position: sticky;
+  top: -292px;
+  z-index: 4;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+}
+
+.experience {
+  background-color: hsl(94, 15%, 60%, 0.5);
+  position: sticky;
+  top: -256px;
+  z-index: 3;
+  border-bottom-left-radius: 33px;
+  border-top-left-radius: 33px;
+}
+
+.contact {
+  border-bottom-left-radius: 39px;
+  border-top-left-radius: 39px;
+  background-color: rgba(232, 211, 118, 0.5);
+  position: sticky;
+  top: -184px;
+}
+
+.about {
+  border-top-left-radius: 33px;
+  border-bottom-left-radius: 33px;
+  background-color: rgba(221, 146, 100, 0.3);
+  position: sticky;
+  top: 180px;
+}
+
