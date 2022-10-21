@@ -1,8 +1,8 @@
 import Section from './Section'
 
-export default function About() {
+export default function Contact() {
   return (
-    <Section title="about">
+    <Section title="contact">
       <p>details</p>
     </Section>
   )
