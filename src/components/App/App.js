@@ -7,19 +7,20 @@ import Intro from '../Intro'
 import Projects from '../Projects'
 
 export default function App() {
-  const [element, setElement] = useState()
+  const [main, setMain] = useState()
   const ref = useRef();
 
   useEffect(() => {
-    setElement(ref.current)
+    setMain(ref.current)
   }, [])
+
   return (
     <>
       <header>
         <img className="logo" src="./djd_icon.svg" alt="DJD icon" />
       </header>
       <main ref={ref} className="App">
-        <Intro portalLocation={element}/>
+        <Intro mainRef={main}/>
         <Projects />
         <Experience />
         <Contact />

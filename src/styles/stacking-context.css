@@ -1,9 +1,9 @@
-header {
+header, button {
   z-index: 10;
 }
 
-button {
-  z-index: 10;
+img.weather {
+  z-index: 11;
 }
 
 .projects {

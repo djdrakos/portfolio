@@ -66,8 +66,13 @@ img.portrait {
   width: 3rem;
 }
 
-.weather {
+div.weather {
+  position: absolute;
+}
+
+img.weather {
   width: 2.5rem;
+  position: sticky;
 }
 
 main {
