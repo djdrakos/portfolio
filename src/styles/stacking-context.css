@@ -1,0 +1,23 @@
+header {
+  z-index: 10;
+}
+
+button {
+  z-index: 10;
+}
+
+.projects {
+  z-index: 4;
+}
+
+.experience {
+  z-index: 3;
+}
+
+.contact {
+  z-index: 2;
+}
+
+.about {
+  z-index: 1;
+}

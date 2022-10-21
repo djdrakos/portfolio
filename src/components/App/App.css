@@ -1,0 +1,132 @@
+header {
+  background: var(--light-cc);
+  position: fixed;
+  width: 100%;
+  padding: .5rem;
+  border-bottom: .125rem solid var(--light-mc);
+  height: 4rem;
+}
+
+p {
+  line-height: 1.5;
+}
+
+h1 {
+  letter-spacing: .04em;
+  font-size: 2.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+  font-weight: 600;
+}
+
+h1 > strong {
+  letter-spacing: -.02em;
+  word-spacing: -.2em;
+  font-family: 'Source Code Pro';
+  font-weight: 600;
+}
+
+.intro {
+  display: flex;
+  min-width: 22rem;
+  flex-wrap: wrap; 
+  grid-gap: 2rem;
+}
+
+.bio {
+  padding-top: var(--pad);
+}
+
+.bio p {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  font-weight: 600;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.wrapper.portrait {
+  width: 22rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+img.portrait {
+  mix-blend-mode: luminosity;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.logo {
+  width: 3rem;
+}
+
+.weather {
+  width: 2.5rem;
+}
+
+main {
+  padding-left: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+main section h2 {
+  position: sticky; 
+  font-weight: 600;
+}
+
+main section {
+  padding-left: var(--pad);
+  min-height: 20rem;
+}
+
+.projects h2 {
+  top: 4rem;
+}
+
+.experience h2 {
+  top: 5.75rem;
+}
+
+.contact h2 {
+  top: 7.5rem;
+}
+
+.about h2 {
+  top: 8.75rem;
+}
+
+.projects {
+  background-color: hsl(216, 73%, 67%, 0.3);
+  border-top-left-radius: 1rem; 
+  position: sticky;
+  top: -14.5rem;
+}
+
+.experience {
+  background-color: hsl(94, 15%, 60%, 0.3);
+  position: sticky;
+  top: -13rem;
+}
+
+.contact {
+  background-color: rgba(232, 211, 118, 0.3);
+  position: sticky;
+  top: -11.5rem;
+}
+
+.about {
+  background-color: rgba(221, 146, 100, 0.2);
+  border-bottom-left-radius: 1rem; 
+  position: sticky;
+  top: -10rem;
+}
+
+button {
+  position: sticky;
+  top: 0;
+  border: none;
+}
