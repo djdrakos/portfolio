@@ -1,44 +1,54 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import Section from './Section'
-import * as Portal from '@radix-ui/react-portal'
+import {ReactComponent as WeatherToggle} from '../assets/sun.svg'
+// import * as Portal from '@radix-ui/react-portal'
 
-export default function Intro({mainRef}) {
-  const [button, setButton] = useState()
-  const [position, setPosition] = useState({top: 0, left: 0})
-  const buttonRef = useRef()
-
-  function debounce(fn, ms) {
-    let timer
-    return () => {
-      clearTimeout(timer)
-      timer = setTimeout(() => {
-        timer = null
-        fn.apply(this, arguments)
-      }, ms)
-    };
-  }
-
-
-  useEffect(() => {
-    const handleReposition = (newPosition) => {
-        const { top, left } = newPosition.getBoundingClientRect()
-        setPosition({ top, left })
+export default function Intro({mainNode}) {
+  const [toggleNode, setToggleNode] = useState()
+  // const [portalPos, setPortalPos] = useState()
+  
+  // const setPosition = (node) => {
+  //   if(node !== null) {
+  //     const { top, left } = node.getBoundingClientRect()
+  //     const newPos = { top, left:  left + 10}
+  //     setPortalPos(newPos)
+  //   }
+  // }
+  
+  //get button position on initial render
+  const toggleRef = useCallback((node) => {
+    if(node !== null) {
+      setToggleNode(node)
+      // setPosition(node)
     }
+  }, [])
+  
+  //add resize event listener on page load
+  // useEffect(() => {
+  //   const debouncedHandleResize = debounce(() => setPosition(buttonNode), 10)
+    
+  //   window.addEventListener('resize', debouncedHandleResize)
 
-    const debouncedHandleReposition = debounce(() => handleReposition(), 10)
-    const newPosition =  buttonRef.current
+  //   return () => window.removeEventListener('resize', debouncedHandleResize)
+  // }, [buttonNode])
 
-    handleReposition(newPosition)
-    window.addEventListener('resize', debouncedHandleReposition)
-
-    return () => window.removeEventListener('resize', debouncedHandleReposition)
-  }, [button])
+  //util function for positioning useEffect
+  // function debounce(fn, ms) {
+  //   let timer
+  //   return () => {
+  //     clearTimeout(timer)
+  //     timer = setTimeout(() => {
+  //       timer = null
+  //       fn.apply(this, arguments)
+  //     }, ms)
+  //   };
+  // }
 
 
   return (
     <Section className="intro">
       <div className="wrapper portrait">
-        <img src="./dj 1.jpg" className="portrait" alt="DJ Drakos sitting on a couch, staring intently at something on their laptop" />
+        <img src="../assets/dj.jpg" className="portrait" alt="DJ Drakos sitting on a couch, staring intently at something on their laptop" />
       </div>
       <div className="wrapper bio"> 
 
@@ -49,12 +59,8 @@ export default function Intro({mainRef}) {
         <p>
         I’m a Fullstack Software Engineer/Creative<br />
         based in 
-          <button ref={buttonRef} className="toggle-mode">sunny
-            <Portal.Root container={mainRef} asChild >
-              <div className="weather" style={position} >
-                <img  className="weather"src="./sun.svg" alt="sun icon" />
-              </div>
-            </Portal.Root>
+          <button  className="toggle-weather">&nbsp;sunny&nbsp;
+            <WeatherToggle ref={toggleRef} className='weather' />
           </button>
         Portland, Oregon.
         </p>

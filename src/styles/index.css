@@ -37,6 +37,7 @@ img, picture {
 input, button, textarea, select {
   font: inherit;
   background: inherit;
+  padding: 0;
 }
 
 ul, ol {

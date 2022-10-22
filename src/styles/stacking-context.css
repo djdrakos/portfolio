@@ -2,7 +2,7 @@ header, button {
   z-index: 10;
 }
 
-img.weather {
+.weather {
   z-index: 11;
 }
 
