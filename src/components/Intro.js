@@ -62,6 +62,11 @@ export default function Intro({...props}) {
 
   return (
     <Section className="intro" darkMode={darkMode}>
+      <div className="wrapper spiral" >
+        <span className="spiral">
+        🌀
+        </span>
+      </div>
       <div className="wrapper portrait">
         <img src={require("../assets/dj.jpg")} className="portrait" alt="DJ Drakos sitting on a couch, staring intently at something on their laptop" />
       </div>
@@ -69,9 +74,8 @@ export default function Intro({...props}) {
         <h1>
           Hi, I’m <strong ref={tipParentRef}>DJ Drakos! <span ref={tipRef} className={isTipFixed ? 'tip fixed' : 'tip'}>*</span></strong> 
         </h1>
-        <p>
-        I’m a Fullstack Software Engineer/Creative<br />
-        based in 
+        <p>I’m a Fullstack Software Engineer/Creative</p>
+        <p>based in 
           <button ref={toggleParentRef} className={darkMode ? 'toggle-weather dark-mode' : 'toggle-weather'} onClick={handleToggleDarkMode}>
             <span>
               &nbsp;{darkMode ? 'rainy' : 'sunny' }&nbsp;
@@ -80,10 +84,9 @@ export default function Intro({...props}) {
           </button>
         Portland, Oregon.
         </p>
-        <p>
-        I love coding well-crafted, accessible applications<br />
-        using modern, scalable web technologies and design patterns.
-        </p>
+        <br/ >
+        <p>I love coding well-crafted, accessible applications</p>
+        <p>using modern, scalable web technologies and design patterns.</p>
       </div>
     </Section>
   )

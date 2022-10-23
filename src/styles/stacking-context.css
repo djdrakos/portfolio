@@ -1,12 +1,4 @@
-header, button {
-  z-index: 10;
-}
-
-.tip {
-  z-index: 10;
-}
-
-.weather{
+header, button, .spiral, .tip, .weather {
   z-index: 10;
 }
 
