@@ -35,10 +35,22 @@ h1 {
 }
 
 h1 > strong {
+  display: inline-block;
   letter-spacing: -.02em;
   word-spacing: -.2em;
   font-family: 'Source Code Pro';
   font-weight: 600;
+}
+
+.tip {
+  font-family: 'Sanchez';
+  font-size: 5rem;
+  padding-top: .6rem;
+  color: khaki;
+  position: absolute;
+  transform: translate(-1.4rem, -1.5rem);
+  mix-blend-mode: multiply;
+  cursor: pointer;
 }
 
 h2 {

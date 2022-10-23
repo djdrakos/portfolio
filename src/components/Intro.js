@@ -3,9 +3,11 @@ import Section from './Section'
 import ToggleWeatherIcon from './ToggleWeatherIcon'
 
 export default function Intro({...props}) {
-  const [darkMode, setDarkMode] = useState(false)
   const [toggleNode, setToggleNode] = useState()
-  const [isFixed, setIsFixed] = useState()
+  const [tipNode, setTipNode] = useState()
+  const [isToggleFixed, setIsToggleFixed] = useState()
+  const [isTipFixed, setIsTipFixed] = useState()
+  const [darkMode, setDarkMode] = useState(false)
 
   const toggleRef = useCallback((node) => {
     if(node !== null) {
@@ -13,29 +15,46 @@ export default function Intro({...props}) {
     }
   }, [])
 
-  const buttonRef = useCallback((node) => {
-    if(node && toggleNode) {
-      const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: [0, 1]
-      }
-      
-      const handleIntersect = (entries) => {
-        entries.forEach((entry) => {
-          if(entry.intersectionRatio < 1) {
-            setIsFixed(true)
-          } 
-          if(entry.intersectionRatio === 1) {
-            setIsFixed(false)
-          }
-        })
-      }
-    
-      const observer = new IntersectionObserver(handleIntersect, options)
-      observer.observe(node)
+  const tipRef = useCallback((node) => {
+    if(node !== null) {
+      setTipNode(node)
+    }
+  }, [])
+
+  const createIntersectionObserver = (callback) => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: [0, 1]
+    }
+    const handleIntersect = (entries) => {
+      entries.forEach((entry) => {
+        if(entry.intersectionRatio < 1) {
+          callback(true)
+        } 
+        if(entry.intersectionRatio === 1) {
+          callback(false)
+        }
+      })
+    }
+    return new IntersectionObserver(handleIntersect, options)
+  }
+
+  
+  const toggleParentRef = useCallback((toggleParentNode) => {
+    if(toggleParentNode && toggleNode) {
+      const observer = createIntersectionObserver(setIsToggleFixed);
+      observer.observe(toggleParentNode)
     }
   }, [toggleNode])
+  
+  const tipParentRef = useCallback((tipParentNode) => {
+    if(tipParentNode && tipNode) {
+      const observer = createIntersectionObserver(setIsTipFixed);
+      observer.observe(tipParentNode)
+    }
+  }, [tipNode])
+
 
   const handleToggleDarkMode = () => {
     setDarkMode((mode) => !mode)
@@ -48,16 +67,16 @@ export default function Intro({...props}) {
       </div>
       <div className="wrapper bio"> 
         <h1>
-          Hi, I’m <strong>DJ Drakos!</strong>
+          Hi, I’m <strong ref={tipParentRef}>DJ Drakos! <span ref={tipRef} className={isTipFixed ? 'tip fixed' : 'tip'}>*</span></strong> 
         </h1>
         <p>
         I’m a Fullstack Software Engineer/Creative<br />
         based in 
-          <button ref={buttonRef} className={darkMode ? 'toggle-weather dark-mode' : 'toggle-weather'} onClick={handleToggleDarkMode}>
+          <button ref={toggleParentRef} className={darkMode ? 'toggle-weather dark-mode' : 'toggle-weather'} onClick={handleToggleDarkMode}>
             <span>
               &nbsp;{darkMode ? 'rainy' : 'sunny' }&nbsp;
             </span>
-            <ToggleWeatherIcon ref={toggleRef} className={isFixed ? 'weather fixed' : 'weather'} darkMode={darkMode} />
+            <ToggleWeatherIcon ref={toggleRef} className={isToggleFixed ? 'weather fixed' : 'weather'} darkMode={darkMode} />
           </button>
         Portland, Oregon.
         </p>
