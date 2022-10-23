@@ -7,8 +7,29 @@ header {
   height: 4rem;
 }
 
-p {
-  line-height: 1.5;
+main {
+  padding-left: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+main section {
+  padding-left: var(--pad);
+  min-height: 20rem;
+  display: flex;
+  flex-flow: column wrap;
+  column-gap: 1rem;
+  align-content: flex-start;
+}
+
+main section:not(.intro) {
+  padding-left: var(--pad);
+  height: 20rem;
+  display: flex;
+  flex-flow: column wrap;
+  column-gap: 1rem;
+  align-content: flex-start;
 }
 
 h1 {
@@ -28,6 +49,10 @@ h1 > strong {
 
 h2 {
   text-transform: capitalize;
+}
+
+p {
+  line-height: 1.5;
 }
 
 .intro {
@@ -67,9 +92,11 @@ img.portrait {
 }
 
 button.toggle-weather {
+  position: relative;
   display: inline-block; 
   width: min-content;
   vertical-align: top;
+  border: none;
 }
 
 .weather {
@@ -80,7 +107,6 @@ button.toggle-weather {
   transform: translate(-2.3rem);
   fill: peru;
   mix-blend-mode: multiply;
-  background-blend-mode: multiply;
 }
 
 .fixed {
@@ -88,21 +114,11 @@ button.toggle-weather {
   top: 0;
 }
 
-main {
-  padding-left: 5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-}
-
-main section h2 {
+main section:not(.intro) h2 {
+  flex: 1 1 100%;
+  width: min-content;
   position: sticky; 
   font-weight: 600;
-}
-
-main section {
-  padding-left: var(--pad);
-  min-height: 20rem;
 }
 
 .projects h2 {
@@ -145,10 +161,4 @@ main section {
   border-bottom-left-radius: 1rem; 
   position: sticky;
   top: -10rem;
-}
-
-button {
-  position: sticky;
-  top: 0;
-  border: none;
 }

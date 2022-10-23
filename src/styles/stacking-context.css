@@ -1,8 +1,4 @@
-header, button {
-  z-index: 10;
-}
-
-.weather {
+header, button, .weather {
   z-index: 10;
 }
 
