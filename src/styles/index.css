@@ -20,8 +20,8 @@ html, body, #root {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--light-mc);
-  background-color: var(--light-cc);
+  color: var(--mc);
+  background-color: var(--cc);
   font-family: 'Source Sans Pro', Verdana, 'sans-serif';
 }
 

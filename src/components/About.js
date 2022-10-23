@@ -3,7 +3,7 @@ import Section from './Section'
 export default function About() {
   return (
     <Section title="about">
-      <p>"Toobox?"</p>
+      <p>"Toolbox?"</p>
       <p>details</p>
       <p>React, Netlify</p>
       <p>Intersection Observer API</p>

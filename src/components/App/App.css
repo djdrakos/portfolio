@@ -1,9 +1,9 @@
 header {
-  background: var(--light-cc);
+  background: var(--cc);
   position: fixed;
   width: 100%;
   padding: .5rem;
-  border-bottom: .125rem solid var(--light-mc);
+  border-bottom: .125rem solid var(--mc);
   height: 4rem;
 }
 
@@ -93,20 +93,28 @@ img.portrait {
 
 button.toggle-weather {
   position: relative;
-  display: inline-block; 
-  width: min-content;
+  width: 3.3rem;
   vertical-align: top;
   border: none;
+  text-align-last: justify;
+}
+
+button.toggle-weather.dark-mode span {
+  letter-spacing: .06rem;
 }
 
 .weather {
   position: absolute;
-  display: inline;
   padding-top: .5rem;
   width: 2.5rem;
   transform: translate(-2.3rem);
-  fill: peru;
+  fill: var(--fill);
   mix-blend-mode: multiply;
+}
+
+.weather.dark-mode {
+  fill: var(--fill);
+  letter-spacing: 1.3rem;
 }
 
 .fixed {

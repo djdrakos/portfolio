@@ -1,5 +1,12 @@
 :root {
-  --light-mc: hsl(60, 3%, 15%);
-  --light-cc: hsl(51, 39%, 93%);
+  --mc: hsl(60, 3%, 15%);
+  --cc: hsl(51, 39%, 93%);
   --pad: 4rem;
+  --fill: peru;
+}
+
+.dark-mode {
+  --mc: hsl(60, 3%, 15%);
+  --cc: hsl(51, 39%, 93%);
+  --fill: midnight;
 }

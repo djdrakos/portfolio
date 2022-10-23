@@ -1,7 +1,10 @@
-header, button, .weather {
+header, button {
   z-index: 10;
 }
 
+.weather {
+  z-index: 10;
+}
 .projects {
   z-index: 4;
 }
