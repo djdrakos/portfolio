@@ -6,7 +6,7 @@ export default function Section({title, children, ...props}) {
   return (
     <section className={className}>
       { title && <h2>{title}</h2> }
-      {children}
+      { children && <div>{children}</div>}
     </section>
   )
 }
