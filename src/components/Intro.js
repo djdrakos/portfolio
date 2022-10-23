@@ -1,54 +1,46 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
 import Section from './Section'
-import {ReactComponent as WeatherToggle} from '../assets/sun.svg'
-// import * as Portal from '@radix-ui/react-portal'
+import ToggleWeatherIcon from './ToggleWeatherIcon'
 
-export default function Intro({mainNode}) {
+export default function Intro({...props}) {
   const [toggleNode, setToggleNode] = useState()
-  // const [portalPos, setPortalPos] = useState()
-  
-  // const setPosition = (node) => {
-  //   if(node !== null) {
-  //     const { top, left } = node.getBoundingClientRect()
-  //     const newPos = { top, left:  left + 10}
-  //     setPortalPos(newPos)
-  //   }
-  // }
-  
-  //get button position on initial render
+
   const toggleRef = useCallback((node) => {
     if(node !== null) {
       setToggleNode(node)
-      // setPosition(node)
     }
   }, [])
-  
-  //add resize event listener on page load
-  // useEffect(() => {
-  //   const debouncedHandleResize = debounce(() => setPosition(buttonNode), 10)
-    
-  //   window.addEventListener('resize', debouncedHandleResize)
 
-  //   return () => window.removeEventListener('resize', debouncedHandleResize)
-  // }, [buttonNode])
-
-  //util function for positioning useEffect
-  // function debounce(fn, ms) {
-  //   let timer
-  //   return () => {
-  //     clearTimeout(timer)
-  //     timer = setTimeout(() => {
-  //       timer = null
-  //       fn.apply(this, arguments)
-  //     }, ms)
-  //   };
-  // }
-
+  const buttonRef = useCallback((node) => {
+    if(node && toggleNode) {
+      const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: [0, 1]
+      }
+      
+      const handleIntersect = (entries) => {
+        entries.forEach((entry) => {
+          if(entry.intersectionRatio < 1) {
+            toggleNode.classList.add('fixed')
+          } 
+          if(entry.intersectionRatio === 1) {
+            if(toggleNode.classList.contains('fixed')) {
+              toggleNode.classList.remove('fixed')
+            }
+          }
+        })
+      }
+      
+      const observer = new IntersectionObserver(handleIntersect, options)
+      observer.observe(node)
+    }
+  }, [toggleNode])
 
   return (
     <Section className="intro">
       <div className="wrapper portrait">
-        <img src="../assets/dj.jpg" className="portrait" alt="DJ Drakos sitting on a couch, staring intently at something on their laptop" />
+        <img src={require("../assets/dj.jpg")} className="portrait" alt="DJ Drakos sitting on a couch, staring intently at something on their laptop" />
       </div>
       <div className="wrapper bio"> 
 
@@ -59,8 +51,8 @@ export default function Intro({mainNode}) {
         <p>
         I’m a Fullstack Software Engineer/Creative<br />
         based in 
-          <button  className="toggle-weather">&nbsp;sunny&nbsp;
-            <WeatherToggle ref={toggleRef} className='weather' />
+          <button ref={buttonRef} className="toggle-weather">&nbsp;sunny&nbsp;
+            <ToggleWeatherIcon ref={toggleRef} className='weather' />
           </button>
         Portland, Oregon.
         </p>

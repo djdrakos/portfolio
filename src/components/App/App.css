@@ -67,19 +67,25 @@ img.portrait {
 }
 
 button.toggle-weather {
-  display: inline-block;
+  display: inline-block; 
   width: min-content;
-  position: relative;
   vertical-align: top;
 }
 
 .weather {
+  position: absolute;
   display: inline;
+  padding-top: .5rem;
   width: 2.5rem;
-  position: sticky;
-  transform: translate(10px, -15px);
+  transform: translate(-2.3rem);
   fill: peru;
   mix-blend-mode: multiply;
+  background-blend-mode: multiply;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
 }
 
 main {

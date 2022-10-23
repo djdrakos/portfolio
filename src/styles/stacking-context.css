@@ -3,7 +3,7 @@ header, button {
 }
 
 .weather {
-  z-index: 11;
+  z-index: 10;
 }
 
 .projects {
