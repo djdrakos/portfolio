@@ -22,7 +22,7 @@ main section {
 main section:not(.intro) {
   min-height: 22rem;
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 15% 1fr;
   align-items: flex-start;
   column-gap: 1rem;
 }
@@ -60,12 +60,30 @@ h1 > strong {
   transform: translate(-1.4rem, -1.5rem);
   mix-blend-mode: multiply;
   cursor: pointer;
+  font-weight: 400;
 }
 
-.wrapper.spiral {
+.wrapper.icon {
+  display: flex; 
+  flex-direction: row;
+  grid-gap: 2rem;
+  align-items: center;
+}
+.icon.github {
+  width: 2.2rem;
+}
+
+.icon.linkedin {
+  width: 1.5rem;
+}
+
+.icon.email {
+  width: 2.5rem;
+}
+
+  .wrapper.spiral {
   position: absolute;
   transform: translate(10.5rem, 4rem);
-
 }
 
 span.spiral {
@@ -141,20 +159,23 @@ button.toggle-weather.dark-mode span {
   top: 0;
 }
 
-main section:not(.intro) h2 {
+main > section:not(.intro) h2 {
   font-weight: 600;
   position: sticky; 
 }
 
+main > section:not(.intro) p {
+  padding-bottom: 1rem;
+}
 .projects h2 {
   top: 4rem;
 }
 
-.experience h2 {
+.tech-stack h2 {
   top: 5.75rem;
 }
 
-.contact h2 {
+.career h2 {
   top: 7.5rem;
 }
 
@@ -169,13 +190,13 @@ main section:not(.intro) h2 {
   top: -16.5rem;
 }
 
-.experience {
+.tech-stack {
   background-color: hsl(94, 15%, 60%, 0.3);
   position: sticky;
   top: -15rem;
 }
 
-.contact {
+.career {
   background-color: rgba(232, 211, 118, 0.3);
   position: sticky;
   top: -13.5rem;

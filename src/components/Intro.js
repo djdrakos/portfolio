@@ -85,7 +85,7 @@ export default function Intro({...props}) {
         Portland, Oregon.
         </p>
         <br/ >
-        <p>I love coding well-crafted, accessible applications</p>
+        <p>I love crafting well-crafted, accessible applications</p>
         <p>using modern, scalable web technologies and design patterns.</p>
       </div>
     </Section>

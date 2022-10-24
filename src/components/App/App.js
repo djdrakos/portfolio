@@ -1,7 +1,7 @@
 import './App.css';
 import About from '../About'
-import Contact from '../Contact'
-import Experience from '../Experience'
+import Career from '../Career'
+import TechStack from '../TechStack'
 import Intro from '../Intro'
 import Projects from '../Projects'
 
@@ -15,8 +15,8 @@ export default function App() {
       <main className="App">
         <Intro />
         <Projects />
-        <Experience />
-        <Contact />
+        <TechStack />
+        <Career />
         <About />
         <section></section>
         <section></section>
