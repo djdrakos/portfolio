@@ -153,6 +153,13 @@ button.toggle-weather.dark-mode span {
   opacity: .4;
 }
 
+.weather, .tip {
+  -webkit-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  -o-transition: all .15s linear;
+  transition: all .15s linear, opacity .1s;
+}
+
 .weather:hover {
   opacity: 1;
 }
@@ -202,37 +209,37 @@ main > section:not(.intro) h4, .career .social {
 
 .projects {
   height: var(--section-med);
-  background-color: hsla(100, 70%, 60%, .1);
+  background-color: hsla(100, 70%, 60%, .15);
   border-bottom: .1rem solid hsla(100, 70%, 60%, .01);
   border-bottom-left-radius: 1rem;
-  position: sticky;
+    position: sticky;
   top: calc(var(--stack-block100) + var(--header100) - var(--stack-offset) - var(--section-med));
 }
 
 .tech-stack {
   height: var(--section-med);
-  background-color: hsla(150, 70%, 60%, .1);
+  background-color: hsla(150, 70%, 60%, .15);
   border-bottom: .1rem solid hsla(150, 70%, 60%, .01);
   border-bottom-left-radius: 1rem;
-  position: sticky;
+    position: sticky;
   top: calc(var(--stack-block200) + var(--header100) - var(--stack-offset) - var(--section-med));
 }
 
 .career {
   height: var(--section-tall);
-  background-color: hsla(200, 70%, 60%, .1);
+  background-color: hsla(200, 70%, 60%, .15);
   border-bottom: .1rem solid hsla(200, 70%, 60%, .01);
   border-bottom-left-radius: 1rem;
-  position: sticky;
+    position: sticky;
   top: calc(var(--stack-block300) + var(--header100) - var(--stack-offset) - var(--section-tall));
 }
 
 .about {
   height: var(--section-tall);
-  background-color: hsla(250, 70%, 75%, .1);
+  background-color: hsla(250, 70%, 75%, .15);
   border-bottom: .1rem solid hsla(250, 70%, 60%, .01);
   border-bottom-left-radius: 1rem;
-  position: sticky;
+    position: sticky;
   top: calc(var(--stack-block400) + var(--header100) - var(--stack-offset) - var(--section-tall));
 }
 
