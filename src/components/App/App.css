@@ -70,7 +70,12 @@ h1 strong {
   column-gap: var(--gap100);
   padding-top: var(--gap100);
   padding-left: var(--gap150);
-  padding-bottom: .4rem;
+  padding-bottom: .5rem;
+  align-items: stretch;
+}
+
+.social a:hover img {
+  border: none;
 }
 
 .resume {
@@ -78,18 +83,16 @@ h1 strong {
   font-family: 'Source Code Pro', monospace;
   font-weight: 600;
   text-transform: uppercase;
+  /* border-bottom-width: .1rem;
+  border-bottom-color: rgba( 0, 0, 0, 0); */
 }
 
-img.github {
-  width: 1.8rem;
+.resume {
+  border-bottom-color: inherit
 }
 
-img.linkedin {
-  width: 1.7rem;
-}
-
-img.email {
-  width: 2rem;
+.social img {
+  width: 1.9rem;
 }
 
 .wrapper.spiral {

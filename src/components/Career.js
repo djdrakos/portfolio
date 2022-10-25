@@ -43,3 +43,4 @@ export default function Career() {
 //<p>
 //<strong>Debugging:</strong> repairing a worn relay that connects the light beam safety guard on the paper trimmer, using a water-stained photocopy of a wiring diagram from 1967 in German.
 //</p> 
+//<a target="_blank" href="https://icons8.com/icon/K5fFJa77Yo3h/email">Email</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

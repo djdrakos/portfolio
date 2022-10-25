@@ -90,8 +90,16 @@ small, .text_small {
 
 a {
   text-decoration: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 101%;
+  font-weight: 600;
+  -webkit-transition: all .1s;
+  -moz-transition: all .1s;
+  -o-transition: all .1s;
+  transition: all .1s;
 }
 
 a:hover {
-  text-decoration: underline;
+  border-bottom-style: solid; 
+  border-bottom-width: .1rem;
 }
