@@ -72,21 +72,23 @@ export default function Intro({...props}) {
       </div>
       <div className="wrapper bio"> 
         <h1>
-          Hi, I’m <strong ref={tipParentRef}>DJ Drakos! <span ref={tipRef} className={isTipFixed ? 'tip fixed' : 'tip'}>*</span></strong> 
+          Hi, I’m <strong ref={tipParentRef}>DJ Drakos!<span ref={tipRef} className={isTipFixed ? 'tip fixed' : 'tip'}>*</span></strong> 
         </h1>
-        <p>I’m a Fullstack Software Engineer/Creative</p>
-        <p>based in 
+        <p>I’m a Fullstack Software Engineer/Creative
+          <br/ >
+          based in 
           <button ref={toggleParentRef} className={darkMode ? 'toggle-weather dark-mode' : 'toggle-weather'} onClick={handleToggleDarkMode}>
             <span>
               &nbsp;{darkMode ? 'rainy' : 'sunny' }&nbsp;
             </span>
             <ToggleWeatherIcon ref={toggleRef} className={isToggleFixed ? 'weather fixed' : 'weather'} darkMode={darkMode} />
           </button>
-        Portland, Oregon.
+          Portland, Oregon.
         </p>
-        <br/ >
-        <p>I love crafting well-crafted, accessible applications</p>
-        <p>using modern, scalable web technologies and design patterns.</p>
+        <p>I love bringing well-crafted, accessible applications to life
+          <br/ >
+          using modern, scalable web technologies and design patterns.
+        </p>
       </div>
     </Section>
   )

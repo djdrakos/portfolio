@@ -2,7 +2,7 @@ header, button, .spiral, .tip, .weather {
   z-index: 10;
 }
 
-.projects {
+.projects{
   z-index: 4;
 }
 
@@ -10,7 +10,7 @@ header, button, .spiral, .tip, .weather {
   z-index: 3;
 }
 
-.career {
+.career, .social  {
   z-index: 2;
 }
 
