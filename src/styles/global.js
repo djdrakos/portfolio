@@ -29,6 +29,10 @@ body {
   font-weight: 400;
   line-height: 1.5;
   scroll-behavior: smooth;
+  -webkit-transition: background-color .25s ease-out, color .25s ease-out;
+  -moz-transition: background-color .25s ease-out, color .25s ease-out;
+  -o-transition: background-color .25s ease-out, color .25s ease-out;
+  transition: background-color .25s ease-out, color .25s ease-out;
 }
 
 #root {
@@ -107,8 +111,21 @@ a:hover {
   border-bottom-style: solid; 
   border-bottom-width: .1rem;
 }
+
+:root {
+  --header100: 4rem;
+  --bio-pic100: 15rem;
+  --bio-pic200: calc(2 * var(--bio-pic100));
+  --bio-pic300: calc(3 * var(--bio-pic100));
+  --gap100: 3rem;
+  --gap50: calc(var(--gap100) / 2);
+  --gap150: calc(1.5 * var(--gap100));
+  --gap200: calc(2 * var(--gap100));
+  --gap300: calc(3 * var(--gap100));
+  --stack-block100: 3rem;
+  --stack-block200: calc(2 * var(--stack-block100));
+  --stack-block300: calc(3 * var(--stack-block100));
+  --stack-block400: calc(4 * var(--stack-block100));
+}
+
 `
-
-
-/* @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300..700;1,200..700&family=Source+Sans+Pro:ital,wght@0,200..900;1,200..900&family=Source+Serif+Pro:ital,wght@0,200..900;1,200..900&family=DM+Mono:ital,wght@0,300..500;1,300..500&family=Sanchez&family=Space+Mono&display=swap'); */
-

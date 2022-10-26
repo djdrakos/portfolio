@@ -1,15 +1,3 @@
-header {
-  position: fixed;
-  top: 0;
-  background: var(--cc);
-  display: flex;
-  align-items: center;
-  height: var(--header100);
-  width: 100%;
-  padding-left: calc(var(--gap100) / 4);
-  border-bottom-left-radius: var(--gap50);
-}
-
 main {
   display: flex;
   flex-direction: column;
@@ -122,10 +110,6 @@ img.portrait {
   object-fit: cover;
   object-position: calc( -1 * var(--gap100)) calc( -1 * var(--gap150));
   opacity: 0.6;
-}
-
-.logo {
-  width: var(--gap100);
 }
 
 button.toggle-weather {
