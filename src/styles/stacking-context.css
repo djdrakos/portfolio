@@ -1,19 +1,18 @@
-header, button, .spiral, .tip, .weather {
-  z-index: 10;
-}
+/* top: root */
+header {  z-index: 10; }
 
-.projects{
-  z-index: 4;
-}
+/* main.intro: same stacking context as header */
+.spiral, .tip, .toggle-weather {  z-index: 10; }
 
-.tech-stack {
-  z-index: 3;
-}
+.projects{  z-index: 4; }
+/* |- projects */
 
-.career, .social  {
-  z-index: 2;
-}
+.tech-stack {  z-index: 3; }
+/* |- tech-stack */
 
-.about {
-  z-index: 1;
-}
+.career  { z-index: 2; }
+/* |- career */
+  .social {    z-index: 1; }
+
+.about {  z-index: 1; }
+/* |- about */

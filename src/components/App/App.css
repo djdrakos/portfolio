@@ -51,7 +51,7 @@ h1 strong {
   position: absolute;
   font-family: 'Sanchez';
   font-size: 5rem;
-  color: rgb(238, 221, 73);
+  color: rgb(210, 193, 40);
   transform: translate(-1.4rem, -1.5rem);
   mix-blend-mode: multiply;
   cursor: pointer;
@@ -74,8 +74,8 @@ h1 strong {
   align-items: stretch;
 }
 
-.social a:hover img {
-  border: none;
+.social a:hover:not(.resume) {
+  border-style: none;
 }
 
 .resume {
@@ -83,8 +83,6 @@ h1 strong {
   font-family: 'Source Code Pro', monospace;
   font-weight: 600;
   text-transform: uppercase;
-  /* border-bottom-width: .1rem;
-  border-bottom-color: rgba( 0, 0, 0, 0); */
 }
 
 .resume {
@@ -255,12 +253,16 @@ main > section:not(.intro) h4, .career .social {
 }
 
 .projects .content {
-  align-self: flex-end;
+  display: grid;
+  grid-template-rows: auto;
+}
+
+.titles {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  column-gap: var(--gap50);
+  align-self: flex-end;
   align-items: flex-end;
+  justify-content: space-between;
 }
 
 .projects .content p {

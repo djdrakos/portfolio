@@ -9,18 +9,8 @@ export default function Intro({...props}) {
   const [isTipFixed, setIsTipFixed] = useState()
   const [darkMode, setDarkMode] = useState(false)
 
-  const toggleRef = useCallback((node) => {
-    if(node !== null) {
-      setToggleNode(node)
-    }
-  }, [])
-
-  const tipRef = useCallback((node) => {
-    if(node !== null) {
-      setTipNode(node)
-    }
-  }, [])
-
+  
+  
   const createIntersectionObserver = (callback) => {
     const options = {
       root: null,
@@ -39,15 +29,30 @@ export default function Intro({...props}) {
     }
     return new IntersectionObserver(handleIntersect, options)
   }
-
+  
+  const toggleRef = useCallback((node) => {
+    if(node !== null) {
+      setToggleNode(node)
+    }
+  }, [])
+  
   
   const toggleParentRef = useCallback((toggleParentNode) => {
     if(toggleParentNode && toggleNode) {
       const observer = createIntersectionObserver(setIsToggleFixed);
+
+      if(toggleParentRef)
       observer.observe(toggleParentNode)
     }
   }, [toggleNode])
   
+
+  const tipRef = useCallback((node) => {
+    if(node !== null) {
+      setTipNode(node)
+    }
+  }, [])
+
   const tipParentRef = useCallback((tipParentNode) => {
     if(tipParentNode && tipNode) {
       const observer = createIntersectionObserver(setIsTipFixed);
@@ -61,7 +66,7 @@ export default function Intro({...props}) {
   }
 
   return (
-    <Section className="intro" darkMode={darkMode}>
+    <Section className="intro">
       <div className="wrapper spiral" >
         <span className="spiral">
         🌀
