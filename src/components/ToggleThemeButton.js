@@ -3,7 +3,7 @@ import ToggleWeatherIcon from './ToggleWeatherIcon'
 import useIntersection from '../hooks/useIntersection'
 
 const Toggle = styled.button`
-  z-index:10;
+  z-index: 10;
   width: 3.3rem;
   position: relative;
   vertical-align: top;

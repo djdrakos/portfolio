@@ -8,7 +8,7 @@ const useIntersection = () => {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: [0, 1]
+      threshold: [0, .25, .5, .75, 1]
     }
 
     const handleIntersect = (entries) => {

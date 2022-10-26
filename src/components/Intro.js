@@ -1,18 +1,14 @@
 import Section from './Section'
 import ToggleThemeButton from './ToggleThemeButton'
 import useIntersection from '../hooks/useIntersection'
+import ThoughtSpiral from './ThoughtSpiral'
 
 export default function Intro({currentTheme, toggleTheme, ...props}) {
   const [ nodeRef, referenceRef, isFixed ] = useIntersection()
 
   return (
     <Section className="intro">
-      <div className="wrapper spiral" >
-        <span className="spiral">
-        🌀
-        </span>
-      </div>
-
+      <ThoughtSpiral />
       <div className="wrapper portrait">
         <img src={require("../assets/dj.jpg")} className="portrait" alt="DJ Drakos sitting on a couch, staring intently at something on their laptop" />
       </div>

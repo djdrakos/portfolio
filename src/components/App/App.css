@@ -1,5 +1,3 @@
-
-
 main section {
   padding-left: var(--gap300);
   padding-right: var(--gap150);
@@ -74,17 +72,6 @@ h1 strong {
 
 .social img {
   width: 1.9rem;
-}
-
-.wrapper.spiral {
-position: absolute;
-transform: translate(5rem, 2.5rem);
-}
-
-span.spiral {
-  position: absolute;
-  font-size: 2rem;
-  cursor: pointer;
 }
 
 .bio p {
