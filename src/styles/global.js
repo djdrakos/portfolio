@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300..700;1,200..700&family=Source+Sans+Pro:ital,wght@0,200..900;1,200..900&family=Source+Serif+Pro:ital,wght@0,200..900;1,200..900&family=DM+Mono:ital,wght@0,300..500;1,300..500&family=Sanchez&family=Space+Mono&display=swap');
+import { createGlobalStyle } from 'styled-components'
+
+export const GlobalStyles = createGlobalStyle`
 
 /*
   Adapted from Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
 */
+
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -20,8 +23,8 @@ html, body, #root {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--mc);
-  background-color: var(--cc);
+  color: ${({ theme }) => theme.color};
+  background-color: ${({ theme }) => theme.background};
   font-family: 'Source Serif Pro', 'serif';
   font-weight: 400;
   line-height: 1.5;
@@ -50,6 +53,7 @@ ul, ol {
 
 button, a {
   cursor: pointer;
+  color: inherit;
 }
 
 p {
@@ -103,3 +107,8 @@ a:hover {
   border-bottom-style: solid; 
   border-bottom-width: .1rem;
 }
+`
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300..700;1,200..700&family=Source+Sans+Pro:ital,wght@0,200..900;1,200..900&family=Source+Serif+Pro:ital,wght@0,200..900;1,200..900&family=DM+Mono:ital,wght@0,300..500;1,300..500&family=Sanchez&family=Space+Mono&display=swap'); */
+

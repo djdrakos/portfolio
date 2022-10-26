@@ -1,15 +1,10 @@
 import { useCallback, useState } from 'react'
 import Section from './Section'
-import ToggleWeatherIcon from './ToggleWeatherIcon'
+import ToggleThemeButton from './ToggleThemeButton'
 
-export default function Intro({...props}) {
-  const [toggleNode, setToggleNode] = useState()
+export default function Intro({currentTheme, toggleTheme, ...props}) {
   const [tipNode, setTipNode] = useState()
-  const [isToggleFixed, setIsToggleFixed] = useState()
   const [isTipFixed, setIsTipFixed] = useState()
-  const [darkMode, setDarkMode] = useState(false)
-
-  
   
   const createIntersectionObserver = (callback) => {
     const options = {
@@ -30,22 +25,6 @@ export default function Intro({...props}) {
     return new IntersectionObserver(handleIntersect, options)
   }
   
-  const toggleRef = useCallback((node) => {
-    if(node !== null) {
-      setToggleNode(node)
-    }
-  }, [])
-  
-  
-  const toggleParentRef = useCallback((toggleParentNode) => {
-    if(toggleParentNode && toggleNode) {
-      const observer = createIntersectionObserver(setIsToggleFixed);
-
-      if(toggleParentRef)
-      observer.observe(toggleParentNode)
-    }
-  }, [toggleNode])
-  
 
   const tipRef = useCallback((node) => {
     if(node !== null) {
@@ -59,11 +38,6 @@ export default function Intro({...props}) {
       observer.observe(tipParentNode)
     }
   }, [tipNode])
-
-
-  const handleToggleDarkMode = () => {
-    setDarkMode((mode) => !mode)
-  }
 
   return (
     <Section className="intro">
@@ -82,12 +56,7 @@ export default function Intro({...props}) {
         <p>I’m a Fullstack Software Engineer/Creative
           <br/ >
           based in 
-          <button ref={toggleParentRef} className={darkMode ? 'toggle-weather dark-mode' : 'toggle-weather'} onClick={handleToggleDarkMode}>
-            <span>
-              &nbsp;{darkMode ? 'rainy' : 'sunny' }&nbsp;
-            </span>
-            <ToggleWeatherIcon ref={toggleRef} className={isToggleFixed ? 'weather fixed' : 'weather'} darkMode={darkMode} />
-          </button>
+          <ToggleThemeButton currentTheme={currentTheme} toggleTheme={toggleTheme} />
           Portland, Oregon.
         </p>
         <p>I love bringing well-crafted, accessible applications to life
