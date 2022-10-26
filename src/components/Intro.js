@@ -1,43 +1,9 @@
-import { useCallback, useState } from 'react'
 import Section from './Section'
 import ToggleThemeButton from './ToggleThemeButton'
+import useIntersection from '../hooks/useIntersection'
 
 export default function Intro({currentTheme, toggleTheme, ...props}) {
-  const [tipNode, setTipNode] = useState()
-  const [isTipFixed, setIsTipFixed] = useState()
-  
-  const createIntersectionObserver = (callback) => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: [0, 1]
-    }
-    const handleIntersect = (entries) => {
-      entries.forEach((entry) => {
-        if(entry.intersectionRatio < 1) {
-          callback(true)
-        } 
-        if(entry.intersectionRatio === 1) {
-          callback(false)
-        }
-      })
-    }
-    return new IntersectionObserver(handleIntersect, options)
-  }
-  
-
-  const tipRef = useCallback((node) => {
-    if(node !== null) {
-      setTipNode(node)
-    }
-  }, [])
-
-  const tipParentRef = useCallback((tipParentNode) => {
-    if(tipParentNode && tipNode) {
-      const observer = createIntersectionObserver(setIsTipFixed);
-      observer.observe(tipParentNode)
-    }
-  }, [tipNode])
+  const [ nodeRef, referenceRef, isFixed ] = useIntersection()
 
   return (
     <Section className="intro">
@@ -46,12 +12,14 @@ export default function Intro({currentTheme, toggleTheme, ...props}) {
         🌀
         </span>
       </div>
+
       <div className="wrapper portrait">
         <img src={require("../assets/dj.jpg")} className="portrait" alt="DJ Drakos sitting on a couch, staring intently at something on their laptop" />
       </div>
+
       <div className="wrapper bio"> 
         <h1>
-          Hi, I’m <strong ref={tipParentRef}>DJ Drakos!<span ref={tipRef} className={isTipFixed ? 'tip fixed' : 'tip'}>*</span></strong> 
+          Hi, I’m <strong ref={referenceRef}>DJ Drakos!<span ref={nodeRef} className={isFixed ? 'tip fixed' : 'tip'}>*</span></strong> 
         </h1>
         <p>I’m a Fullstack Software Engineer/Creative
           <br/ >

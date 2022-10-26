@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { useCallback, useState } from 'react'
 import ToggleWeatherIcon from './ToggleWeatherIcon'
+import useIntersection from '../hooks/useIntersection'
 
 const Toggle = styled.button`
   z-index:10;
@@ -28,51 +28,22 @@ const Toggle = styled.button`
   .weather:hover {
     opacity: 1;
   }
+
+  .fixed {
+    position: fixed;
+    top: 0;
+  }
 `
 
 export default function ToggleThemeButton({currentTheme, toggleTheme, ...props}) {
-  const [toggleNode, setToggleNode] = useState()
-  const [isToggleFixed, setIsToggleFixed] = useState()
-
-  const createIntersectionObserver = (callback) => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: [0, 1]
-    }
-    const handleIntersect = (entries) => {
-      entries.forEach((entry) => {
-        if(entry.intersectionRatio < 1) {
-          callback(true)
-        } 
-        if(entry.intersectionRatio === 1) {
-          callback(false)
-        }
-      })
-    }
-    return new IntersectionObserver(handleIntersect, options)
-  }
+  const [nodeRef, referenceRef, isFixed] = useIntersection()
   
-  const toggleRef = useCallback((node) => {
-    if(node !== null) {
-      setToggleNode(node)
-    }
-  }, [])  
-  
-  const toggleParentRef = useCallback((toggleParentNode) => {
-    if(toggleParentNode && toggleNode) {
-      const observer = createIntersectionObserver(setIsToggleFixed);
-      observer.observe(toggleParentNode)
-    }
-  }, [toggleNode])
-
-
   return (
-    <Toggle currentTheme={currentTheme} ref={toggleParentRef} onClick={toggleTheme}>
+    <Toggle currentTheme={currentTheme} ref={referenceRef} onClick={toggleTheme}>
       <span>
         &nbsp;{ currentTheme === 'dark' ? 'rainy' : 'sunny' }&nbsp;
       </span>
-      <ToggleWeatherIcon ref={toggleRef} className={isToggleFixed ? 'weather fixed' : 'weather'} theme={currentTheme} />
+      <ToggleWeatherIcon ref={nodeRef} className={isFixed ? 'weather fixed' : 'weather'} theme={currentTheme} />
     </Toggle>
   )
 }
