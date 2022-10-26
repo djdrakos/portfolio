@@ -69,7 +69,9 @@ export default function ToggleThemeButton({currentTheme, toggleTheme, ...props})
 
   return (
     <Toggle currentTheme={currentTheme} ref={toggleParentRef} onClick={toggleTheme}>
+      <span>
         &nbsp;{ currentTheme === 'dark' ? 'rainy' : 'sunny' }&nbsp;
+      </span>
       <ToggleWeatherIcon ref={toggleRef} className={isToggleFixed ? 'weather fixed' : 'weather'} theme={currentTheme} />
     </Toggle>
   )

@@ -1,9 +1,4 @@
-main {
-  display: flex;
-  flex-direction: column;
-  row-gap: var(--gap300);
-  padding-top: var(--gap300);
-}
+
 
 main section {
   padding-left: var(--gap300);
@@ -112,46 +107,11 @@ img.portrait {
   opacity: 0.6;
 }
 
-button.toggle-weather {
-  width: 3.3rem;
-  position: relative;
-  vertical-align: top;
-  border: none;
-}
-
-button.toggle-weather.dark-mode span {
-  letter-spacing: .06rem;
-}
-
-.weather {
-  width: 2.5rem;
-  padding-top: .3rem;
-  padding-left: .02rem;
-  position: absolute;
-  transform: translate(-2.3rem);
-  fill: var(--fill);
-  mix-blend-mode: multiply;
-  opacity: .6;
-}
-
-.weather.dark-mode {
-  opacity: .4;
-}
-
-.weather, .tip {
+.tip {
   -webkit-transition: all .15s linear;
   -moz-transition: all .15s linear;
   -o-transition: all .15s linear;
   transition: all .15s linear, opacity .1s;
-}
-
-.weather:hover {
-  opacity: 1;
-}
-
-.fixed {
-  position: fixed;
-  top: 0;
 }
 
 h4 {

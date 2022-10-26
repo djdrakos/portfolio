@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 const StyledHeader = styled.header`
+  z-index: 10;
   position: fixed;
   top: 0;
   background: ${({ theme }) => theme.background};

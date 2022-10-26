@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './styles/custom-vars.css';
 import './styles/stacking-context.css';
 import App from './components/App';
 
