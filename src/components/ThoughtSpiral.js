@@ -6,17 +6,13 @@ const StyledSpiral = styled.div`
   position: absolute;
   padding-left: 5rem;
   padding-top: 2.5rem;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end; */
   height: fit-content;
   width: 7rem;
 
   > div {
     padding-top: .5rem;
   }
-  
+
   .spiral {
     padding-top: .5rem;
     height: fit-content;
