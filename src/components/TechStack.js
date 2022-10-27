@@ -12,7 +12,7 @@ const StyledTechStack = styled(SectionContent)`
   border-bottom-left-radius: 1rem;
   
   .content {
-    padding-bottom: var(--stack-block200);
+    margin-bottom: var(--stack-block200);
   }
 
   h4 {

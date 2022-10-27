@@ -18,9 +18,11 @@ const StyledSection = styled(Section)`
   }
 
   .content {
-    display: grid;
-    grid-template-rows: auto;
+    height: 100%;
+    display: flex; 
+    flex-direction: column;
     padding-top: 3rem;
+    margin-bottom: var(--gap100);
   }
 `
 

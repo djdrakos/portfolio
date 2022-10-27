@@ -10,14 +10,9 @@ const StyledCareer = styled(SectionContent)`
   border-bottom-left-radius: 1rem;
 
   .content {
-    height: 100%;
-    display: grid;
-    grid-template-rows: auto;
-    align-items: flex-start;
-    align-content: flex-start;
-    margin-bottom: var(--stackblock300)
+    margin-bottom: var(--stackblock300);
   }
-
+  
   h4 {
     top: calc(var(--stack-start) + var(--stack-block200));
   }
@@ -25,15 +20,13 @@ const StyledCareer = styled(SectionContent)`
   .social {
     position: sticky; 
     top: calc(var(--header100) + var(--stack-block200));
-    margin-bottom: 0;
+    height: var(--gap100);
     display: flex; 
     flex-direction: row;
     align-items: center;
     column-gap: var(--gap100);
-    padding-top: var(--gap100);
-    padding-left: var(--gap150);
-    padding-bottom: var(--gap50);
-    align-items: stretch;
+    margin-top: var(--gap100);
+    margin-left: var(--gap150);
 
     img {
       width: 1.9rem;
@@ -42,15 +35,21 @@ const StyledCareer = styled(SectionContent)`
     a:hover:not(.resume) {
     border-style: none;
     }
+
+    .resume {
+      color: inherit;
+      font-size: larger;
+      font-family: 'Source Code Pro', monospace;
+      font-weight: 600;
+      text-transform: uppercase;
+      border: .1rem solid transparent;
+
+      :hover {
+      border-bottom: .1rem black solid;
+    }
+    }
   }
 
-  .resume {
-    font-size: larger;
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-bottom-color: inherit
-  }
 `
 
 export default function Career() {

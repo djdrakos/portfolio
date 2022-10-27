@@ -10,6 +10,7 @@ const StyledMain = styled.main`
   flex-direction: column;
   row-gap: var(--gap300);
   padding-top: var(--gap300);
+  padding-bottom: 50vh;
 `
 
 export default function Main({ currentTheme, toggleTheme }) {
