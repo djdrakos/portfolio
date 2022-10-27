@@ -15,15 +15,23 @@ export default function Intro({currentTheme, toggleTheme, ...props}) {
 
       <div className="wrapper bio"> 
         <h1>
-          Hi, I’m <strong ref={referenceRef}>DJ Drakos!<span ref={nodeRef} className={isFixed ? 'tip fixed' : 'tip'}>*</span></strong> 
+          Hi, I’m 
+          <strong ref={referenceRef}>
+            &nbsp;DJ Drakos!
+            <span ref={nodeRef} className={isFixed ? 'tip fixed' : 'tip'}>
+              *
+            </span>
+          </strong> 
         </h1>
-        <p>I’m a Fullstack Software Engineer/Creative
+        <p>
+          I’m a Fullstack Software Engineer/Creative
           <br/ >
           based in 
           <ToggleThemeButton currentTheme={currentTheme} toggleTheme={toggleTheme} />
           Portland, Oregon.
         </p>
-        <p>I love bringing well-crafted, accessible applications to life
+        <p>
+          I love bringing well-crafted, accessible applications to life
           <br/ >
           using modern, scalable web technologies and design patterns.
         </p>
