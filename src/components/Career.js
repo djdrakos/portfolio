@@ -2,39 +2,55 @@ import SectionContent from './SectionContent'
 import styled from 'styled-components'
 
 const StyledCareer = styled(SectionContent)`
-h4 {
-  top: calc(var(--stack-start) + var(--stack-block200));
-}
+  position: sticky;
+  top: calc(var(--stack-block300) + var(--header100) - var(--stack-offset) - var(--section-tall));
+  height: var(--section-tall);
+  background-color: hsla(200, 70%, 60%, .15);
+  border-bottom: .1rem solid hsla(200, 70%, 60%, .01);
+  border-bottom-left-radius: 1rem;
 
-.social {
-  position: sticky; 
-  top: calc(var(--header100) + var(--stack-block200));
-  margin-bottom: 0;
-  display: flex; 
-  flex-direction: row;
-  align-items: center;
-  column-gap: var(--gap100);
-  padding-top: var(--gap100);
-  padding-left: var(--gap150);
-  padding-bottom: var(--gap50);
-  align-items: stretch;
-
-  img {
-    width: 1.9rem;
+  .content {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-bottom: var(--stackblock300)
   }
 
-  a:hover:not(.resume) {
-  border-style: none;
+  h4 {
+    top: calc(var(--stack-start) + var(--stack-block200));
   }
-}
 
-.resume {
-  font-size: larger;
-  font-family: 'Source Code Pro', monospace;
-  font-weight: 600;
-  text-transform: uppercase;
-  border-bottom-color: inherit
-}
+  .social {
+    position: sticky; 
+    top: calc(var(--header100) + var(--stack-block200));
+    margin-bottom: 0;
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    column-gap: var(--gap100);
+    padding-top: var(--gap100);
+    padding-left: var(--gap150);
+    padding-bottom: var(--gap50);
+    align-items: stretch;
+
+    img {
+      width: 1.9rem;
+    }
+
+    a:hover:not(.resume) {
+    border-style: none;
+    }
+  }
+
+  .resume {
+    font-size: larger;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom-color: inherit
+  }
 `
 
 export default function Career() {
