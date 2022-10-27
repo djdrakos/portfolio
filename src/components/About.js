@@ -1,8 +1,27 @@
-import Section from './Section'
+import styled from 'styled-components'
+import SectionContent from './SectionContent'
+
+const StyledAbout = styled(SectionContent)`
+  position: sticky;
+  top: calc(var(--stack-block400) + var(--header100) - var(--stack-offset) - var(--section-tall));
+  height: var(--section-tall);
+  background-color: hsla(250, 70%, 75%, .15);
+  border-bottom: .1rem solid hsla(250, 70%, 60%, .01);
+  border-bottom-left-radius: 1rem;
+
+  h4 {
+    top: calc(var(--stack-start) + var(--stack-block300));
+  }
+
+  .content {
+    margin-bottom: var(--stack-block400);
+  }
+
+`
 
 export default function About() {
   return (
-    <Section title="about">
+    <StyledAbout title="about">
       <p>"Toolbox?"</p>
 
       <p>Portfolio v0.1.0 built on the React 18 library, deployed on Netlify</p>
@@ -15,7 +34,7 @@ export default function About() {
       
       <p><a href="https://www.flaticon.com/authors/syafii5758" rel="noreferrer" target="_blank">Weather Icons</a></p>
       <p>🖤 to the <a href="https://radious.pro/" rel="noreferrer" target="_blank">Radious</a> crew for the bio pic and workspace for the day</p>
-    </Section>
+    </StyledAbout>
   )
 }
 
