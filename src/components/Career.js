@@ -2,6 +2,7 @@ import SectionContent from './SectionContent'
 import styled from 'styled-components'
 
 const StyledCareer = styled(SectionContent)`
+  z-index: 2;
   position: sticky;
   top: calc(var(--stack-block300) + var(--header100) - var(--stack-offset) - var(--section-tall));
   height: var(--section-tall);
@@ -9,12 +10,12 @@ const StyledCareer = styled(SectionContent)`
   border-bottom: .1rem solid hsla(200, 70%, 60%, .01);
   border-bottom-left-radius: 1rem;
 
-  .content {
-    margin-bottom: var(--stackblock300);
-  }
-  
   h4 {
     top: calc(var(--stack-start) + var(--stack-block200));
+  }
+
+  .content {
+    margin-bottom: var(--stackblock300);
   }
 
   .social {

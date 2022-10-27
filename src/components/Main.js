@@ -10,7 +10,7 @@ const StyledMain = styled.main`
   flex-direction: column;
   row-gap: var(--gap300);
   padding-top: var(--gap300);
-  padding-bottom: 50vh;
+  padding-bottom: calc(100vh - var(--header100) - var(--stack-block400));
 `
 
 export default function Main({ currentTheme, toggleTheme }) {
@@ -21,9 +21,6 @@ export default function Main({ currentTheme, toggleTheme }) {
       <TechStack />
       <Career />
       <About />
-      <section></section>
-      <section></section>
-      <section></section>
     </StyledMain>
   )
 }

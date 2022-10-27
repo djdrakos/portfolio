@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import SectionContent from './SectionContent'
 
 const StyledAbout = styled(SectionContent)`
+  z-index: 1;
   position: sticky;
   top: calc(var(--stack-block400) + var(--header100) - var(--stack-offset) - var(--section-tall));
   height: var(--section-tall);

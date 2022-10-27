@@ -1,7 +1,7 @@
 import { formatClassName } from '../helpers/formatting-helpers'
 import styled from 'styled-components';
 import Section from './Section';
-// import TextMask from './TextMask';
+import TextMask from './TextMask';
 
 const StyledSection = styled(Section)`
   position: sticky;
@@ -33,7 +33,7 @@ export default function SectionContent({title, children, ...props}) {
       { title && <h4>{title}</h4> }
       { children && 
       <div className='content'>
-        {/* <TextMask/> */}
+        <TextMask/>
         {children}
       </div>}
     </StyledSection>
