@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 
 const StyledTechStack = styled(SectionContent)`
-  
+  z-index: 3;
   position: sticky;
   top: calc(var(--stack-block200) + var(--header100) - var(--stack-offset) - var(--section-med));
   height: var(--section-med);

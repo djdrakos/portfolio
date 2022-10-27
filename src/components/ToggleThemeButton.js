@@ -10,10 +10,9 @@ const Toggle = styled.button`
   border: none;
   letter-spacing: ${ ({ currentTheme }) => currentTheme === 'dark' && '.06rem' };
 
-  .weather {
+  svg {
     width: 2.5rem;
-    padding-top: .3rem;
-    padding-left: .02rem;
+    margin-top: .3rem;
     position: absolute;
     transform: translate(-2.3rem);
     fill: ${({ theme }) => theme.fill};
@@ -25,7 +24,7 @@ const Toggle = styled.button`
     transition: all .15s linear, opacity .1s;
   }
 
-  .weather:hover {
+  svg:hover {
     opacity: 1;
   }
 
@@ -43,7 +42,7 @@ export default function ToggleThemeButton({currentTheme, toggleTheme, ...props})
       <span>
         &nbsp;{ currentTheme === 'dark' ? 'rainy' : 'sunny' }&nbsp;
       </span>
-      <ToggleWeatherIcon ref={nodeRef} className={isFixed ? 'weather fixed' : 'weather'} theme={currentTheme} />
+      <ToggleWeatherIcon ref={nodeRef} darkMode={currentTheme === 'dark'} className={ isFixed ? 'fixed' : ''} />
     </Toggle>
   )
 }
