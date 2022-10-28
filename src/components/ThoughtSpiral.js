@@ -28,12 +28,12 @@ const StyledSpiral = styled.div`
 `
 
 export default function ThoughtSpiral() {
-  const [nodeRef, referenceRef, isFixed] = useIntersection({ rootMargin: '5rem' })
+  const [nodeRef, referenceRef, IsIntersecting] = useIntersection({ rootMargin: '5rem' })
 
   return (
     <StyledSpiral >
       <div ref={referenceRef}>
-        <span ref={nodeRef} className={isFixed ? 'spiral fixed' : 'spiral'}>
+        <span ref={nodeRef} className={IsIntersecting ? 'spiral fixed' : 'spiral'}>
           🌀
         </span>
       </div>

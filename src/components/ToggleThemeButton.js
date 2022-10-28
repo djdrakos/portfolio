@@ -35,14 +35,14 @@ const Toggle = styled.button`
 `
 
 export default function ToggleThemeButton({currentTheme, toggleTheme, ...props}) {
-  const [nodeRef, referenceRef, isFixed] = useIntersection()
+  const [nodeRef, referenceRef, IsIntersecting] = useIntersection()
   
   return (
     <Toggle currentTheme={currentTheme} ref={referenceRef} onClick={toggleTheme}>
       <span>
         &nbsp;{ currentTheme === 'dark' ? 'rainy' : 'sunny' }&nbsp;
       </span>
-      <ToggleWeatherIcon ref={nodeRef} darkMode={currentTheme === 'dark'} className={ isFixed ? 'fixed' : ''} />
+      <ToggleWeatherIcon ref={nodeRef} darkMode={currentTheme === 'dark'} className={ IsIntersecting ? 'fixed' : ''} />
     </Toggle>
   )
 }

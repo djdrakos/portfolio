@@ -68,7 +68,7 @@ const StyledHero = styled(Section)`
   `
 
 export default function Hero({currentTheme, toggleTheme, ...props}) {
-  const [ nodeRef, referenceRef, isFixed ] = useIntersection()
+  const [ nodeRef, referenceRef, IsIntersecting ] = useIntersection()
 
   return (
     <StyledHero className="hero">
@@ -82,7 +82,7 @@ export default function Hero({currentTheme, toggleTheme, ...props}) {
           Hi, I’m 
           <strong ref={referenceRef}>
             &nbsp;DJ Drakos!
-            <span ref={nodeRef} className={isFixed ? 'tip fixed' : 'tip'}>
+            <span ref={nodeRef} className={IsIntersecting ? 'tip fixed' : 'tip'}>
               *
             </span>
           </strong> 

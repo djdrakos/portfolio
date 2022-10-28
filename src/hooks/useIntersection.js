@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 
 const useIntersection = () => {
   const [node, setNode] = useState(null)
-  const [isFixed, setIsFixed] = useState(null)
+  const [isIntersecting, setIsIntersecting] = useState(null)
 
   const createIntersectionObserver = (callback) => {
     const options = {
@@ -34,13 +34,13 @@ const useIntersection = () => {
     
     const referenceRef = useCallback((referenceNode) => {
       if(referenceNode && node) {
-        const observer = createIntersectionObserver(setIsFixed);
+        const observer = createIntersectionObserver(setIsIntersecting);
         const { current } = referenceNode
         current ? observer.observe(current) : observer.observe(referenceNode)
       }
     }, [node])
     
-    return [ nodeRef, referenceRef, isFixed ]
+    return [ nodeRef, referenceRef, isIntersecting ]
   }
 
 export default useIntersection
