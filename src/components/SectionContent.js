@@ -24,17 +24,39 @@ const StyledSection = styled(Section)`
     margin-bottom: var(--gap100);
   }
 
+  .mask {
+    height: 100%;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .1) 0, 
+    rgba(0, 0, 0, .1) ${({mask}) => mask ? mask.start : '0%'}, 
+    rgba(0, 0, 0, .5) ${({mask}) => mask ? mask.end : '0%'}, 
+    rgba(0, 0, 0, 1) ${({mask}) => mask ? mask.end : '0%'});
+    mask-size: 100%;
+    mask-position: 0 0;
+    mask-repeat: no-repeat;
+  }
+  /* :before {
+content:'';
+width: 100%;
+height: 9rem;
+position:absolute;
+top: 0;
+background: linear-gradient(#e7e3e6, var(--stack-block300), transparent);
+pointer-events: none;
+} */
+
 `
 
-export default function SectionContent({title, children, ...props}) {
+export default function SectionContent({mask, title, children, ...props}) {
   const className = props.className ?? formatClassName(title);
   return (
-    <StyledSection className={className}>
+    <StyledSection className={className} mask={mask} {...props}>
       { title && <h4>{title}</h4> }
       { children && 
-      <div className='content'>
+      <div className={ mask ? 'content mask' : 'content' }>
         {children}
       </div>}
     </StyledSection>
   )
 }
+
+//2-block mask: linear-gradient(to bottom, rgba(255, 0, 0, .0), rgba(255, 0, 0, .3) calc(var(--stack-block200) / 1), rgba(0, 0, 0, 1) calc(var(--stack-block200) / 1))

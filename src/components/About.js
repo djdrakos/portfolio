@@ -3,7 +3,6 @@ import SectionContent from './SectionContent'
 
 const StyledAbout = styled(SectionContent)`
   z-index: 1;
-  position: sticky;
   top: calc(var(--stack-block400) + var(--header100) - var(--stack-offset) - var(--section-tall));
   height: var(--section-tall);
   background-color: hsla(250, 70%, 75%, .15);
@@ -17,12 +16,11 @@ const StyledAbout = styled(SectionContent)`
   .content {
     margin-bottom: var(--stack-block400);
   }
-
 `
 
-export default function About() {
+export default function About(props) {
   return (
-    <StyledAbout title="about">
+    <StyledAbout title="about" {...props}>
       <p>"Toolbox?"</p>
 
       <p>Portfolio v0.1.0 built on the React 18 library, deployed on Netlify</p>

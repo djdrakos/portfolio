@@ -18,7 +18,7 @@ export default function Main({ currentTheme, toggleTheme }) {
     <StyledMain className="App">
       <Hero currentTheme={currentTheme} toggleTheme={toggleTheme} />
       <Projects />
-      <TechStack />
+      <TechStack mask={ {'start' : '0%', 'end': '20%'} }/>
       <Career />
       <About />
     </StyledMain>

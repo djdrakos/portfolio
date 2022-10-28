@@ -3,7 +3,6 @@ import SectionContent from './SectionContent'
 
 const StyledProjects = styled(SectionContent)`
   z-index: 4;
-  position: sticky;
   top: calc(var(--stack-block100) + var(--header100) - var(--stack-offset) - var(--section-med));
   height: var(--section-med);
   background-color: hsla(100, 70%, 60%, .15);
@@ -34,9 +33,9 @@ const StyledProjects = styled(SectionContent)`
 }
 `
 
-export default function Projects() {
+export default function Projects(props) {
   return (
-    <StyledProjects title="projects">
+    <StyledProjects title="projects" {...props}>
       <div className='titles'>
         <p>Random Quote Generator</p>
         <p>Dark Sky Observer App</p>

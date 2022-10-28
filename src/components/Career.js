@@ -3,17 +3,17 @@ import styled from 'styled-components'
 
 const StyledCareer = styled(SectionContent)`
   z-index: 2;
-  position: sticky;
   top: calc(var(--stack-block300) + var(--header100) - var(--stack-offset) - var(--section-tall));
   height: var(--section-tall);
   background-color: hsla(200, 70%, 60%, .15);
   border-bottom: .1rem solid hsla(200, 70%, 60%, .01);
   border-bottom-left-radius: 1rem;
-
+  
+  
   h4 {
     top: calc(var(--stack-start) + var(--stack-block200));
   }
-
+  
   .content {
     margin-bottom: var(--stackblock300);
   }
@@ -47,15 +47,15 @@ const StyledCareer = styled(SectionContent)`
 
       :hover {
       border-bottom: .1rem black solid;
-    }
+      }
     }
   }
 
 `
 
-export default function Career() {
+export default function Career(props) {
   return (
-    <StyledCareer title="career">
+    <StyledCareer title="career" {...props}>
       <p>
         As a kid, I coded for fun, but didn't see a career in it. So, naturally, I went to <a href="https://pnca.willamette.edu" rel="noreferrer" target="_blank">art school</a> instead.
       </p>
