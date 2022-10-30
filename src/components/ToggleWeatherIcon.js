@@ -10,11 +10,11 @@ const StyledToggle = styled.svg`
   transform: translate(-2.3rem);
   fill: ${({ theme }) => theme.weather};
   mix-blend-mode: multiply;
-  opacity: .5;
-  -webkit-transition: all .15s linear;
-  -moz-transition: all .15s linear;
-  -o-transition: all .15s linear;
-  transition: all .15s linear, opacity .2s;
+  opacity: ${({ theme }) => theme.type === 'dark' ? .4 : .5 };
+  -webkit-transition: opacity .2s ease-out;
+  -moz-transition: opacity .2s ease-out;
+  -o-transition: opacity .2s ease-out;
+  transition: opacity .2s ease-out;
 
   &:hover {
     opacity: 1;

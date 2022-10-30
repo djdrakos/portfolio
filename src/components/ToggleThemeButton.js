@@ -1,7 +1,7 @@
 import { forwardRef, useContext } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import ToggleWeatherIcon from './ToggleWeatherIcon'
-import useIntersection from '../hooks/useIntersection'
+import useSticky from '../hooks/useSticky'
 
 const Toggle = styled.button`
   z-index: 10;
@@ -10,23 +10,24 @@ const Toggle = styled.button`
   vertical-align: top;
   border: none;
   letter-spacing: ${ ({ theme }) => theme.type === 'dark' && '.06rem' };
-  -webkit-transition: all .2 linear;
-  -moz-transition: all .2 linear;
-  -o-transition: all .2 linear;
-  transition: all .2 linear, opacity .2s;
+  -webkit-transition: color .15s ease-out;
+  -moz-transition: color .15s  ease-out;
+  -o-transition: color .15s  ease-out;
+  transition: color .15s ease-out;
+
+  &:hover {
+    color: ${({ theme }) => theme.type === 'dark' ? theme.color300 : theme.color400 };
+  }
 
   .fixed {
     position: fixed;
     top: 0;
   }
+  `
 
-  &:hover {
-    color: ${({ theme }) => theme.type === 'dark' ? theme.color300 : theme.color400 };
-  }
-`
 
 const ToggleThemeButton = forwardRef(({toggleTheme, ...props}, ref) => {
-  const [nodeRef, referenceRef, IsIntersecting] = useIntersection()
+  const [ nodeRef, referenceRef, IsIntersecting ] = useSticky()
   const themeContext = useContext(ThemeContext)
 
   return (

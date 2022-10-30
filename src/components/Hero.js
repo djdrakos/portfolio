@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Section from './Section'
 import ThoughtSpiral from './ThoughtSpiral'
 import ToggleThemeButton from './ToggleThemeButton'
-import useIntersection from '../hooks/useIntersection'
+import useSticky from '../hooks/useSticky'
 
 const StyledHero = styled(Section)`
   min-height: var(--section-short);
@@ -53,13 +53,13 @@ const StyledHero = styled(Section)`
     cursor: pointer;
     font-weight: 400;
     opacity: .6;
-    -webkit-transition: all .15s linear;
-    -moz-transition: all .15s linear;
-    -o-transition: all .15s linear;
-    transition: all .15s linear, opacity .1s;
+    -webkit-transition: opacity .2s ease-out;
+    -moz-transition: opacity .2s ease-out;
+    -o-transition: opacity .2s ease-out;
+    transition: opacity .2s ease-out;
 
     :hover {
-      opacity: 1;1
+      opacity: 1;
     }
   }
     
@@ -70,7 +70,7 @@ const StyledHero = styled(Section)`
   `
 
 export default function Hero({toggleTheme, ...props}) {
-  const [ nodeRef, referenceRef, IsIntersecting ] = useIntersection()
+  const [ nodeRef, referenceRef, IsIntersecting ] = useSticky()
 
   return (
     <StyledHero className="hero">

@@ -1,14 +1,14 @@
 import { useCallback, useState } from 'react'
 
-const useIntersection = () => {
+const useSticky = () => {
   const [node, setNode] = useState(null)
   const [isIntersecting, setIsIntersecting] = useState(null)
 
-  const createIntersectionObserver = (callback) => {
+  const createIntersectionObserver = useCallback((callback) => {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: [0, .25, .5, .75, 1]
+      threshold: [0, ., .5, .75, 1],
     }
 
     const handleIntersect = (entries) => {
@@ -23,7 +23,7 @@ const useIntersection = () => {
     }
     
     return new IntersectionObserver(handleIntersect, options)
-    }
+    }, [])
     
     const nodeRef = useCallback((node) => {
       if(node) {
@@ -34,13 +34,13 @@ const useIntersection = () => {
     
     const referenceRef = useCallback((referenceNode) => {
       if(referenceNode && node) {
-        const observer = createIntersectionObserver(setIsIntersecting);
+        const observer = createIntersectionObserver(setIsIntersecting, options);
         const { current } = referenceNode
         current ? observer.observe(current) : observer.observe(referenceNode)
       }
-    }, [node])
+    }, [node, createIntersectionObserver, options])
     
-    return [ nodeRef, referenceRef, isIntersecting ]
+    return [ nodeRef, referenceRef, isIntersecting, node, setOptions ]
   }
 
-export default useIntersection
+export default useSticky

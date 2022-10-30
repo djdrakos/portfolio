@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import useIntersection from '../hooks/useIntersection'
+import useSticky from '../hooks/useSticky'
 
 const StyledSpiral = styled.div`
   z-index: 10;
@@ -28,7 +28,7 @@ const StyledSpiral = styled.div`
 `
 
 export default function ThoughtSpiral() {
-  const [nodeRef, referenceRef, IsIntersecting] = useIntersection({ rootMargin: '5rem' })
+  const [ nodeRef, referenceRef, IsIntersecting ] = useSticky({ rootMargin: '5rem' })
 
   return (
     <StyledSpiral >
