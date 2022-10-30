@@ -1,4 +1,4 @@
-import { formatClassName } from '../helpers/formatting-helpers'
+import { forwardRef } from 'react';
 import styled from 'styled-components';
 import Section from './Section';
 
@@ -36,16 +36,18 @@ const StyledSection = styled(Section)`
   }
 `
 
-export default function SectionContent({ mask, title, children, ...props }) {
+const SectionContent = forwardRef(({ mask, title, children, ...props }, ref) => {
   return (
-    <StyledSection mask={mask} {...props}>
+    <StyledSection  mask={mask} {...props}>
       { title && <h4>{title}</h4> }
       { children && 
-      <div className={ mask ? 'content mask' : 'content' }>
+      <div ref={ref} className={ mask ? 'content mask' : 'content' }>
         {children}
       </div>}
     </StyledSection>
   )
-}
+})
+
+export default SectionContent
 
 //2-block mask: linear-gradient(to bottom, rgba(255, 0, 0, .0), rgba(255, 0, 0, .3) calc(var(--stack-block200) / 1), rgba(0, 0, 0, 1) calc(var(--stack-block200) / 1))
