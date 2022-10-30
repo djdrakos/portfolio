@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import ToggleWeatherIcon from './ToggleWeatherIcon'
-import useSticky from '../hooks/useSticky'
+import useToggleFixedClass from '../hooks/useToggleFixedClass'
 
 const Toggle = styled.button`
   z-index: 10;
@@ -18,21 +18,16 @@ const Toggle = styled.button`
   &:hover {
     color: ${({ theme }) => theme.type === 'dark' ? theme.color300 : theme.color400 };
   }
-
-  .fixed {
-    position: fixed;
-    top: 0;
-  }
   `
 
 const ToggleThemeButton = ({ toggleTheme }) => {
-  const [ referenceRef, IsIntersecting ] = useSticky()
+  const [ stickyRef, triggerRef ] = useToggleFixedClass()
   const themeContext = useContext(ThemeContext)
 
   return (
-    <Toggle ref={referenceRef} onClick={toggleTheme}>
+    <Toggle ref={triggerRef} onClick={toggleTheme}>
       { themeContext.type === 'dark' ? ' rainy ' : ' sunny '}
-      <ToggleWeatherIcon darkMode={themeContext.type === 'dark'} className={ IsIntersecting ? 'fixed' : ''} />
+      <ToggleWeatherIcon ref={stickyRef} darkMode={themeContext.type === 'dark'} />
     </Toggle>
   )
 }

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Section from './Section'
 import ThoughtSpiral from './ThoughtSpiral'
 import ToggleThemeButton from './ToggleThemeButton'
-import useSticky from '../hooks/useSticky'
+import useToggleFixedClass from '../hooks/useToggleFixedClass'
 
 const StyledHero = styled(Section)`
   min-height: var(--section-short);
@@ -61,16 +61,16 @@ const StyledHero = styled(Section)`
     :hover {
       opacity: 1;
     }
-  }
     
-  .fixed {
-    position: fixed;
-    top: 0;
+    &.fixed{
+      position: fixed;
+      top: 0;
+    }
   }
   `
 
 export default function Hero({ toggleTheme }) {
-  const [ nodeRef, IsIntersecting ] = useSticky()
+  const [ stickyRef, triggerRef ] = useToggleFixedClass()
 
   return (
     <StyledHero className="hero">
@@ -82,9 +82,9 @@ export default function Hero({ toggleTheme }) {
       <div className="wrapper bio"> 
         <h1>
           Hi, I’m 
-          <strong ref={nodeRef}>
+          <strong ref={triggerRef}>
             &nbsp;DJ Drakos!
-            <span className={IsIntersecting ? 'tip fixed' : 'tip'}>
+            <span ref={stickyRef} className='tip'>
               *
             </span>
           </strong> 

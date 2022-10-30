@@ -111,11 +111,6 @@ a:hover {
   border-bottom-width: .1rem;
 }
 
-.fixed {
-  position: fixed;
-  top: 0;
-}
-
 :root {
   --header100: 4rem;
   --bio-pic100: 15rem;

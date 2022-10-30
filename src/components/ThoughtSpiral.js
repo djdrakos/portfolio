@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import useSticky from '../hooks/useSticky'
+import useToggleFixedClass from '../hooks/useToggleFixedClass'
 
 const StyledSpiral = styled.div`
   z-index: 10;
@@ -28,12 +28,12 @@ const StyledSpiral = styled.div`
 `
 
 export default function ThoughtSpiral() {
-  const [ nodeRef, IsIntersecting ] = useSticky({ rootMargin: '5rem' })
+  const [ stickyRef, triggerRef ] = useToggleFixedClass()
 
   return (
     <StyledSpiral >
-      <div ref={nodeRef}>
-        <span className={IsIntersecting ? 'spiral fixed' : 'spiral'}>
+      <div ref={triggerRef}>
+        <span ref={stickyRef} className='spiral'>
           🌀
         </span>
       </div>
