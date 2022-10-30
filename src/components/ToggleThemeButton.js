@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import { forwardRef, useContext } from 'react'
+import styled, { ThemeContext } from 'styled-components'
 import ToggleWeatherIcon from './ToggleWeatherIcon'
 import useIntersection from '../hooks/useIntersection'
 
@@ -8,41 +9,32 @@ const Toggle = styled.button`
   position: relative;
   vertical-align: top;
   border: none;
-  letter-spacing: ${ ({ currentTheme }) => currentTheme === 'dark' && '.06rem' };
-
-  svg {
-    width: 2.5rem;
-    margin-top: .3rem;
-    position: absolute;
-    transform: translate(-2.3rem);
-    fill: ${({ theme }) => theme.fill};
-    mix-blend-mode: multiply;
-    opacity: .5;
-    -webkit-transition: all .15s linear;
-    -moz-transition: all .15s linear;
-    -o-transition: all .15s linear;
-    transition: all .15s linear, opacity .1s;
-  }
-
-  svg:hover {
-    opacity: 1;
-  }
+  letter-spacing: ${ ({ theme }) => theme.type === 'dark' && '.06rem' };
+  -webkit-transition: all .2 linear;
+  -moz-transition: all .2 linear;
+  -o-transition: all .2 linear;
+  transition: all .2 linear, opacity .2s;
 
   .fixed {
     position: fixed;
     top: 0;
   }
+
+  &:hover {
+    color: ${({ theme }) => theme.type === 'dark' ? theme.color300 : theme.color400 };
+  }
 `
 
-export default function ToggleThemeButton({currentTheme, toggleTheme, ...props}) {
+const ToggleThemeButton = forwardRef(({toggleTheme, ...props}, ref) => {
   const [nodeRef, referenceRef, IsIntersecting] = useIntersection()
-  
+  const themeContext = useContext(ThemeContext)
+
   return (
-    <Toggle currentTheme={currentTheme} ref={referenceRef} onClick={toggleTheme}>
-      <span>
-        &nbsp;{ currentTheme === 'dark' ? 'rainy' : 'sunny' }&nbsp;
-      </span>
-      <ToggleWeatherIcon ref={nodeRef} darkMode={currentTheme === 'dark'} className={ IsIntersecting ? 'fixed' : ''} />
+    <Toggle ref={referenceRef} onClick={toggleTheme}>
+      { themeContext.type === 'dark' ? ' rainy ' : ' sunny '}
+      <ToggleWeatherIcon ref={nodeRef} darkMode={themeContext.type === 'dark'} className={ IsIntersecting ? 'fixed' : ''} />
     </Toggle>
   )
-}
+})
+
+export default ToggleThemeButton

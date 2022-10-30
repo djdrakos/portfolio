@@ -31,7 +31,8 @@ const StyledCareer = styled(SectionContent)`
 
     img {
       width: 1.9rem;
-    }
+      filter:${({ theme }) => theme.type === 'dark' &&' invert(72%) sepia(95%) saturate(2%) hue-rotate(202deg) brightness(97%) contrast(84%)'};
+    } 
 
     a:hover:not(.resume) {
     border-style: none;
@@ -46,7 +47,7 @@ const StyledCareer = styled(SectionContent)`
       border: .1rem solid transparent;
 
       :hover {
-      border-bottom: .1rem black solid;
+      border-bottom: .1rem ${({ theme }) => theme.color } solid;
       }
     }
   }

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Logo from './Logo'
 
 const StyledHeader = styled.header`
   z-index: 10;
@@ -11,17 +12,12 @@ const StyledHeader = styled.header`
   width: 100%;
   padding-left: calc(var(--gap100) / 4);
   border-bottom-left-radius: var(--gap50);
-
-  .logo {
-  width: var(--gap100);
-  }
 `
-
 
 export default function Header() {
   return (
     <StyledHeader>
-      <img className="logo" src="./djd_icon.svg" alt="DJD icon" />
+      <Logo />
     </StyledHeader>
   )
 }

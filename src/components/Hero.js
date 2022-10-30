@@ -26,16 +26,19 @@ const StyledHero = styled(Section)`
   max-width: var(--bio-pic100);
   max-height: var(--bio-pic100);
   border-radius: 50%;
+  background-color: ${({ theme }) => theme.type === 'dark' ? theme.color300 : 'none'};
   overflow: hidden;
 } 
 
   img.portrait {
+    isolation: isolate;
     max-width: 130%;
     height: auto;
-    mix-blend-mode: luminosity;
+    filter: grayscale();
+    mix-blend-mode: luminosity;;
     object-fit: cover;
     object-position: calc( -1 * var(--gap100)) calc( -1 * var(--gap150));
-    opacity: 0.6;
+    opacity: ${({ theme }) => theme.type === 'dark' ? .5 : .6 };
   }
 
   .tip {
@@ -44,9 +47,9 @@ const StyledHero = styled(Section)`
     position: absolute;
     font-family: 'Sanchez';
     font-size: 5rem;
-    color: rgb(210, 193, 40);
+    color: ${({ theme }) => theme.tip};
     transform: translate(-1.4rem, -1.5rem);
-    mix-blend-mode: multiply;
+    mix-blend-mode: ${({ theme }) => theme.type === 'dark' ? 'lighten' : 'multiply'};
     cursor: pointer;
     font-weight: 400;
     opacity: .6;
@@ -56,18 +59,17 @@ const StyledHero = styled(Section)`
     transition: all .15s linear, opacity .1s;
 
     :hover {
-      opacity: 1;
+      opacity: 1;1
     }
   }
     
-
   .fixed {
     position: fixed;
     top: 0;
   }
   `
 
-export default function Hero({currentTheme, toggleTheme, ...props}) {
+export default function Hero({toggleTheme, ...props}) {
   const [ nodeRef, referenceRef, IsIntersecting ] = useIntersection()
 
   return (
@@ -91,7 +93,7 @@ export default function Hero({currentTheme, toggleTheme, ...props}) {
           I’m a Fullstack Software Engineer/Creative
           <br/ >
           based in 
-          <ToggleThemeButton currentTheme={currentTheme} toggleTheme={toggleTheme} />
+          <ToggleThemeButton toggleTheme={toggleTheme} />
           Portland, Oregon.
         </p>
         <p>

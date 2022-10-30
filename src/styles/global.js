@@ -7,7 +7,6 @@ export const GlobalStyles = createGlobalStyle`
   https://www.joshwcomeau.com/css/custom-css-reset/
 */
 
-
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -132,5 +131,4 @@ a:hover {
   --stack-block300: calc(3 * var(--stack-block100));
   --stack-block400: calc(4 * var(--stack-block100));
 }
-
 `

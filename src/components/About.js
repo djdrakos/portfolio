@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import { useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components'
 import SectionContent from './SectionContent'
 
 const StyledAbout = styled(SectionContent)`
@@ -19,6 +20,7 @@ const StyledAbout = styled(SectionContent)`
 `
 
 export default function About(props) {
+  const themeContext = useContext(ThemeContext);
   return (
     <StyledAbout title="about" {...props}>
       <p>"Toolbox?"</p>
@@ -32,7 +34,7 @@ export default function About(props) {
       <p>Lighthouse score, Accessibility considerations</p>
       
       <p><a href="https://www.flaticon.com/authors/syafii5758" rel="noreferrer" target="_blank">Weather Icons</a></p>
-      <p>🖤 to the <a href="https://radious.pro/" rel="noreferrer" target="_blank">Radious</a> crew for the bio pic and workspace for the day</p>
+      <p>{ themeContext.type === 'dark' ? '🤍' :  '🖤'} to the <a href="https://radious.pro/" rel="noreferrer" target="_blank">Radious</a> crew for the bio pic and workspace for the day</p>
     </StyledAbout>
   )
 }
