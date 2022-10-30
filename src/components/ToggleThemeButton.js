@@ -25,17 +25,16 @@ const Toggle = styled.button`
   }
   `
 
-
-const ToggleThemeButton = forwardRef(({toggleTheme, ...props}, ref) => {
-  const [ nodeRef, referenceRef, IsIntersecting ] = useSticky()
+const ToggleThemeButton = ({ toggleTheme }) => {
+  const [ referenceRef, IsIntersecting ] = useSticky()
   const themeContext = useContext(ThemeContext)
 
   return (
     <Toggle ref={referenceRef} onClick={toggleTheme}>
       { themeContext.type === 'dark' ? ' rainy ' : ' sunny '}
-      <ToggleWeatherIcon ref={nodeRef} darkMode={themeContext.type === 'dark'} className={ IsIntersecting ? 'fixed' : ''} />
+      <ToggleWeatherIcon darkMode={themeContext.type === 'dark'} className={ IsIntersecting ? 'fixed' : ''} />
     </Toggle>
   )
-})
+}
 
 export default ToggleThemeButton

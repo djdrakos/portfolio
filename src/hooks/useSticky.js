@@ -1,14 +1,14 @@
 import { useCallback, useState } from 'react'
+import { generateThresholds } from '../helpers/array-helpers'
 
 const useSticky = () => {
-  const [node, setNode] = useState(null)
   const [isIntersecting, setIsIntersecting] = useState(null)
 
   const createIntersectionObserver = useCallback((callback) => {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: [0, ., .5, .75, 1],
+      threshold: generateThresholds(1),
     }
 
     const handleIntersect = (entries) => {
@@ -27,20 +27,13 @@ const useSticky = () => {
     
     const nodeRef = useCallback((node) => {
       if(node) {
+        const observer = createIntersectionObserver(setIsIntersecting);
         const { current } = node
-        current ? setNode(current) : setNode(node)
+        current ? observer.observe(current) : observer.observe(node)
       }
-    }, [])
+    }, [createIntersectionObserver])
     
-    const referenceRef = useCallback((referenceNode) => {
-      if(referenceNode && node) {
-        const observer = createIntersectionObserver(setIsIntersecting, options);
-        const { current } = referenceNode
-        current ? observer.observe(current) : observer.observe(referenceNode)
-      }
-    }, [node, createIntersectionObserver, options])
-    
-    return [ nodeRef, referenceRef, isIntersecting, node, setOptions ]
+    return [nodeRef, isIntersecting]
   }
 
 export default useSticky

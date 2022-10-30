@@ -69,8 +69,8 @@ const StyledHero = styled(Section)`
   }
   `
 
-export default function Hero({toggleTheme, ...props}) {
-  const [ nodeRef, referenceRef, IsIntersecting ] = useSticky()
+export default function Hero({ toggleTheme }) {
+  const [ nodeRef, IsIntersecting ] = useSticky()
 
   return (
     <StyledHero className="hero">
@@ -82,9 +82,9 @@ export default function Hero({toggleTheme, ...props}) {
       <div className="wrapper bio"> 
         <h1>
           Hi, I’m 
-          <strong ref={referenceRef}>
+          <strong ref={nodeRef}>
             &nbsp;DJ Drakos!
-            <span ref={nodeRef} className={IsIntersecting ? 'tip fixed' : 'tip'}>
+            <span className={IsIntersecting ? 'tip fixed' : 'tip'}>
               *
             </span>
           </strong> 
