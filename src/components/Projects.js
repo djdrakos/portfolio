@@ -33,9 +33,9 @@ const StyledProjects = styled(SectionContent)`
 }
 `
 
-export default function Projects(props) {
+export default function Projects() {
   return (
-    <StyledProjects title="projects" {...props}>
+    <StyledProjects title="projects">
       <div className='titles'>
         <p>Random Quote Generator</p>
         <p>Dark Sky Observer App</p>

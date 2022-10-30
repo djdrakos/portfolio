@@ -34,22 +34,11 @@ const StyledSection = styled(Section)`
     mask-position: 0 0;
     mask-repeat: no-repeat;
   }
-  /* :before {
-content:'';
-width: 100%;
-height: 9rem;
-position:absolute;
-top: 0;
-background: linear-gradient(#e7e3e6, var(--stack-block300), transparent);
-pointer-events: none;
-} */
-
 `
 
-export default function SectionContent({mask, title, children, ...props}) {
-  const className = props.className ?? formatClassName(title);
+export default function SectionContent({ mask, title, children, ...props }) {
   return (
-    <StyledSection className={className} mask={mask} {...props}>
+    <StyledSection mask={mask} {...props}>
       { title && <h4>{title}</h4> }
       { children && 
       <div className={ mask ? 'content mask' : 'content' }>

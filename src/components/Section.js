@@ -18,7 +18,7 @@ const StyledSection = styled.section`
   top: calc(var(--stack-block100) + var(--header100) - var(--stack-offset) - var(--section-med));
 `
 
-export default function Section({title, children,...props}) {
+export default function Section({ title, children,...props }) {
   const className = props.className ?? formatClassName(title);
   return (
     <StyledSection className={className} {...props}>

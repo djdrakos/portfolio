@@ -54,9 +54,9 @@ const StyledCareer = styled(SectionContent)`
 
 `
 
-export default function Career(props) {
+export default function Career() {
   return (
-    <StyledCareer title="career" {...props}>
+    <StyledCareer title="career">
       <p>
         As a kid, I coded for fun, but didn't see a career in it. So, naturally, I went to <a href="https://pnca.willamette.edu" rel="noreferrer" target="_blank">art school</a> instead.
       </p>

@@ -1,4 +1,3 @@
-import { forwardRef, useContext } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import ToggleWeatherIcon from './ToggleWeatherIcon'
 import useSticky from '../hooks/useSticky'
