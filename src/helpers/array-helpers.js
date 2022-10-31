@@ -1,7 +1,7 @@
 export function generateThresholds(steps) {
   let thresholds = []
 
-  for (let i = 1; i <= steps; i++) {
+  for (let i = steps; i >= 1; i--) {
     thresholds.push(i / steps)
   }
 
