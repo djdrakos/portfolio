@@ -1,8 +1,9 @@
-import useScrollMask from '../hooks/useScrollMask'
+import { forwardRef } from 'react'
 import styled from 'styled-components'
 import SectionContent from './SectionContent'
 
 const StyledTechStack = styled(SectionContent)`
+--top-offset: calc(var(--stack-block100) + var(--header100));
   z-index: 3;
   top: calc(var(--stack-block200) + var(--header100) - var(--stack-offset) - var(--section-med));
   height: var(--section-med);
@@ -23,15 +24,14 @@ const StyledTechStack = styled(SectionContent)`
   }
 `
 
-const TechStack = () => {
-  const [nodeRef] = useScrollMask()
+const TechStack = forwardRef((props, ref) => {
   return (
-    <StyledTechStack ref={nodeRef} title="Tech Stack">
+    <StyledTechStack ref={ref} title="Tech Stack" {...props}>
       <h5>Lorem Ipsum</h5>
       <p>dolor sit amet, consectetur adipiscing elit. Phasellus porta et diam in vestibulum. Aliquam nunc enim, condimentum in volutpat viverra, ultricies non sem. Phasellus eu nisi mauris. Nunc at molestie enim. Curabitur finibus suscipit felis ut congue. Phasellus sed justo velit. Aenean neque purus, fermentum sit amet scelerisque tempus, ultrices eget massa. Etiam eget ante augue.</p>
       <p>Vivamus eu orci id nisl cursus fermentum in sed elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi efficitur nunc a quam faucibus egestas. Pellentesque viverra arcu eu suscipit sollicitudin.</p>
     </StyledTechStack>
   )
-}
+})
 
 export default TechStack

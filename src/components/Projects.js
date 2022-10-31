@@ -1,7 +1,9 @@
 import styled from 'styled-components'
+import { forwardRef } from 'react'
 import SectionContent from './SectionContent'
 
 const StyledProjects = styled(SectionContent)`
+  --top-offset: var(--header100);
   z-index: 4;
   top: calc(var(--stack-block100) + var(--header100) - var(--stack-offset) - var(--section-med));
   height: var(--section-med);
@@ -27,15 +29,15 @@ const StyledProjects = styled(SectionContent)`
   .titles {
     display: flex;
     flex-direction: row;
-    align-self: flex-end;
     align-items: flex-end;
     justify-content: space-between;
 }
+
 `
 
-export default function Projects() {
+const Projects = forwardRef((props, ref) => {
   return (
-    <StyledProjects title="projects">
+    <StyledProjects ref={ref} title="projects">
       <div className='titles'>
         <p>Random Quote Generator</p>
         <p>Dark Sky Observer App</p>
@@ -45,4 +47,6 @@ export default function Projects() {
       </div>
     </StyledProjects>
   )
-}
+})
+
+export default Projects

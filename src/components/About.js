@@ -1,8 +1,9 @@
-import { useContext } from 'react';
+import { forwardRef, useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components'
 import SectionContent from './SectionContent'
 
 const StyledAbout = styled(SectionContent)`
+  --top-offset: calc(var(--stack-block300) + var(--header100));
   z-index: 1;
   top: calc(var(--stack-block400) + var(--header100) - var(--stack-offset) - var(--section-tall));
   height: var(--section-tall);
@@ -19,10 +20,10 @@ const StyledAbout = styled(SectionContent)`
   }
 `
 
-export default function About(props) {
+const About = forwardRef((props, ref) => {
   const themeContext = useContext(ThemeContext);
   return (
-    <StyledAbout title="about" {...props}>
+    <StyledAbout ref={ref} title="about" {...props}>
       <p>"Toolbox?"</p>
 
       <p>Portfolio v0.1.0 built on the React 18 library, deployed on Netlify</p>
@@ -37,7 +38,8 @@ export default function About(props) {
       <p>{ themeContext.type === 'dark' ? '🤍' :  '🖤'} to the <a href="https://radious.pro/" rel="noreferrer" target="_blank">Radious</a> crew for the bio pic and workspace for the day</p>
     </StyledAbout>
   )
-}
+})
+export default About
 
 //<a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by pictogramer - Flaticon</a>
 

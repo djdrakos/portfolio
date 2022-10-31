@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Section from './Section';
 
 const StyledSection = styled(Section)`
+  --top-offset: var(--header100);
   position: sticky;
   top: calc(var(--stack-block100) + var(--header100) - var(--stack-offset) - var(--section-med));
   background-color: hsla(50, 70%, 60%, .15);
@@ -24,12 +25,24 @@ const StyledSection = styled(Section)`
     margin-bottom: var(--gap100);
   }
 
+  //TODO make invisible for prod
+  .mask-helper {
+    position: absolute;
+    top: calc(-1 * var(--top-offset));
+    width: 100%;
+    height: var(--top-offset);
+    background-color: ${({ theme }) => theme.background};
+    border: 1px dotted #444cf7;
+    opacity: 0.2;
+    background-size: 5px 5px;
+    background-image: repeating-linear-gradient(45deg, #444cf7 0, #444cf7 0.5px, #f4f2e6 0, #f4f2e6 50%);
+  }
+
   .mask {
     height: 100%;
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .1) 0, 
-    rgba(0, 0, 0, .1) ${({mask}) => mask ? mask.start : '0%'}, 
-    rgba(0, 0, 0, .5) ${({mask}) => mask ? mask.end : '0%'}, 
-    rgba(0, 0, 0, 1) ${({mask}) => mask ? mask.end : '0%'});
+    rgba(0, 0, 0, .2) ${({ mask }) => mask ? mask : '0px'},
+    rgba(0, 0, 0, 1) 13%) ${({ mask }) => mask ? mask : '0px'};
     mask-size: 100%;
     mask-position: 0 0;
     mask-repeat: no-repeat;
@@ -38,10 +51,11 @@ const StyledSection = styled(Section)`
 
 const SectionContent = forwardRef(({ mask, title, children, ...props }, ref) => {
   return (
-    <StyledSection  mask={mask} {...props}>
+    <StyledSection mask={mask} {...props}>
+      <div className='mask-helper' />
       { title && <h4>{title}</h4> }
       { children && 
-      <div ref={ref} className={ mask ? 'content mask' : 'content' }>
+      <div ref={ref} className={ mask ? `${title} content mask` : `${title} content` }>
         {children}
       </div>}
     </StyledSection>
@@ -49,5 +63,3 @@ const SectionContent = forwardRef(({ mask, title, children, ...props }, ref) => 
 })
 
 export default SectionContent
-
-//2-block mask: linear-gradient(to bottom, rgba(255, 0, 0, .0), rgba(255, 0, 0, .3) calc(var(--stack-block200) / 1), rgba(0, 0, 0, 1) calc(var(--stack-block200) / 1))
