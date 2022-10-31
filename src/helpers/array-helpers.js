@@ -2,7 +2,9 @@ export function generateThresholds(steps) {
   let thresholds = []
 
   for (let i = steps; i >= 1; i--) {
-    thresholds.push(i / steps)
+    const factor = 10 ** 2
+    const num = i / steps
+    thresholds.push(Math.round(num * factor) / factor)
   }
 
   thresholds.push(0)
