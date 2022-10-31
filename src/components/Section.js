@@ -7,8 +7,9 @@ const StyledSection = styled.section`
   --section-short: var(--bio-pic100);
   --section-med: var(--bio-pic200);
   --section-tall: var(--bio-pic300);
+  --section-height: var(--section-short);
 
-  min-height: var(--section-short);
+  min-height: var(--section-height);
   padding-left: var(--gap300);
   padding-right: var(--gap150);
   display: grid;

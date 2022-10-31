@@ -3,10 +3,11 @@ import styled, { ThemeContext } from 'styled-components'
 import SectionContent from './SectionContent'
 
 const StyledAbout = styled(SectionContent)`
-  --top-offset: calc(var(--stack-block300) + var(--header100));
+  --top-offset: calc(var(--stack-block300) + var(--header100) - var(--stack-offset));
+  --section-height: var(--section-tall);
   z-index: 1;
   top: calc(var(--stack-block400) + var(--header100) - var(--stack-offset) - var(--section-tall));
-  height: var(--section-tall);
+  height: var(--section-height);
   background-color: hsla(250, 70%, 75%, .15);
   border-bottom: .1rem solid hsla(250, 70%, 60%, .01);
   border-bottom-left-radius: 1rem;

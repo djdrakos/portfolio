@@ -3,10 +3,11 @@ import styled from 'styled-components'
 import SectionContent from './SectionContent'
 
 const StyledTechStack = styled(SectionContent)`
---top-offset: calc(var(--stack-block100) + var(--header100));
+--top-offset: calc(var(--stack-block100) + var(--header100) - var(--stack-offset));
+--section-height: var(--section-med);
   z-index: 3;
   top: calc(var(--stack-block200) + var(--header100) - var(--stack-offset) - var(--section-med));
-  height: var(--section-med);
+  height: var(--section-height);
   background-color: hsla(150, 70%, 60%, .15);
   border-bottom: .1rem solid hsla(150, 70%, 60%, .01);
   border-bottom-left-radius: 1rem;

@@ -4,9 +4,10 @@ import SectionContent from './SectionContent'
 
 const StyledProjects = styled(SectionContent)`
   --top-offset: var(--header100);
+  --section-height: var(--section-med);
   z-index: 4;
   top: calc(var(--stack-block100) + var(--header100) - var(--stack-offset) - var(--section-med));
-  height: var(--section-med);
+  height: var(--section-height);
   background-color: hsla(100, 70%, 60%, .15);
   border-bottom: .1rem solid hsla(100, 70%, 60%, .01);
   border-bottom-left-radius: 1rem;
@@ -32,7 +33,6 @@ const StyledProjects = styled(SectionContent)`
     align-items: flex-end;
     justify-content: space-between;
 }
-
 `
 
 const Projects = forwardRef((props, ref) => {

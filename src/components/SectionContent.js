@@ -30,7 +30,7 @@ const StyledSection = styled(Section)`
     position: absolute;
     top: calc(-1 * var(--top-offset));
     width: 100%;
-    height: var(--top-offset);
+    height: calc(var(--top-offset) + var(--section-height));
     background-color: ${({ theme }) => theme.background};
     border: 1px dotted #444cf7;
     opacity: 0.2;
@@ -52,10 +52,10 @@ const StyledSection = styled(Section)`
 const SectionContent = forwardRef(({ mask, title, children, ...props }, ref) => {
   return (
     <StyledSection mask={mask} {...props}>
-      <div className='mask-helper' />
+      <div ref={ref} className={`${title} mask-helper`} />
       { title && <h4>{title}</h4> }
       { children && 
-      <div ref={ref} className={ mask ? `${title} content mask` : `${title} content` }>
+      <div className={ mask ? `content mask` : `content` }>
         {children}
       </div>}
     </StyledSection>
