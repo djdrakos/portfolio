@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import ToggleWeatherIcon from './ToggleWeatherIcon'
-import useToggleFixedClass from '../hooks/useToggleFixedClass'
+import useIntersectionObserver from '../hooks/useIntersectionObserver'
 
 const Toggle = styled.button`
   z-index: 10;
@@ -18,16 +18,21 @@ const Toggle = styled.button`
   &:hover {
     color: ${({ theme }) => theme.type === 'dark' ? theme.color300 : theme.color400 };
   }
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+  }
   `
 
 const ToggleThemeButton = ({ toggleTheme }) => {
-  const [ stickyRef, triggerRef ] = useToggleFixedClass()
+  const [ triggerRef, isIntersecting ] = useIntersectionObserver()
   const themeContext = useContext(ThemeContext)
 
   return (
     <Toggle ref={triggerRef} onClick={toggleTheme}>
-      { themeContext.type === 'dark' ? ' rainy ' : ' sunny '}
-      <ToggleWeatherIcon ref={stickyRef} darkMode={themeContext.type === 'dark'} />
+      {themeContext.type === 'dark' ? ' rainy ' : ' sunny '}
+      <ToggleWeatherIcon darkMode={themeContext.type === 'dark'} className={isIntersecting ? 'fixed' : ''}/>
     </Toggle>
   )
 }
