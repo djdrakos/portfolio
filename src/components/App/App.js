@@ -15,7 +15,7 @@ let themeMode = themes[currentTheme]
     <>
       <GlobalStyles />
         <Header />
-        <Main currentTheme={currentTheme} toggleTheme={toggleTheme} />
+        <Main toggleTheme={toggleTheme} />
       </>
     </ThemeProvider>
   );

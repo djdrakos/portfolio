@@ -13,10 +13,10 @@ const StyledMain = styled.main`
   padding-bottom: calc(100vh - var(--header100) - var(--stack-block400));
 `
 
-export default function Main({ currentTheme, toggleTheme }) {
+export default function Main({ toggleTheme }) {
   return (
     <StyledMain className="App" >
-      <Hero currentTheme={currentTheme} toggleTheme={toggleTheme} />
+      <Hero toggleTheme={toggleTheme} />
       <Projects />
       <TechStack />
       <Career />

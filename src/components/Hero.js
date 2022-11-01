@@ -35,7 +35,7 @@ const StyledHero = styled(Section)`
     max-width: 130%;
     height: auto;
     filter: grayscale();
-    mix-blend-mode: luminosity;;
+    mix-blend-mode: ${({ theme }) => theme.type === 'dark' ? 'overlay' : ''};
     object-fit: cover;
     object-position: calc( -1 * var(--gap100)) calc( -1 * var(--gap150));
     opacity: ${({ theme }) => theme.type === 'dark' ? .5 : .6 };
