@@ -49,7 +49,7 @@ const StyledHero = styled(Section)`
     font-size: 5rem;
     color: ${({ theme }) => theme.tip};
     transform: translate(-1.4rem, -1.5rem);
-    mix-blend-mode: ${({ theme }) => theme.type === 'dark' ? 'lighten' : 'multiply'};
+    mix-blend-mode: ${({ theme }) => theme.type === 'dark' ? 'screen' : 'multiply'};
     cursor: pointer;
     font-weight: 400;
     opacity: .6;

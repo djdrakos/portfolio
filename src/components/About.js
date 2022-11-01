@@ -8,8 +8,8 @@ const StyledAbout = styled(SectionContent)`
   z-index: 1;
   top: calc(var(--stack-block400) + var(--header100) - var(--stack-offset) - var(--section-tall));
   height: var(--section-height);
-  background-color: ${({ theme }) => theme.bg4};
-  border-bottom: .1rem solid hsla(250, 70%, 60%, .01);
+  background-color: ${({ theme }) => theme.bg4 };
+  border-bottom: .1rem solid  ${({ theme }) => theme.bg4 };
   border-bottom-left-radius: 1rem;
 
   h4 {

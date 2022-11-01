@@ -8,7 +8,7 @@ const StyledTechStack = styled(SectionContent)`
   top: calc(var(--stack-block200) + var(--header100) - var(--stack-offset) - var(--section-med));
   height: var(--section-height);
   background-color: ${({ theme }) => theme.bg2 };
-  border-bottom: .1rem solid hsla(150, 70%, 60%, .01);
+  border-bottom: .1rem solid ${({ theme }) => theme.bg2 };
   border-bottom-left-radius: 1rem;
   
   .content {
