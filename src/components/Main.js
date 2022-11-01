@@ -15,7 +15,7 @@ const StyledMain = styled.main`
 
 export default function Main({ toggleTheme }) {
   return (
-    <StyledMain className="App" >
+    <StyledMain>
       <Hero toggleTheme={toggleTheme} />
       <Projects />
       <TechStack />

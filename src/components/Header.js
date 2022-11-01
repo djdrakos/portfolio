@@ -12,7 +12,6 @@ const StyledHeader = styled.header`
   width: 100%;
   padding-left: calc(var(--gap100) / 4);
   border-bottom-left-radius: var(--gap50);
-  /* opacity: .5; */
 `
 
 export default function Header() {

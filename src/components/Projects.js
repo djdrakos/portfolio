@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { forwardRef } from 'react'
 import SectionContent from './SectionContent'
 
 const StyledProjects = styled(SectionContent)`
@@ -35,9 +34,9 @@ const StyledProjects = styled(SectionContent)`
 }
 `
 
-const Projects = forwardRef((props, ref) => {
+const Projects = (props) => {
   return (
-    <StyledProjects ref={ref} title="projects">
+    <StyledProjects  title="projects">
       <div className='titles'>
         <p>Random Quote Generator</p>
         <p>Dark Sky Observer App</p>
@@ -47,6 +46,6 @@ const Projects = forwardRef((props, ref) => {
       </div>
     </StyledProjects>
   )
-})
+}
 
 export default Projects

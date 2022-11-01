@@ -1,6 +1,5 @@
-import { forwardRef } from 'react'
-import SectionContent from './SectionContent'
 import styled from 'styled-components'
+import SectionContent from './SectionContent'
 
 const StyledCareer = styled(SectionContent)`
   --top-offset: calc(var(--stack-block300) + var(--header100) - var(--stack-offset));
@@ -11,7 +10,6 @@ const StyledCareer = styled(SectionContent)`
   background-color: ${({ theme }) => theme.bg3 };
   border-bottom: .1rem solid hsla(200, 70%, 60%, .01);
   border-bottom-left-radius: 1rem;
-  
   
   h4 {
     top: calc(var(--stack-start) + var(--stack-block200));
@@ -52,18 +50,14 @@ const StyledCareer = styled(SectionContent)`
       :hover {
       border-bottom: .1rem ${({ theme }) => theme.color } solid;
       }
-
-      .mask-helper {
-        height: var(--top-offset);
-      }
     }
   }
 
 `
 
-const Career = forwardRef((props, ref) => {
+const Career = (props) => {
   return (
-    <StyledCareer ref={ref} title="career" {...props}>
+    <StyledCareer title="career" {...props}>
       <p>
         As a kid, I coded for fun, but didn't see a career in it. So, naturally, I went to <a href="https://pnca.willamette.edu" rel="noreferrer" target="_blank">art school</a> instead.
       </p>
@@ -98,7 +92,7 @@ const Career = forwardRef((props, ref) => {
       </div>
     </StyledCareer>
   )
-})
+}
 
 export default Career
 

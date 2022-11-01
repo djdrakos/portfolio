@@ -27,7 +27,7 @@ const SectionContent = forwardRef(({ title, children, ...props }, ref) => {
       { children && 
       <div className='content'>
           {children}
-      </div>}
+      </div> }
     </StyledSection>
   )
 })
