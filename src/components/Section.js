@@ -2,13 +2,6 @@ import { formatClassName } from '../helpers/formatting-helpers'
 import styled from 'styled-components';
 
 const StyledSection = styled.section`
-  --stack-offset: .25rem;
-  --stack-start: calc(var(--header100) + var(--stack-offset));
-  --section-short: var(--bio-pic100);
-  --section-med: var(--bio-pic200);
-  --section-tall: var(--bio-pic300);
-  --section-height: var(--section-short);
-
   min-height: var(--section-height);
   padding-left: var(--gap300);
   padding-right: var(--gap150);

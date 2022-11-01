@@ -125,5 +125,11 @@ a:hover {
   --stack-block200: calc(2 * var(--stack-block100));
   --stack-block300: calc(3 * var(--stack-block100));
   --stack-block400: calc(4 * var(--stack-block100));
+  --stack-offset: .25rem;
+  --stack-start: calc(var(--header100) + var(--stack-offset));
+  --section-short: var(--bio-pic100);
+  --section-med: var(--bio-pic200);
+  --section-tall: var(--bio-pic300);
+  --section-height: var(--section-short);
 }
 `

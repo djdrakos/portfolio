@@ -3,12 +3,12 @@ import SectionContent from './SectionContent'
 import styled from 'styled-components'
 
 const StyledCareer = styled(SectionContent)`
-  --top-offset: calc(var(--stack-block200) + var(--header100) - var(--stack-offset));
+  --top-offset: calc(var(--stack-block300) + var(--header100) - var(--stack-offset));
   --section-height: var(--section-tall);
   z-index: 2;
   top: calc(var(--stack-block300) + var(--header100) - var(--stack-offset) - var(--section-tall));
   height: var(--section-height);
-  background-color: hsla(200, 70%, 60%, .15);
+  background-color: ${({ theme }) => theme.bg3 };
   border-bottom: .1rem solid hsla(200, 70%, 60%, .01);
   border-bottom-left-radius: 1rem;
   
@@ -51,6 +51,10 @@ const StyledCareer = styled(SectionContent)`
 
       :hover {
       border-bottom: .1rem ${({ theme }) => theme.color } solid;
+      }
+
+      .mask-helper {
+        height: var(--top-offset);
       }
     }
   }

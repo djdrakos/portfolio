@@ -8,7 +8,7 @@ const StyledProjects = styled(SectionContent)`
   z-index: 4;
   top: calc(var(--stack-block100) + var(--header100) - var(--stack-offset) - var(--section-med));
   height: var(--section-height);
-  background-color: hsla(100, 70%, 60%, .15);
+  background-color: ${({ theme }) => theme.bg1 };
   border-bottom: .1rem solid hsla(100, 70%, 60%, .01);
   border-bottom-left-radius: 1rem;
 
