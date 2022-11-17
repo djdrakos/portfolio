@@ -66,22 +66,20 @@ export default function ThoughtSpiral() {
   const [ triggerRef, isIntersecting ] = useIntersectionObserver()
 
   return (
-    <Tooltip.Provider delayDuration={100}>
+    <StyledSpiral>
       <Tooltip.Root asChild>
-        <StyledSpiral>
-          <div className="wrapper" ref={triggerRef}>
-            <div className={ isIntersecting ? 'intersection-trigger fixed' : 'intersection-trigger'}>
-              <Tooltip.Trigger className='spiral-trigger' >
-                🌀
-              </Tooltip.Trigger>
-              <Tooltip.Content className='spiral-content' align={'end'} side={'left'} sticky={'always'} avoidCollisions={false}>
-              <Tooltip.Arrow className='tooltip-arrow' />
-                Coding... Coding...
-              </Tooltip.Content>
-            </div>
+        <div className="wrapper" ref={triggerRef}>
+          <div className={ isIntersecting ? 'intersection-trigger fixed' : 'intersection-trigger'}>
+            <Tooltip.Trigger className='spiral-trigger' >
+              🌀
+            </Tooltip.Trigger>
+            <Tooltip.Content className='spiral-content' align={'end'} side={'left'} sticky={'always'} avoidCollisions={false}>
+            <Tooltip.Arrow className='tooltip-arrow' />
+              Coding... Coding...
+            </Tooltip.Content>
           </div>
-        </StyledSpiral>
+        </div>
       </Tooltip.Root>
-    </Tooltip.Provider>
+    </StyledSpiral>
   )
 }

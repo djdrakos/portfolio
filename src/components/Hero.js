@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import Bio from './Bio'
 import Section from './Section'
 import ThoughtSpiral from './ThoughtSpiral'
+import * as Tooltip from '@radix-ui/react-tooltip'
 
 const StyledHero = styled(Section)`
   min-height: var(--section-short);
@@ -39,11 +40,13 @@ export default function Hero({ toggleTheme }) {
 
   return (
     <StyledHero>
-      <ThoughtSpiral />
-      <div className="wrapper portrait">
-        <img src={require("../assets/dj.jpg")} className="portrait" alt="DJ Drakos sitting on a couch, staring intently at something on their laptop" />
-      </div>
-    <Bio toggleTheme={toggleTheme}/>
+      <Tooltip.Provider delayDuration={100}>
+        <ThoughtSpiral />
+        <div className="wrapper portrait">
+          <img src={require("../assets/dj.jpg")} className="portrait" alt="DJ Drakos sitting on a couch, staring intently at something on their laptop" />
+        </div>
+        <Bio toggleTheme={toggleTheme}/>
+      </Tooltip.Provider>
     </StyledHero>
   )
 }
