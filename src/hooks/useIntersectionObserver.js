@@ -9,7 +9,7 @@ const useIntersectionObserver = () => {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: generateThresholds(2),
+      threshold: generateThresholds(4),
     }
 
     const handleIntersect = (entries) => {
@@ -18,7 +18,7 @@ const useIntersectionObserver = () => {
         if(entry.intersectionRect.top === 0) {
           setIsIntersecting(true)
         } 
-        else if(entry.intersectionRatio > 0) {
+        else {
           setIsIntersecting(false)
         }
       })
