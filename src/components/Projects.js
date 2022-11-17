@@ -36,12 +36,13 @@ const StyledProjects = styled(SectionContent)`
 
 const Projects = (props) => {
   return (
-    <StyledProjects  title="featured projects">
+    <StyledProjects  title="projects">
       <div className='titles'>
-        <p>Local Clock</p>
         <p>Random Quote Generator</p>
         <p>Dark Sky Observer App</p>
         <p>Tales of Torr</p>
+        <p>Bienventory</p>
+        <p>Affirbisiaks</p>
       </div>
     </StyledProjects>
   )

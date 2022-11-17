@@ -43,7 +43,7 @@ export default function Hero({ toggleTheme }) {
       <div className="wrapper portrait">
         <img src={require("../assets/dj.jpg")} className="portrait" alt="DJ Drakos sitting on a couch, staring intently at something on their laptop" />
       </div>
-      <Bio toggleTheme={toggleTheme}/>
+    <Bio toggleTheme={toggleTheme}/>
     </StyledHero>
   )
 }
