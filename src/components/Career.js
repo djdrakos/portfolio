@@ -8,7 +8,7 @@ const StyledCareer = styled(SectionContent)`
   top: calc(var(--stack-block300) + var(--header100) - var(--stack-offset) - var(--section-tall));
   height: var(--section-height);
   background-color: ${({ theme }) => theme.bg3 };
-  border-bottom: .1rem solid ${({ theme }) => theme.bg3 };
+  border-bottom: .05rem solid ${({ theme }) => theme.bg3 };
   border-bottom-left-radius: 1rem;
   
   h4 {

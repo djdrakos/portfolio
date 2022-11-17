@@ -8,7 +8,7 @@ const StyledProjects = styled(SectionContent)`
   top: calc(var(--stack-block100) + var(--header100) - var(--stack-offset) - var(--section-med));
   height: var(--section-height);
   background-color: ${({ theme }) => theme.bg1 };
-  border-bottom: .1rem solid ${({ theme }) => theme.bg1 };
+  border-bottom: .05rem solid ${({ theme }) => theme.bg1 };
   border-bottom-left-radius: 1rem;
 
   h4 {

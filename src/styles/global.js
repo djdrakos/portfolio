@@ -65,7 +65,7 @@ p {
 
 h1, h2, h3, h4, h5 {
   margin: 3rem 0 1.38rem;
-  font-family: 'Source Sans Pro', sans-serif;
+  /* font-family: 'Source Sans Pro', sans-serif; */
   font-weight: 600;
   line-height: 1.3;
 }
