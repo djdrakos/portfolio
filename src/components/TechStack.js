@@ -3,9 +3,9 @@ import SectionContent from './SectionContent'
 
 const StyledTechStack = styled(SectionContent)`
   --top-offset: calc(var(--stack-block200) + var(--header100) - var(--stack-offset));
-  --section-height: var(--section-med);
+  --section-height: var(--section-tall);
   z-index: 3;
-  top: calc(var(--stack-block200) + var(--header100) - var(--stack-offset) - var(--section-med));
+  top: calc(var(--stack-block200) + var(--header100) - var(--stack-offset) - var(--section-tall));
   height: var(--section-height);
   background-color: ${({ theme }) => theme.bg2 };
   border-bottom: .05rem solid ${({ theme }) => theme.bg2 };
@@ -19,17 +19,40 @@ const StyledTechStack = styled(SectionContent)`
     top: calc(var(--stack-start) + var(--stack-block100));
   }
 
-  h5:first-of-type {
-    margin-top: 0;
+  h5 {
+    margin-block: 0;
   }
 `
 
 const TechStack = (props) => {
   return (
-    <StyledTechStack title="tech stack" {...props}>
-      <h5>Lorem Ipsum</h5>
-      <p>dolor sit amet, consectetur adipiscing elit. Phasellus porta et diam in vestibulum. Aliquam nunc enim, condimentum in volutpat viverra, ultricies non sem. Phasellus eu nisi mauris. Nunc at molestie enim. Curabitur finibus suscipit felis ut congue. Phasellus sed justo velit. Aenean neque purus, fermentum sit amet scelerisque tempus, ultrices eget massa. Etiam eget ante augue.</p>
-      <p>Vivamus eu orci id nisl cursus fermentum in sed elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi efficitur nunc a quam faucibus egestas. Pellentesque viverra arcu eu suscipit sollicitudin.</p>
+    <StyledTechStack title="Toolkit" {...props}>
+      <h5>Languages</h5>
+      <p>JavaScript ES6 / HTML5 / CSS3 / Sass</p>
+
+      <h5>Libraries & Frameworks</h5>
+      <p>React.js / Node.js / Express / styled-components</p>
+
+      <h5>Databases</h5>
+      <p>PostgreSQL / Sequelize / Supabase</p>
+
+      <h5>Testing</h5>
+      <p>Jest / QUnit / Supertest / React Testing Library</p>
+
+      <h5>Dev Tools</h5>
+      <p>Github / VSCode / Postman / pgAdmin </p>
+
+      <h5>Deployment</h5>
+      <p>Heroku / Netlify / Vercel</p>
+
+      <h5>Design</h5>
+      <p>Adobe Creative Suite / Sketch / Figma</p>
+
+      <h5>Practices</h5>
+      <p>Agile, Pair Programming, RESTful APIs, Test Driven Development, Design Driven Development</p>
+
+      <h5>Learning</h5>
+      <p>Typescript / GraphQL / Python</p>
     </StyledTechStack>
   )
 }
