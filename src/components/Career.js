@@ -57,7 +57,7 @@ const StyledCareer = styled(SectionContent)`
 
 const Career = (props) => {
   return (
-    <StyledCareer title="career" {...props}>
+    <StyledCareer {...props}>
       <p>
         As a kid, I coded for fun, but didn't see a career in it. So, naturally, I went to <a href="https://pnca.willamette.edu" rel="noreferrer" target="_blank">art school</a> instead.
       </p>

@@ -17,10 +17,10 @@ export default function Main({ toggleTheme }) {
   return (
     <StyledMain>
       <Hero toggleTheme={toggleTheme} />
-      <Projects />
-      <TechStack />
-      <Career />
-      <About />
+      <Projects title="featured projects"/>
+      <TechStack title="Toolkit"/>
+      <Career title="career"/>
+      <About title="Colophon" />
     </StyledMain>
   )
 }

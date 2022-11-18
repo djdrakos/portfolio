@@ -57,6 +57,7 @@ ul, ol {
 button, a {
   cursor: pointer;
   color: inherit;
+  border: none;
 }
 
 p {
@@ -65,7 +66,7 @@ p {
 
 h1, h2, h3, h4, h5 {
   margin: 3rem 0 1.38rem;
-  /* font-family: 'Source Sans Pro', sans-serif; */
+  font-family: 'Source Serif Pro', serif;
   font-weight: 600;
   line-height: 1.3;
 }
@@ -98,7 +99,6 @@ small, .text_small {
 a {
   text-decoration: none;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 101%;
   font-weight: 600;
   -webkit-transition: all .1s;
   -moz-transition: all .1s;

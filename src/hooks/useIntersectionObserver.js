@@ -14,7 +14,6 @@ const useIntersectionObserver = () => {
 
     const handleIntersect = (entries) => {
       entries.forEach((entry) => {
-        console.log(entry)
         if(entry.intersectionRect.top === 0) {
           setIsIntersecting(true)
         } 
