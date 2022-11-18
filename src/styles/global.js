@@ -57,6 +57,7 @@ ul, ol {
 button, a {
   cursor: pointer;
   color: inherit;
+  border: none;
 }
 
 p {

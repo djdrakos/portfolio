@@ -27,7 +27,7 @@ const StyledTechStack = styled(SectionContent)`
 
 const TechStack = (props) => {
   return (
-    <StyledTechStack title="Toolkit" {...props}>
+    <StyledTechStack {...props}>
       <h5>Languages</h5>
       <p>JavaScript ES6 / HTML5 / CSS3 / Sass</p>
 

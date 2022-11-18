@@ -55,7 +55,7 @@ const StyledProjects = styled(SectionContent)`
 
 const Projects = (props) => {
   return (
-    <StyledProjects title="featured projects">
+    <StyledProjects {...props}>
       <Tabs.Root defaultValue={projectData[0].id}>
         <Tabs.List className='titles'>
           { projectData.map(project => {
