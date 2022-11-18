@@ -79,7 +79,7 @@ const Career = (props) => {
       </p>
 
       <div className="social">
-        <a className="resume" href="https://www.dropbox.com/s/y7i3001iydza7sf/dj-drakos-resume.pdf?dl=0" target="blank">Resume PDF</a>
+        <a className="resume" href="https://www.dropbox.com/s/20mj20bgfp1v03u/dj-drakos-resume.pdf?dl=0" target="blank">Resume PDF</a>
         <a href="https://github.com/dj-drakos" rel="noreferrer" target="_blank">
           <img className="github" src={require('../assets/github.png')} alt="Github Profile" />
         </a>
