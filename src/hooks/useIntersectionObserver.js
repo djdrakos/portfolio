@@ -9,15 +9,16 @@ const useIntersectionObserver = () => {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: generateThresholds(2),
+      threshold: generateThresholds(4),
     }
 
     const handleIntersect = (entries) => {
       entries.forEach((entry) => {
-        if(entry.intersectionRatio < 1 && entry.intersectionRect.top === 0 && entry.intersectionRect.height !== 0) {
+        console.log(entry)
+        if(entry.intersectionRect.top === 0) {
           setIsIntersecting(true)
         } 
-        if(entry.intersectionRatio === 1) {
+        else {
           setIsIntersecting(false)
         }
       })

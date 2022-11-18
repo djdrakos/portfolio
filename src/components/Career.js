@@ -8,7 +8,7 @@ const StyledCareer = styled(SectionContent)`
   top: calc(var(--stack-block300) + var(--header100) - var(--stack-offset) - var(--section-tall));
   height: var(--section-height);
   background-color: ${({ theme }) => theme.bg3 };
-  border-bottom: .1rem solid hsla(200, 70%, 60%, .01);
+  border-bottom: .05rem solid ${({ theme }) => theme.bg3 };
   border-bottom-left-radius: 1rem;
   
   h4 {
@@ -32,7 +32,7 @@ const StyledCareer = styled(SectionContent)`
 
     img {
       width: 1.9rem;
-      filter:${({ theme }) => theme.type === 'dark' &&' invert(72%) sepia(95%) saturate(2%) hue-rotate(202deg) brightness(97%) contrast(84%)'};
+      filter: ${({ theme }) => theme.type === 'dark' &&' invert(72%) sepia(95%) saturate(2%) hue-rotate(202deg) brightness(97%) contrast(84%)'};
     } 
 
     a:hover:not(.resume) {
