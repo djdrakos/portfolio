@@ -69,7 +69,7 @@ export default function ThoughtSpiral() {
     <StyledSpiral>
       <Tooltip.Root asChild>
         <div className="wrapper" ref={triggerRef}>
-          <div className={ isIntersecting ? 'intersection-trigger fixed' : 'intersection-trigger'}>
+          <div className={ isIntersecting ? 'intersection-content fixed' : 'intersection-content'}>
             <Tooltip.Trigger className='spiral-trigger' >
               🌀
             </Tooltip.Trigger>
