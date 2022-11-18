@@ -30,19 +30,18 @@ const StyledProjects = styled(SectionContent)`
   }
 
   .tab-trigger {
-    border: none;
-  
+    border: .1rem solid transparent;
+    
     &:hover {
-      text-decoration: none;
+      border-bottom: .1rem solid ${({ theme }) => theme.color};
       -webkit-transition: all .1s;
       -moz-transition: all .1s;
       -o-transition: all .1s;
       transition: all .1s;
-      text-decoration: underline;
     }
-
+    
     &[data-state='active'] {
-
+      border-bottom: .1rem solid ${({ theme }) => theme.color};
     }
   }
 
