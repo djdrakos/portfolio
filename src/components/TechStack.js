@@ -20,6 +20,7 @@ const StyledTechStack = styled(SectionContent)`
   }
 
   h5 {
+    font-size: 1rem;
     margin-block: 0;
   }
 `

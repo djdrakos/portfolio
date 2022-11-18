@@ -38,11 +38,26 @@ const Projects = (props) => {
   return (
     <StyledProjects  title="projects">
       <div className='titles'>
-        <p>Random Quote Generator</p>
-        <p>Dark Sky Observer App</p>
-        <p>Tales of Torr</p>
-        <p>Bienventory</p>
-        <p>Affirbisiaks</p>
+        <p>
+          <a href="https://fem-clock-app-ten.vercel.app/" target="_blank" rel="noreferrer">
+            Local Clock App
+          </a>
+        </p>
+        <p>
+          <a href="https://dark-sky-log.netlify.app/signup" target="_blank" rel="noreferrer">
+            Dark Sky Observer App
+          </a>
+        </p>
+        <p>
+          <a href="https://advice-dice.netlify.app/" target="_blank" rel="noreferrer">
+            Advice Dice
+          </a>
+        </p>
+        <p>
+          <a href="https://gorgeous-griffin-5766e6.netlify.app/" target="_blank" rel="noreferrer">
+            Time Tracking   Dashboard
+          </a>
+      </p>
       </div>
     </StyledProjects>
   )
