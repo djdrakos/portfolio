@@ -45,11 +45,15 @@ const StyledSpiral = styled.div`
     backdrop-filter: blur(1px);
     border: .1rem solid ${({ theme }) => theme.color };   
     border-radius: .5rem;
-    font-family: 'Source Sans Pro', sans-serif; 
-    font-weight: 600;
-    font-size: .8rem;
-    line-height: 1;
-    text-transform: uppercase;
+    
+    p {
+      font-family: 'Source Sans Pro', sans-serif; 
+      font-weight: 600;
+      font-size: .8rem;
+      line-height: 1;
+      text-transform: uppercase;
+      margin: 0;
+    }
   }
   
   .tooltip-arrow {
@@ -75,7 +79,7 @@ export default function ThoughtSpiral() {
             </Tooltip.Trigger>
             <Tooltip.Content className='spiral-content' align={'end'} side={'left'} sticky={'always'} avoidCollisions={false}>
             <Tooltip.Arrow className='tooltip-arrow' />
-              Coding... Coding...
+              <p>Coding... Coding...</p>
             </Tooltip.Content>
           </div>
         </div>

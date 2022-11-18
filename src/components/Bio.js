@@ -72,10 +72,14 @@ const StyledBio = styled.div`
     backdrop-filter: blur(1px);
     border: .1rem solid ${({ theme }) => theme.color };   
     border-radius: .5rem;
-    font-family: 'Source Sans Pro', sans-serif; 
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 1;
+    
+    p {
+      margin: 0;
+      font-family: 'Source Sans Pro', sans-serif; 
+      font-weight: 600;
+      font-size: .8rem;
+      line-height: 1;
+    }
   }
   
   .tooltip-arrow {
@@ -106,7 +110,9 @@ export default function Bio({ toggleTheme }) {
               *
             </Tooltip.Trigger>
             <Tooltip.Content className='tooltip-content' side={'bottom'} avoidCollisions={false} >
-              {isIntersecting ? '{key:value}' : '(they/them)'}
+              <p>
+                {isIntersecting ? '{key:value}' : '(they/them)'}
+              </p>
               <Tooltip.Arrow className='tooltip-arrow'/>
             </Tooltip.Content>
           </div>
