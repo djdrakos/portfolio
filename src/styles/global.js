@@ -55,6 +55,7 @@ ul, ol {
 }
 
 button, a {
+  overflow: hidden;
   cursor: pointer;
   color: inherit;
   border: none;
