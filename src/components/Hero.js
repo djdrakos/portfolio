@@ -41,10 +41,10 @@ export default function Hero({ toggleTheme }) {
   return (
     <StyledHero>
       <Tooltip.Provider delayDuration={100}>
-        <ThoughtSpiral />
         <div className="wrapper portrait">
           <img src={require("../assets/dj.jpg")} className="portrait" alt="DJ Drakos sitting on a couch, staring intently at something on their laptop" />
         </div>
+        <ThoughtSpiral />
         <Bio toggleTheme={toggleTheme}/>
       </Tooltip.Provider>
     </StyledHero>
