@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import { useContext } from 'react'
+import styled, { ThemeContext } from 'styled-components'
 import ToggleThemeButton from './ToggleThemeButton'
 import useIntersectionObserver from '../hooks/useIntersectionObserver'
 import * as Tooltip from '@radix-ui/react-tooltip'
@@ -21,8 +22,10 @@ const StyledBio = styled.div`
     font-weight: 500;
   }
 
-  .tooltip-root {
+  .intersection-content {
     z-index: 10;
+  }
+  .tooltip-root {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -91,6 +94,7 @@ const StyledBio = styled.div`
 
 export default function Bio({ toggleTheme }) {
   const [triggerRef, isIntersecting] = useIntersectionObserver()
+  const themeContext = useContext(ThemeContext)
 
   return (
     <StyledBio> 
@@ -101,7 +105,7 @@ export default function Bio({ toggleTheme }) {
               &nbsp;DJ Drakos!
             </strong> 
           </h1>
-          <div className={isIntersecting ? 'tooltip-root fixed' : 'tooltip-root'}>
+          <div className={isIntersecting ? 'tooltip-root intersection-content fixed' : 'tooltip-root intersection-content'}>
             <Tooltip.Root>
               <Tooltip.Trigger className='tooltip-trigger'>
                 *
@@ -119,7 +123,8 @@ export default function Bio({ toggleTheme }) {
           I’m a Fullstack Software Engineer/Creative
           <br/ >
           based in 
-          <ToggleThemeButton className="z-index-10" toggleTheme={toggleTheme} />
+            {themeContext.type === 'dark' ? ' rainy ' : ' sunny '}
+            <ToggleThemeButton className="intersection-content" themeContext={themeContext} toggleTheme={toggleTheme} />
           Portland, Oregon.
         </p>
         <p>
