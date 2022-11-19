@@ -4,23 +4,24 @@ import useIntersectionObserver from '../hooks/useIntersectionObserver'
 import * as Tooltip from '@radix-ui/react-tooltip'
 
 const StyledBio = styled.div`
+
   h1 {
-    display: inline
-  }
+    display: inline;
   
-  h1 strong {
-    display: inline-block;
-    font-family: 'Source Code Pro';
-    font-weight: 600;
-    letter-spacing: -.03em;
-    word-spacing: -.2em;
+    strong {
+      display: inline-block;
+      font-family: 'Source Code Pro';
+      font-weight: 600;
+      letter-spacing: -.03em;
+      word-spacing: -.2em;
+    }
   }
 
   p {
     font-weight: 500;
   }
 
-  .intersection-content {
+  .tooltip-root {
     z-index: 10;
     display: inline-flex;
     align-items: center;
@@ -29,10 +30,6 @@ const StyledBio = styled.div`
     position: absolute;
     transform: translate(-1.9rem, -.7rem);
   }
-
-  .tooltip-root {
-    display: block;
-  };
   
   .tooltip-trigger {
     display: flex;
@@ -104,7 +101,7 @@ export default function Bio({ toggleTheme }) {
               &nbsp;DJ Drakos!
             </strong> 
           </h1>
-          <div className={isIntersecting ? 'intersection-content fixed' : 'intersection-content'}>
+          <div className={isIntersecting ? 'tooltip-root fixed' : 'tooltip-root'}>
             <Tooltip.Root>
               <Tooltip.Trigger className='tooltip-trigger'>
                 *
@@ -122,7 +119,7 @@ export default function Bio({ toggleTheme }) {
           I’m a Fullstack Software Engineer/Creative
           <br/ >
           based in 
-          <ToggleThemeButton toggleTheme={toggleTheme} />
+          <ToggleThemeButton className="z-index-10" toggleTheme={toggleTheme} />
           Portland, Oregon.
         </p>
         <p>

@@ -3,12 +3,11 @@ import useIntersectionObserver from '../hooks/useIntersectionObserver'
 import * as Tooltip from '@radix-ui/react-tooltip';
 
 const StyledSpiral = styled.div`
+  z-index: 10;
   position: absolute;
   width: 7rem;
   padding-left: 5.5rem;
   padding-top: 1.5rem;
-
-  .intersection-content {  z-index: 10; }
 
   .spiral-trigger {
     height: 3rem;
@@ -63,7 +62,7 @@ export default function ThoughtSpiral() {
   const [ triggerRef, isIntersecting ] = useIntersectionObserver()
 
   return (
-    <StyledSpiral className="intersection-content">
+    <StyledSpiral>
         <div className="intersection-trigger" ref={triggerRef} />
         <div className={ isIntersecting ? 'fixed' : ''}>
           <Tooltip.Root asChild>
