@@ -3,19 +3,16 @@ import useIntersectionObserver from '../hooks/useIntersectionObserver'
 import * as Tooltip from '@radix-ui/react-tooltip';
 
 const StyledSpiral = styled.div`
-  z-index: 10;
   position: absolute;
   width: 7rem;
   padding-left: 5.5rem;
   padding-top: 1.5rem;
 
+  .intersection-content {  z-index: 10; }
+
   .spiral-trigger {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 3rem;
     width: 3rem; 
-    margin: 0;
     border: none;
     border-radius: 50%;
     opacity: .6;
@@ -23,7 +20,6 @@ const StyledSpiral = styled.div`
     font-family: 'Noto Emoji', sans-serif;
     font-size: 2rem;
     font-weight: 300;
-    cursor: pointer;
     -webkit-transition: opacity .1s ease-out;
     -moz-transition: opacity .1s ease-out;
     -o-transition: opacity .1s ease-out;
@@ -35,9 +31,6 @@ const StyledSpiral = styled.div`
   }
   
   .spiral-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     max-width: 10rem;
     padding-block: .6rem;
     padding-inline: 1rem;
@@ -70,10 +63,10 @@ export default function ThoughtSpiral() {
   const [ triggerRef, isIntersecting ] = useIntersectionObserver()
 
   return (
-    <StyledSpiral>
-      <Tooltip.Root asChild>
-        <div className="wrapper" ref={triggerRef}>
-          <div className={ isIntersecting ? 'intersection-content fixed' : 'intersection-content'}>
+    <StyledSpiral className="intersection-content">
+        <div className="intersection-trigger" ref={triggerRef} />
+        <div className={ isIntersecting ? 'fixed' : ''}>
+          <Tooltip.Root asChild>
             <Tooltip.Trigger className='spiral-trigger' >
               🌀
             </Tooltip.Trigger>
@@ -81,9 +74,8 @@ export default function ThoughtSpiral() {
             <Tooltip.Arrow className='tooltip-arrow' />
               <p>Coding... Coding...</p>
             </Tooltip.Content>
-          </div>
+          </Tooltip.Root>
         </div>
-      </Tooltip.Root>
     </StyledSpiral>
   )
 }
