@@ -21,10 +21,10 @@ const StyledBio = styled.div`
   }
 
   .intersection-content {
+    z-index: 10;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
     padding-top: .6rem;
     position: absolute;
     transform: translate(-1.9rem, -.7rem);
@@ -65,7 +65,7 @@ const StyledBio = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 10rem;
+    max-width: 15rem;
     padding-block: .6rem;
     padding-inline: 1rem;
     background-color: ${({ theme }) => theme.backgroundA };
@@ -97,7 +97,6 @@ export default function Bio({ toggleTheme }) {
 
   return (
     <StyledBio> 
-      <Tooltip.Root>
         <div className='wrapper'>
           <h1>
             Hi, I’m 
@@ -106,18 +105,19 @@ export default function Bio({ toggleTheme }) {
             </strong> 
           </h1>
           <div className={isIntersecting ? 'intersection-content fixed' : 'intersection-content'}>
-            <Tooltip.Trigger className='tooltip-trigger'>
-              *
-            </Tooltip.Trigger>
-            <Tooltip.Content className='tooltip-content' side={'bottom'} avoidCollisions={false} >
-              <p>
-                {isIntersecting ? '{key:value}' : '(they/them)'}
-              </p>
-              <Tooltip.Arrow className='tooltip-arrow'/>
-            </Tooltip.Content>
+            <Tooltip.Root>
+              <Tooltip.Trigger className='tooltip-trigger'>
+                *
+              </Tooltip.Trigger>
+              <Tooltip.Content className='tooltip-content' side={'bottom'} avoidCollisions={false} >
+                <p>
+                  {isIntersecting ? 'looks like good coding weather today' : '(they/them)'}
+                </p>
+                <Tooltip.Arrow className='tooltip-arrow'/>
+              </Tooltip.Content>
+            </Tooltip.Root>
           </div>
         </div>
-      </Tooltip.Root>
         <p>
           I’m a Fullstack Software Engineer/Creative
           <br/ >
