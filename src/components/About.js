@@ -31,7 +31,11 @@ const About = (props) => {
       <h5>Portfolio v0.1.0</h5> 
       <p>Best viewed on desktop at fullscreen. Mobile version coming in the next project sprint. Built with <a href="https://reactjs.org/" target="_blank" rel="noreferrer">React v18</a>, <a href="https://styled-components.com/" target="_blank" rel="noreferrer">styled-components</a>, and <a href="https://www.radix-ui.com/" target="_blank" rel="noreferrer">Radix Primitives</a>, deployed on <a href="https://www.netlify.com/" target="_blank" rel="noreferrer">Netlify.</a> The sticky scroll is a hand-rolled React hook that uses the magic of CSS and the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API" rel="noreferrer" target="_blank">Intersection Observer API.</a></p>
       
-      <p>Icon Credits: <a href="https://www.flaticon.com/authors/syafii5758" rel="noreferrer" target="_blank">Weather</a> | <a href="https://www.flaticon.com/authors/pictogramer" rel="noreferrer" target="_blank">Github</a> | <a href="https://www.flaticon.com/authors/aldo-cervantes" rel="noreferrer" target="_blank">LinkedIn</a> |  <a href="https://icons8.com/icons/authors/p8VPlvrruECd/inipagistudio" rel="noreferrer" target="_blank">Email</a></p>
+      <p>Typographic direction aided by <a href="https://type-scale.com/" target="_blank" rel="noreferrer">Type Scale</a>.</p>
+      
+      <p>Icon Credits: <a href="https://www.flaticon.com/authors/syafii5758" rel="noreferrer" target="_blank">Weather</a> | <a href="https://www.flaticon.com/" rel="noreferrer" target="_blank">Github</a> | <a href="https://www.flaticon.com/" rel="noreferrer" target="_blank">LinkedIn</a> |  <a href="https://icons8.com/icons/authors/p8VPlvrruECd/inipagistudio" rel="noreferrer" target="_blank">Email</a></p>
+
+
       <p>{ themeContext.type === 'dark' ? '🤍' :  '🖤'} to the <a href="https://radious.pro/" rel="noreferrer" target="_blank">Radious</a> crew for the bio pic and workspace for the day</p>
     </StyledAbout>
   )
