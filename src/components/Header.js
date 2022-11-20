@@ -5,12 +5,12 @@ const StyledHeader = styled.header`
   z-index: 10;
   position: fixed;
   top: 0;
-  background: ${({ theme }) => theme.background};
+  width: 100%;
   display: flex;
   align-items: center;
   height: var(--header100);
-  width: 100%;
-  padding-left: calc(var(--gap100) / 4);
+  background: ${({ theme }) => theme.background};
+  padding-left: calc(var(--gap100) / 3);
   border-bottom-left-radius: var(--gap50);
 `
 
