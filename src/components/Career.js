@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 import SectionContent from './SectionContent'
+import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
+import {ReactComponent as GithubIcon} from '../assets/github.svg'
+import {ReactComponent as LinkedInIcon} from '../assets/linkedin.svg'
+import {ReactComponent as EmailIcon} from '../assets/email.svg'
 
 const StyledCareer = styled(SectionContent)`
   --top-offset: calc(var(--stack-block300) + var(--header100) - var(--stack-offset));
@@ -26,14 +30,34 @@ const StyledCareer = styled(SectionContent)`
     display: flex; 
     flex-direction: row;
     align-items: center;
-    column-gap: var(--gap100);
+    column-gap: var(--gap50);
     margin-top: var(--gap100);
     margin-left: var(--gap150);
 
-    img {
-      width: 1.9rem;
-      filter: ${({ theme }) => theme.type === 'dark' &&' invert(72%) sepia(95%) saturate(2%) hue-rotate(202deg) brightness(97%) contrast(84%)'};
-    } 
+    a {
+      
+    }
+    .social-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      height: 3rem;
+      width: 3rem;
+      
+      svg {
+        width: 1.9rem;
+        fill: ${({ theme }) => theme.color };
+        -webkit-transition: all .25s;
+        -moz-transition: all .25s;
+        -o-transition: all .25s;
+        transition: all .25s;
+
+        .st1 {
+          fill: ${({ theme }) => theme.weather };
+        }
+      }
+    }
 
     a:hover:not(.resume) {
     border-style: none;
@@ -79,15 +103,23 @@ const Career = (props) => {
       </p>
 
       <div className="social">
-        <a className="resume" href="https://www.dropbox.com/s/y7i3001iydza7sf/dj-drakos-resume.pdf?dl=0" target="blank">Resume PDF</a>
-        <a href="https://github.com/dj-drakos" rel="noreferrer" target="_blank">
-          <img className="github" src={require('../assets/github.png')} alt="Github Profile" />
+        <a className="resume" href="https://www.dropbox.com/s/y7i3001iydza7sf/dj-drakos-resume.pdf?dl=0" target="blank">
+          Resume PDF
         </a>
-        <a href="https://www.linkedin.com/in/dj-drakos/" rel="noreferrer" target="_blank">
-          <img className="linkedin" src={require('../assets/linkedin.png')} alt="LinkedIn Profile" />
+        <a className="social-icon" href="https://github.com/dj-drakos" rel="noreferrer" target="_blank">
+          <AccessibleIcon.Root label='Github Profile'>
+            <GithubIcon />
+          </AccessibleIcon.Root>
         </a>
-        <a href="mailto:devin.josi.drakos+portfolio@gmail.com?subject=I saw your portfolio, let's chat!">
-          <img className="email" src={require('../assets/email.png')} alt="Send an Email" />
+        <a className="social-icon" href="https://www.linkedin.com/in/dj-drakos/" rel="noreferrer" target="_blank">
+          <AccessibleIcon.Root className="social-icon" label='LinkedIn Profile'>
+            <LinkedInIcon/>
+          </AccessibleIcon.Root>
+        </a>
+        <a className="social-icon" href="mailto:devin.josi.drakos+portfolio@gmail.com?subject=I saw your portfolio, let's chat!">
+          <AccessibleIcon.Root className="social-icon" label='Send an Email'>
+            <EmailIcon/>
+          </AccessibleIcon.Root>
         </a>
       </div>
     </StyledCareer>
