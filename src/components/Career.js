@@ -35,9 +35,6 @@ const StyledCareer = styled(SectionContent)`
     margin-top: var(--gap100);
     margin-left: var(--gap150);
 
-    a {
-      
-    }
     .social-icon {
       display: flex;
       justify-content: center;

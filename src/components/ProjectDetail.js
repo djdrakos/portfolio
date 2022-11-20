@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { P } from './Typography'
+import { H5, P } from './Typography'
 
 const StyledProjectDetail = styled.div`
   display: flex;
@@ -39,7 +39,7 @@ export default function ProjectDetail({project}) {
   return (
     <StyledProjectDetail>
       <img src={`/screenshots/${img}`} alt='' />
-      <h3>{title}</h3>
+      <H5 as ="h3">{title}</H5>
       <P>
         <a href={liveUrl} target="_blank" rel="noreferrer">Live Site</a>
         

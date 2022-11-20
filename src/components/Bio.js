@@ -94,39 +94,39 @@ export default function Bio({ toggleTheme }) {
 
   return (
     <StyledBio> 
-        <div className='wrapper'>
-          <H1>
-            Hi, I’m 
-            <strong ref={triggerRef}>
-              &nbsp;DJ Drakos!
-            </strong> 
-          </H1>
-          <div className={isIntersecting ? 'tooltip-root fixed' : 'tooltip-root'}>
-            <Tooltip.Root>
-              <Tooltip.Trigger className='tooltip-trigger'>
-                *
-              </Tooltip.Trigger>
-              <Tooltip.Content className='tooltip-content' side={'bottom'} avoidCollisions={false} >
-                <P>
-                  {isIntersecting ? 'looks like good coding weather today' : '(they/them)'}
-                </P>
-                <Tooltip.Arrow className='tooltip-arrow'/>
-              </Tooltip.Content>
-            </Tooltip.Root>
-          </div>
+      <div className='wrapper'>
+        <H1>
+          Hi, I’m 
+          <strong ref={triggerRef}>
+            &nbsp;DJ Drakos!
+          </strong> 
+        </H1>
+        <div className={isIntersecting ? 'tooltip-root fixed' : 'tooltip-root'}>
+          <Tooltip.Root>
+            <Tooltip.Trigger className='tooltip-trigger'>
+              *
+            </Tooltip.Trigger>
+            <Tooltip.Content className='tooltip-content' side={'bottom'} avoidCollisions={false} >
+              <P>
+                {isIntersecting ? 'looks like good coding weather today' : '(they/them)'}
+              </P>
+              <Tooltip.Arrow className='tooltip-arrow'/>
+            </Tooltip.Content>
+          </Tooltip.Root>
         </div>
-        <P>
-          I’m a Fullstack Software Engineer/Creative
-          <br/ >
-          based in&nbsp;
-          <ToggleTheme toggleTheme={toggleTheme} />
-          &nbsp;Portland, Oregon.
-        </P>
-        <P>
-          I love bringing well-crafted, accessible applications to life
-          <br/ >
-          using modern, scalable web technologies and design patterns.
-        </P>
-  </StyledBio>
+      </div>
+      <P>
+        I’m a Fullstack Software Engineer/Creative
+        <br/ >
+        based in&nbsp;
+        <ToggleTheme toggleTheme={toggleTheme} />
+        &nbsp;Portland, Oregon.
+      </P>
+      <P>
+        I love bringing well-crafted, accessible applications to life
+        <br/ >
+        using modern, scalable web technologies and design patterns.
+      </P>
+    </StyledBio>
   )
 }
