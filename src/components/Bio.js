@@ -3,6 +3,7 @@ import { H1, P } from './Typography'
 import ToggleTheme from './ToggleTheme'
 import useIntersectionObserver from '../hooks/useIntersectionObserver'
 import * as Tooltip from '@radix-ui/react-tooltip'
+import breakpoints from '../styles/breakpoints'
 
 const StyledBio = styled.div`
 
@@ -30,7 +31,7 @@ const StyledBio = styled.div`
     padding-top: .6rem;
     position: absolute;
     transform: translate(-1.9rem, -.7rem);
-  }
+  } 
   
   .tooltip-trigger {
     display: flex;
@@ -86,6 +87,17 @@ const StyledBio = styled.div`
   .fixed {
     position: fixed;
     top: 0;
+  }
+
+  @media screen and (${breakpoints.tablet}) {
+    .tooltip-root{
+      transform: translate(-1.2rem, -.9rem);
+    }
+    .tooltip-trigger {
+      height: 2rem;
+      width: 2rem; 
+      font-size: 4rem;  
+    }
   }
 `
 

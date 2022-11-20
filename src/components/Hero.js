@@ -6,10 +6,6 @@ import * as Tooltip from '@radix-ui/react-tooltip'
 
 const StyledHero = styled(Section)`
   min-height: var(--section-short);
-  display: grid;
-  grid-template-columns: var(--bio-pic100) minmax(var(--bio-pic200), var(--bio-pic300));
-  align-items: flex-start;
-  column-gap: var(--gap100);
 
   .wrapper.portrait {
     max-width: var(--bio-pic100);
