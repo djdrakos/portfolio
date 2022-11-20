@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import breakpoints from './breakpoints'
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -132,5 +133,19 @@ a:hover {
   --section-med: var(--bio-pic200);
   --section-tall: var(--bio-pic300);
   --section-height: var(--section-short);
+}
+
+@media screen and (${breakpoints.tablet}) {
+h1 {font-size: 1.802rem;}
+
+h2 {font-size: 1.602rem;}
+
+h3 {font-size: 1.424rem;}
+
+h4 {font-size: 1.266rem;}
+
+h5 {font-size: 1.125rem;}
+
+small, .text_small {font-size: 0.889rem;}
 }
 `
