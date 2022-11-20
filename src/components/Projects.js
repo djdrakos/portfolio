@@ -3,6 +3,7 @@ import SectionContent from './SectionContent'
 import * as Tabs from '@radix-ui/react-tabs';
 import ProjectDetail from './ProjectDetail';
 import projectData from './projectData';
+import { P } from './Typography';
 
 const StyledProjects = styled(SectionContent)`
   --top-offset: var(--header100);
@@ -14,7 +15,7 @@ const StyledProjects = styled(SectionContent)`
   border-bottom: .05rem solid ${({ theme }) => theme.bg1 };
   border-bottom-left-radius: 1rem;
 
-  h4 {
+  h2 {
     top: var(--stack-start);
     }
 
@@ -22,7 +23,6 @@ const StyledProjects = styled(SectionContent)`
     margin-top: 0;
     margin-bottom: 0;
     padding-bottom: var(--stack-offset);
-    line-height: 2;
   }
 
   .tab-content {
@@ -61,7 +61,7 @@ const Projects = (props) => {
           { projectData.map(project => {
           return (
             <Tabs.Trigger className='tab-trigger' key={project.id} value={project.id}>
-              <p>{project.title}</p>
+              <P>{project.title}</P>
             </Tabs.Trigger>
               )
             })

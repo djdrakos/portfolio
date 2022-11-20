@@ -62,40 +62,14 @@ button, a {
   border: none;
 }
 
-p {
-  margin-bottom: 1rem;
-}
+
 
 h1, h2, h3, h4, h5 {
   margin: 3rem 0 1.38rem;
   font-family: 'Source Serif Pro', serif;
   font-weight: 600;
   line-height: 1.3;
-}
-
-h1 {
-  margin-top: 0;
-  font-size: 3.052rem;
-}
-
-h2 {
-  font-size: 2.441rem;
-}
-
-h3 {
-  font-size: 1.953rem;
-}
-
-h4 {
-  font-size: 1.563rem;
-}
-
-h5 {
-  font-size: 1.25rem;
-}
-
-small, .text_small {
-  font-size: 0.8rem;
+  text-transform: capitalize;
 }
 
 a {
@@ -133,19 +107,5 @@ a:hover {
   --section-med: var(--bio-pic200);
   --section-tall: var(--bio-pic300);
   --section-height: var(--section-short);
-}
-
-@media screen and (${breakpoints.tablet}) {
-h1 {font-size: 1.802rem;}
-
-h2 {font-size: 1.602rem;}
-
-h3 {font-size: 1.424rem;}
-
-h4 {font-size: 1.266rem;}
-
-h5 {font-size: 1.125rem;}
-
-small, .text_small {font-size: 0.889rem;}
 }
 `

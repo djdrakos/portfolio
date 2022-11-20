@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { H1, P } from './Typography'
 import ToggleTheme from './ToggleTheme'
 import useIntersectionObserver from '../hooks/useIntersectionObserver'
 import * as Tooltip from '@radix-ui/react-tooltip'
@@ -73,7 +74,6 @@ const StyledBio = styled.div`
     p {
       margin: 0;
       font-family: 'Source Sans Pro', sans-serif; 
-      font-weight: 600;
       font-size: .8rem;
       line-height: 1;
     }
@@ -95,38 +95,38 @@ export default function Bio({ toggleTheme }) {
   return (
     <StyledBio> 
         <div className='wrapper'>
-          <h1>
+          <H1>
             Hi, I’m 
             <strong ref={triggerRef}>
               &nbsp;DJ Drakos!
             </strong> 
-          </h1>
+          </H1>
           <div className={isIntersecting ? 'tooltip-root fixed' : 'tooltip-root'}>
             <Tooltip.Root>
               <Tooltip.Trigger className='tooltip-trigger'>
                 *
               </Tooltip.Trigger>
               <Tooltip.Content className='tooltip-content' side={'bottom'} avoidCollisions={false} >
-                <p>
+                <P>
                   {isIntersecting ? 'looks like good coding weather today' : '(they/them)'}
-                </p>
+                </P>
                 <Tooltip.Arrow className='tooltip-arrow'/>
               </Tooltip.Content>
             </Tooltip.Root>
           </div>
         </div>
-        <p>
+        <P>
           I’m a Fullstack Software Engineer/Creative
           <br/ >
           based in&nbsp;
           <ToggleTheme toggleTheme={toggleTheme} />
           &nbsp;Portland, Oregon.
-        </p>
-        <p>
+        </P>
+        <P>
           I love bringing well-crafted, accessible applications to life
           <br/ >
           using modern, scalable web technologies and design patterns.
-        </p>
+        </P>
   </StyledBio>
   )
 }

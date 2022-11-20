@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { P } from './Typography'
 
 const StyledProjectDetail = styled.div`
   display: flex;
@@ -12,13 +13,10 @@ const StyledProjectDetail = styled.div`
   }
 
   .wrapper {
-    /* display: flex;
-    justify-content: space-between; */
     align-items: baseline;
   }
 
-  h5, p{
-    /* display: inline; */
+  h3, p{
     margin-block-end: 0;
 
     a {
@@ -26,7 +24,7 @@ const StyledProjectDetail = styled.div`
     }
   }
   
-  h5 {
+  h3 {
     text-transform: capitalize;
     border-bottom: .1rem solid ${({ theme }) => theme.color };
   }
@@ -41,8 +39,8 @@ export default function ProjectDetail({project}) {
   return (
     <StyledProjectDetail>
       <img src={`/screenshots/${img}`} alt='' />
-      <h5>{title}</h5>
-      <p>
+      <h3>{title}</h3>
+      <P>
         <a href={liveUrl} target="_blank" rel="noreferrer">Live Site</a>
         
         { repoUrl.map(({ label, url }) => {
@@ -51,8 +49,8 @@ export default function ProjectDetail({project}) {
             &nbsp;|&nbsp;<a href={url} target="_blank" rel="noreferrer">{label}</a>
           </>
         )}) }
-      </p>
-      <p>
+      </P>
+      <P>
         <strong>
           Toolkit:
         </strong> 
@@ -61,8 +59,8 @@ export default function ProjectDetail({project}) {
           return ` ${tool}`
           })
         }
-      </p>
-      <p>{description}</p>
+      </P>
+      <P>{description}</P>
     </StyledProjectDetail>
   )
 }

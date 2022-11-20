@@ -4,6 +4,7 @@ import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
 import {ReactComponent as GithubIcon} from '../assets/github.svg'
 import {ReactComponent as LinkedInIcon} from '../assets/linkedin.svg'
 import {ReactComponent as EmailIcon} from '../assets/email.svg'
+import { P } from './Typography';
 
 const StyledCareer = styled(SectionContent)`
   --top-offset: calc(var(--stack-block300) + var(--header100) - var(--stack-offset));
@@ -15,7 +16,7 @@ const StyledCareer = styled(SectionContent)`
   border-bottom: .05rem solid ${({ theme }) => theme.bg3 };
   border-bottom-left-radius: 1rem;
   
-  h4 {
+  h2 {
     top: calc(var(--stack-start) + var(--stack-block200));
   }
   
@@ -83,25 +84,25 @@ const StyledCareer = styled(SectionContent)`
 const Career = (props) => {
   return (
     <StyledCareer {...props}>
-      <p>
+      <P>
         As a kid, I coded for fun, but didn't see a career in it. So, naturally, I went to <a href="https://pnca.willamette.edu" rel="noreferrer" target="_blank">art school</a> instead.
-      </p>
+      </P>
 
-      <p>
+      <P>
         I eventually found my place leading a <a href="https://wholesale.eggpress.com/" rel="noreferrer" target="_blank">team</a> of tireless, brilliant humans to revive the lost craft of letterpress printing at modern industry scale. The work demanded constant learning, ingenuity and reinvention. We were good at it, turning hundred-year-old machines headed to the scrap yard into the workhorses of a multi-million dollar factory.
-      </p>
+      </P>
 
-      <p>
+      <P>
         After ten years, I was ready to hang up my apron, hand off the passwords to my hand-rolled MRP tools, and return to code. 
-      </p>
+      </P>
 
-      <p>
+      <P>
         In April 2021, I enrolled in <a href="https://www.alchemycodelab.com/" target="_blank" rel="noreferrer">Alchemy Code Lab</a> to study fullstack software development, then was hired onto the instruction team after graduation.
-      </p>
+      </P>
 
-      <p>
+      <P>
         I'm currently looking for my next fullstack opportunity with a preference toward front-end development in React.
-      </p>
+      </P>
 
       <div className="social">
         <a className="resume" href="https://www.dropbox.com/s/y7i3001iydza7sf/dj-drakos-resume.pdf?dl=0" target="blank">
@@ -128,9 +129,3 @@ const Career = (props) => {
 }
 
 export default Career
-
- //tooltip professional practices
-//<p>
-//<strong>Debugging:</strong> repairing a worn relay that connects the light beam safety guard on the paper trimmer, using a water-stained photocopy of a wiring diagram from 1967 in German.
-//</p> 
-//<a target="_blank" href="https://icons8.com/icon/K5fFJa77Yo3h/email">Email</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

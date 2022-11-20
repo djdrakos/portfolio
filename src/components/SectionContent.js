@@ -1,15 +1,15 @@
 import { forwardRef } from 'react';
 import styled from 'styled-components';
+import { H4 } from './Typography'
 import Section from './Section';
 
 const StyledSection = styled(Section)`
   position: sticky;
 
-  h4 {
+  h2 {
     position: sticky; 
     margin-left: auto;
     margin-bottom: 0;
-    text-transform: capitalize;
   }
 
   .content {
@@ -23,7 +23,7 @@ const StyledSection = styled(Section)`
 const SectionContent = forwardRef(({ title, children, ...props }, ref) => {
   return (
     <StyledSection {...props}>
-      { title && <h4>{title}</h4> }
+      { title && <H4 as="h2">{title}</H4> }
       { children && 
       <div className='content'>
           {children}

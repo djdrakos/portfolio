@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import useIntersectionObserver from '../hooks/useIntersectionObserver'
 import * as Tooltip from '@radix-ui/react-tooltip';
+import { P } from './Typography';
 
 const StyledSpiral = styled.div`
   z-index: 10;
@@ -71,7 +72,7 @@ export default function ThoughtSpiral() {
             </Tooltip.Trigger>
             <Tooltip.Content className='spiral-content' align={'end'} side={'left'} sticky={'always'} avoidCollisions={false}>
             <Tooltip.Arrow className='tooltip-arrow' />
-              <p>Coding... Coding...</p>
+              <P>Coding... Coding...</P>
             </Tooltip.Content>
           </Tooltip.Root>
         </div>

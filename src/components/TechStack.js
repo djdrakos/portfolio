@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import SectionContent from './SectionContent'
+import { P } from './Typography'
 
 const StyledTechStack = styled(SectionContent)`
   --top-offset: calc(var(--stack-block200) + var(--header100) - var(--stack-offset));
@@ -15,11 +16,11 @@ const StyledTechStack = styled(SectionContent)`
     margin-bottom: var(--stack-block200);
   }
 
-  h4 {
+  h2 {
     top: calc(var(--stack-start) + var(--stack-block100));
   }
 
-  h5 {
+  h3 {
     font-size: 1rem;
     margin-block: 0;
   }
@@ -28,32 +29,32 @@ const StyledTechStack = styled(SectionContent)`
 const TechStack = (props) => {
   return (
     <StyledTechStack {...props}>
-      <h5>Languages</h5>
-      <p>JavaScript ES6 / HTML5 / CSS3 / Sass</p>
+      <h3>Languages</h3>
+      <P>JavaScript ES6 / HTML5 / CSS3 / Sass</P>
 
-      <h5>Libraries & Frameworks</h5>
-      <p>React.js / Node.js / Express / styled-components</p>
+      <h3>Libraries & Frameworks</h3>
+      <P>React.js / Node.js / Express / styled-components</P>
 
-      <h5>Databases</h5>
-      <p>PostgreSQL / Sequelize / Supabase</p>
+      <h3>Databases</h3>
+      <P>PostgreSQL / Sequelize / Supabase</P>
 
-      <h5>Testing</h5>
-      <p>Jest / QUnit / Supertest / React Testing Library</p>
+      <h3>Testing</h3>
+      <P>Jest / QUnit / Supertest / React Testing Library</P>
 
-      <h5>Dev Tools</h5>
-      <p>Github / VSCode / Postman / pgAdmin </p>
+      <h3>Dev Tools</h3>
+      <P>Github / VSCode / Postman / pgAdmin </P>
 
-      <h5>Deployment</h5>
-      <p>Heroku / Netlify / Vercel</p>
+      <h3>Deployment</h3>
+      <P>Heroku / Netlify / Vercel</P>
 
-      <h5>Design</h5>
-      <p>Adobe Creative Suite / Sketch / Figma</p>
+      <h3>Design</h3>
+      <P>Adobe Creative Suite / Sketch / Figma</P>
 
-      <h5>Practices</h5>
-      <p>Agile, Pair Programming, RESTful APIs, Test Driven Development, Design Driven Development</p>
+      <h3>Practices</h3>
+      <P>Agile, Pair Programming, RESTful APIs, Test Driven Development, Design Driven Development</P>
 
-      <h5>Learning</h5>
-      <p>Typescript / GraphQL / Python</p>
+      <h3>Learning</h3>
+      <P>Typescript / GraphQL / Python</P>
     </StyledTechStack>
   )
 }
