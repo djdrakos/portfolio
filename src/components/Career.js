@@ -57,11 +57,12 @@ const StyledCareer = styled(SectionContent)`
           fill: ${({ theme }) => theme.weather };
         }
       }
+
+      &:hover:not(.resume) {
+        border: .1rem ${({ theme }) => theme.color } solid;
+      }
     }
 
-    a:hover:not(.resume) {
-    border-style: none;
-    }
 
     .resume {
       color: inherit;
