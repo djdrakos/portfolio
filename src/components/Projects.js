@@ -52,17 +52,12 @@ const StyledProjects = styled(SectionContent)`
       flex-direction:column;
       align-items: flex-start;
 
-      p {
-        width: 100%;
-        text-align: left;
-
-      &[data-state='active'] > :before {
-      display: inline-block;
+      button[data-state='active'] > p:before {
       content: '☝';
+      display: inline-block;
       font-family: 'Noto Emoji';
       padding-inline: .3rem;
       transform: rotate(.25turn) scale(-1, 1);
-        }
       }
     }
   }
