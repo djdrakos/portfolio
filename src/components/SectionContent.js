@@ -33,7 +33,6 @@ const StyledSection = styled(GridContainer)`
   }
 
   @media screen and (${breakpoints.medium}) {
-
     .title {
       position: unset;
       top: unset;

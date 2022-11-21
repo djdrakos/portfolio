@@ -110,6 +110,11 @@ const StyledSpiral = styled.div`
 
   @media screen and (${breakpoints.small}) {
     --pad: 2rem;
+
+    .spiral-trigger {
+      margin-right: -.5rem;
+      margin-top: 1rem;
+    }
   }
 
 `

@@ -39,12 +39,16 @@ const StyledHero = styled(GridContainer)`
     top: 0;
   }
 
-  @media screen and (${breakpoints.large}) {
-  }
-
+  
   @media screen and (${breakpoints.medium}) {
     .wrapper-portrait {
       margin-block: 1rem -5rem;
+    }
+  }
+
+  @media screen and (${breakpoints.small}) {
+    .wrapper-portrait {
+      width: 8rem;
     }
   }
   `
