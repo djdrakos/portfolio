@@ -15,11 +15,8 @@ const StyledTechStack = styled(SectionContent)`
     margin-block: 0;
   }
 
-  @media screen and (${breakpoints.medium}) {
-    --section-height: calc(var(--section-tall) + var(--stack-block100));
-    .tool-header {
-      font-size: 1rem;
-    }
+  @media screen and (${breakpoints.small}){
+    --section-height: var(--section-med);
   }
 `
 

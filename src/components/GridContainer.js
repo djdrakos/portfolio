@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import breakpoints from '../styles/breakpoints';
 
 const StyledGridContainer = styled.div.attrs( props => ({ style:  props }))`
-  --section-short: calc(5 * var(--stack-block100));
-  --section-med: calc(12 * var(--stack-block100));
-  --section-tall: calc(15 * var(--stack-block100));
+  --section-short: calc(29rem + var(--stack-block100));
+  --section-med: calc(34rem + var(--stack-block100));
+  --section-tall: calc(45rem + var(--stack-block100));
   --section-height: var(--section-tall);
   --top-offset: calc(var(--stack-block) + var(--header100) - var(--stack-offset) - var(--section-height));
 
@@ -18,11 +18,17 @@ const StyledGridContainer = styled.div.attrs( props => ({ style:  props }))`
   height: var(--section-height);
 
   @media screen and (${breakpoints.large}) {
+    --section-short: calc(31rem + var(--stack-block100));
+    --section-med: calc(36rem + var(--stack-block100));
+    --section-tall: calc(45rem + var(--stack-block100));
     padding-left: 10vw;
     padding-right: 16vw;
   }
   
   @media screen and (${breakpoints.medium}) {
+    --section-short: calc(32rem + var(--stack-block100));
+    --section-med: calc(41rem + var(--stack-block100));
+    --section-tall: calc(45rem + var(--stack-block100));
     padding-inline: 3rem;
     display: flex; 
     flex-direction: column;
@@ -30,10 +36,18 @@ const StyledGridContainer = styled.div.attrs( props => ({ style:  props }))`
 
   @media screen and (${breakpoints.small}) {
     padding-inline: 2rem;
-    --section-short: calc(6 * var(--stack-block100));
-    --section-med: calc(15 * var(--stack-block100));
-    --section-tall: calc(20 * var(--stack-block100));
+    --section-short: calc(38rem + var(--stack-block100));
+    --section-med: calc(48rem + var(--stack-block100));
+    --section-tall: calc(57rem + var(--stack-block100));
   }
+
+  @media screen and (${breakpoints.xSmall}) {
+    --section-short: calc(48rem + var(--stack-block100));
+    --section-med: calc(64rem + var(--stack-block100));
+    --section-tall: calc(72rem + var(--stack-block100));
+  }
+
+
 `
 
 export default function GridContainer({ title, children,...props }) {

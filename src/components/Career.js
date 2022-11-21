@@ -8,7 +8,7 @@ import { P } from './Typography';
 import breakpoints from '../styles/breakpoints';
 
 const StyledCareer = styled(SectionContent)`
-  --section-height: var(--section-tall);
+  --section-height: var(--section-med);
   --stack-block: var(--stack-block300);
   z-index: 2;
   background-color: ${({ theme }) => theme.bg3 };
@@ -26,7 +26,7 @@ const StyledCareer = styled(SectionContent)`
     align-items: center;
     justify-content: space-evenly;
     column-gap: var(--gap50);
-    margin-top: var(--gap100);
+  }
 
     
     .wrapper-social-icon {
@@ -80,6 +80,7 @@ const StyledCareer = styled(SectionContent)`
 
   @media screen and (${breakpoints.medium}) {
     .social {
+      margin-top: 1rem;
       position: static;
       align-self: flex-start;
     }
@@ -92,6 +93,9 @@ const StyledCareer = styled(SectionContent)`
     }
   }
 
+  @media screen and (${breakpoints.xSmall}) {
+    --section-height: var(--section-tall);
+  }
 `
 
 const Career = (props) => {
