@@ -2,6 +2,7 @@ import { forwardRef } from 'react';
 import styled from 'styled-components';
 import { H4 } from './Typography'
 import GridContainer from './GridContainer';
+import GridItem from './GridItem';
 
 const StyledSection = styled(GridContainer)`
   position: sticky;
@@ -23,11 +24,18 @@ const StyledSection = styled(GridContainer)`
 const SectionContent = forwardRef(({ title, children, ...props }, ref) => {
   return (
     <StyledSection {...props}>
-      { title && <H4 as="h2">{title}</H4> }
-      { children && 
-      <div className='content'>
+      <GridItem m={3}>
+        { title &&
+        <H4 as="h2" className="title">
+          {title}
+        </H4> }
+      </GridItem>
+      <GridItem m={9}>
+        { children && 
+        <div className='content'>
           {children}
-      </div> }
+        </div> }
+      </GridItem>
     </StyledSection>
   )
 })

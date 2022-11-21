@@ -23,9 +23,9 @@ export default function Main({ toggleTheme }) {
     <StyledMain>
       <Hero toggleTheme={toggleTheme} />
       <Projects title="featured projects"/>
-      {/*<TechStack title="Toolkit"/>
+      <TechStack title="Toolkit"/>
       <Career title="career"/>
-      <About title="Colophon" /> */}
+      <About title="Colophon" />
     </StyledMain>
   )
 }
