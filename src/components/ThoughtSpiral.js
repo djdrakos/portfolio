@@ -64,10 +64,22 @@ const StyledSpiral = styled.div`
   .fixed {
     position: fixed;
     top: var(--stack-block400);
+
+    .spiral-content {
+
+    }
   }
 
   @media screen and (${breakpoints.large}) {
     --pad: 12vw;
+
+    .spiral-content {
+      margin-top: -.3rem;
+    }
+
+    .fixed .spiral-content {
+      margin-top: .5rem;
+    }
   }
 
   @media screen and (${breakpoints.medium}) {
@@ -85,6 +97,14 @@ const StyledSpiral = styled.div`
       margin-left: auto;
       margin-right: .3rem;
       margin-top: 1rem;
+    }
+
+    .spiral-content {
+      margin-top: -.3rem;
+    }
+
+    .fixed .spiral-content {
+      margin-top: 0;
     }
   }
 
