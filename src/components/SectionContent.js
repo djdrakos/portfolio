@@ -6,6 +6,7 @@ import GridItem from './GridItem';
 import breakpoints from '../styles/breakpoints';
 
 const StyledSection = styled(GridContainer)`
+  --stack-block: var(--stack-block100);
   position: sticky;
 
   .title {
@@ -21,6 +22,7 @@ const StyledSection = styled(GridContainer)`
     display: flex;
     flex-direction: column;
     padding-top: 3rem;
+    padding-left: 1rem;
     top: var(--top-offset);
     margin-bottom: var(--stack-block);
   }
@@ -32,7 +34,6 @@ const StyledSection = styled(GridContainer)`
   }
 
   @media screen and (${breakpoints.medium}) {
-
     .title {
       position: unset;
       top: unset;
@@ -43,6 +44,7 @@ const StyledSection = styled(GridContainer)`
 
     .content {
       padding-top: 1rem;
+      padding-left: 0;
     }
   }
 `

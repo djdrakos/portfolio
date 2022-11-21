@@ -7,10 +7,10 @@ import GridItem from './GridItem'
 import breakpoints from '../styles/breakpoints'
 
 const StyledHero = styled(GridContainer)`
-  height: min-content;
+  --section-height: (min-content);
 
   .wrapper-portrait {
-    max-width: 15rem;
+    width: 12rem;
     margin-left: auto;
     aspect-ratio: 1;
     border-radius: 50%;
@@ -26,23 +26,29 @@ const StyledHero = styled(GridContainer)`
     object-fit: contain;
     opacity: ${({ theme }) => theme.type === 'dark' ? .5 : .6 };
     }
+
+  .pad-left {
+    padding-left: 1rem;
+      @media screen and (${breakpoints.medium}) {
+        padding-left: 0;
+      } 
+  }
     
   .fixed {
     position: fixed;
     top: 0;
   }
 
-  @media screen and (${breakpoints.large}) {
-    .wrapper-portrait{
-      max-width: 11.55rem;
-      width: 100%;
+  
+  @media screen and (${breakpoints.medium}) {
+    .wrapper-portrait {
+      margin-bottom: 1.38rem;
+      margin-left: 0;
     }
   }
 
-  @media screen and (${breakpoints.medium}) {
+  @media screen and (${breakpoints.xSmall}) {
     .wrapper-portrait {
-      max-width: 15rem;
-      margin-block: 1rem -5rem;
     }
   }
   `
@@ -58,7 +64,7 @@ export default function Hero({ toggleTheme }) {
           </div>
         </GridItem>
         <ThoughtSpiral/>
-        <GridItem m={9} justifyContent={'flex-start'}>
+        <GridItem m={9} className="pad-left" justifyContent={'flex-start'}>
           <Bio toggleTheme={toggleTheme}/>
         </GridItem>
       </Tooltip.Provider>

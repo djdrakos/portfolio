@@ -118,9 +118,9 @@ export default function Bio({ toggleTheme }) {
     <StyledBio> 
       <div className='wrapper'>
         <H1>
-          Hi, I’m 
+          Hi, I’m&nbsp;
           <strong ref={triggerRef}>
-            &nbsp;DJ Drakos!
+            DJ Drakos!
           </strong> 
         </H1>
         <div className={isIntersecting ? 'tooltip-root fixed' : 'tooltip-root'}>

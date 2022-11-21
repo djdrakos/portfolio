@@ -8,7 +8,7 @@ import { P } from './Typography';
 import breakpoints from '../styles/breakpoints';
 
 const StyledCareer = styled(SectionContent)`
-  --section-height: var(--section-tall);
+  --section-height: var(--section-med);
   --stack-block: var(--stack-block300);
   z-index: 2;
   background-color: ${({ theme }) => theme.bg3 };
@@ -19,12 +19,23 @@ const StyledCareer = styled(SectionContent)`
     position: sticky; 
     top: calc(var(--header100) + var(--stack-block200));
     height: var(--gap100);
+    align-self: center;
     display: flex; 
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-evenly;
     column-gap: var(--gap50);
-    margin-top: var(--gap100);
-    margin-left: var(--gap150);
+  }
+
+    
+    .wrapper-social-icon {
+      display: flex; 
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
 
     .social-icon {
       display: flex;
@@ -69,10 +80,22 @@ const StyledCareer = styled(SectionContent)`
 
   @media screen and (${breakpoints.medium}) {
     .social {
+      margin-top: 1rem;
       position: static;
+      align-self: flex-start;
     }
   }
 
+  @media screen and (${breakpoints.small}) {
+    .social {
+      margin-left: 0;
+      justify-content: flex-start;
+    }
+  }
+
+  @media screen and (${breakpoints.xSmall}) {
+    --section-height: var(--section-tall);
+  }
 `
 
 const Career = (props) => {
@@ -102,21 +125,23 @@ const Career = (props) => {
         <a className="resume" href="https://www.dropbox.com/s/y7i3001iydza7sf/dj-drakos-resume.pdf?dl=0" target="blank">
           Resume PDF
         </a>
-        <a className="social-icon" href="https://github.com/dj-drakos" rel="noreferrer" target="_blank">
-          <AccessibleIcon.Root label='Github Profile'>
-            <GithubIcon />
-          </AccessibleIcon.Root>
-        </a>
-        <a className="social-icon" href="https://www.linkedin.com/in/dj-drakos/" rel="noreferrer" target="_blank">
-          <AccessibleIcon.Root className="social-icon" label='LinkedIn Profile'>
-            <LinkedInIcon/>
-          </AccessibleIcon.Root>
-        </a>
-        <a className="social-icon" href="mailto:devin.josi.drakos+portfolio@gmail.com?subject=I saw your portfolio, let's chat!">
-          <AccessibleIcon.Root className="social-icon" label='Send an Email'>
-            <EmailIcon/>
-          </AccessibleIcon.Root>
-        </a>
+        <div className="wrapper-social-icon">
+          <a className="social-icon" href="https://github.com/dj-drakos" rel="noreferrer" target="_blank">
+            <AccessibleIcon.Root label='Github Profile'>
+              <GithubIcon />
+            </AccessibleIcon.Root>
+          </a>
+          <a className="social-icon" href="https://www.linkedin.com/in/dj-drakos/" rel="noreferrer" target="_blank">
+            <AccessibleIcon.Root className="social-icon" label='LinkedIn Profile'>
+              <LinkedInIcon/>
+            </AccessibleIcon.Root>
+          </a>
+          <a className="social-icon" href="mailto:devin.josi.drakos+portfolio@gmail.com?subject=I saw your portfolio, let's chat!">
+            <AccessibleIcon.Root className="social-icon" label='Send an Email'>
+              <EmailIcon/>
+            </AccessibleIcon.Root>
+          </a>
+        </div>
       </div>
     </StyledCareer>
   )

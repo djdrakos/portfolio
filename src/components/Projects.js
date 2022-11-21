@@ -4,6 +4,7 @@ import * as Tabs from '@radix-ui/react-tabs';
 import ProjectDetail from './ProjectDetail';
 import projectData from './projectData';
 import { P } from './Typography';
+import breakpoints from '../styles/breakpoints';
 
 const StyledProjects = styled(SectionContent)`
   --section-height: var(--section-tall);
@@ -35,19 +36,38 @@ const StyledProjects = styled(SectionContent)`
     }
   }
 
-  .titles {
+  .project-titles {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-evenly;
 }
+
+  @media screen and (${breakpoints.small}) {
+    p {
+      margin-top: .5rem;
+    }
+    
+    .project-titles {
+      flex-direction:column;
+      align-items: flex-start;
+
+      button[data-state='active'] > p:before {
+      content: '☝';
+      display: inline-block;
+      font-family: 'Noto Emoji';
+      padding-inline: .3rem;
+      transform: rotate(.25turn) scale(-1, 1);
+      }
+    }
+  }
 `
 
 const Projects = (props) => {
   return (
     <StyledProjects {...props}>
       <Tabs.Root defaultValue={projectData[0].id}>
-        <Tabs.List className='titles'>
+        <Tabs.List className='project-titles'>
           { projectData.map(project => {
           return (
             <Tabs.Trigger className='tab-trigger' key={project.id} value={project.id}>

@@ -5,18 +5,20 @@ import { P } from './Typography';
 import breakpoints from '../styles/breakpoints';
 
 const StyledSpiral = styled.div`
+  --pad: 15vw;
   z-index: 10;
   position: absolute;
-  display: grid;
-  grid-template-columns: repeat(24, minmax(1rem, 3.4167rem));
-  padding-right: clamp(5rem, 15vw, 9rem);
   
-  
-  .grid-content {
-    grid-column-start: 2;
+  .intersection-content {
+    width: calc(100vw - (2* var(--pad)));
+    display: grid;
+    grid-template-columns: repeat(12, minmax(1rem, 6rem));
+    column-gap: 1rem;
   }
-
+  
   .spiral-trigger {
+    grid-column-start: 3;
+    margin-left: auto;
     height: 3rem;
     width: 3rem; 
     border: none;
@@ -62,32 +64,44 @@ const StyledSpiral = styled.div`
   .fixed {
     position: fixed;
     top: var(--stack-block400);
+
+    .spiral-content {
+      margin-top: .5rem;
+    }
   }
 
   @media screen and (${breakpoints.large}) {
-    padding-right: clamp(3rem, 12vw, 5rem);
+    --pad: 12vw;
+
+    .spiral-content {
+      margin-top: -.3rem;
+    }
   }
 
   @media screen and (${breakpoints.medium}) {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding-right: 3rem;
+    --pad: 3rem;
+    
+    .intersection-content { 
+      display: block;
+      grid-template-columns: unset;
+      column-gap: unset;
+    }
+    
+    .spiral-trigger {
+      display: block;
+      grid-column-start: unset;
+      margin-left: auto;
+      margin-left: 9rem;
+      /* margin-top: .5rem; */
+    }
 
-    .grid-content {
-      grid-column-start: 8;
-      /* grid-column-start: unset; */
-      /* margin-left: auto; */
-      /* margin-right: 12rem; */
+    .spiral-content {
+      margin-top: -.3rem;
     }
   }
 
   @media screen and (${breakpoints.small}) {
-    padding-right: 2rem;
-
-    .spiral-trigger {
-      margin-right: 11rem;
-    }
+    --pad: 2rem;
   }
 
 `
@@ -97,19 +111,17 @@ export default function ThoughtSpiral() {
 
   return (
       <StyledSpiral>
-        <div className="grid-content">
-          <div className="intersection-trigger" ref={triggerRef} />
-          <div className={ isIntersecting ? 'fixed' : ''}>
-            <Tooltip.Root asChild>
-              <Tooltip.Trigger className='spiral-trigger' >
-                🌀
-              </Tooltip.Trigger>
-              <Tooltip.Content className='spiral-content' align={'end'} side={'left'} sticky={'always'} >
-              <Tooltip.Arrow className='tooltip-arrow' />
-                <P>Coding... Coding...</P>
-              </Tooltip.Content>
-            </Tooltip.Root>
-          </div>
+        <div className="intersection-trigger" ref={triggerRef} />
+        <div className={ isIntersecting ? 'intersection-content fixed' : 'intersection-content'}>
+          <Tooltip.Root asChild>
+            <Tooltip.Trigger className='spiral-trigger' >
+              🌀
+            </Tooltip.Trigger>
+            <Tooltip.Content className='spiral-content' align={'start'} side={'left'} sticky={'always'} >
+            <Tooltip.Arrow className='tooltip-arrow' />
+              <P>Coding... Coding...</P>
+            </Tooltip.Content>
+          </Tooltip.Root>
         </div>
       </StyledSpiral>
   )

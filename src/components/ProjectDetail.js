@@ -8,7 +8,8 @@ const StyledProjectDetail = styled.div`
   img {
     align-self: center;
     margin-block-start: 2rem;
-    width: 25rem;
+    width: 100%;
+    max-width: 25rem;
     border-radius: .5rem;
   }
 
@@ -16,7 +17,7 @@ const StyledProjectDetail = styled.div`
     align-items: baseline;
   }
 
-  h3, p{
+  .project-title, .project-content{
     margin-block-end: 0;
 
     a {
@@ -24,7 +25,7 @@ const StyledProjectDetail = styled.div`
     }
   }
   
-  h3 {
+  .project-title {
     text-transform: capitalize;
     border-bottom: .1rem solid ${({ theme }) => theme.color };
   }
@@ -39,8 +40,8 @@ export default function ProjectDetail({project}) {
   return (
     <StyledProjectDetail>
       <img src={`/screenshots/${img}`} alt='' />
-      <H5 as ="h3">{title}</H5>
-      <P>
+      <H5 as ="h3" className="project-title">{title}</H5>
+      <P className='.project-content'>
         <a href={liveUrl} target="_blank" rel="noreferrer">Live Site</a>
         
         { repoUrl.map(({ label, url }) => {
@@ -50,7 +51,7 @@ export default function ProjectDetail({project}) {
           </>
         )}) }
       </P>
-      <P>
+      <P className='.project-content'>
         <strong>
           Toolkit:
         </strong> 
@@ -60,7 +61,7 @@ export default function ProjectDetail({project}) {
           })
         }
       </P>
-      <P>{description}</P>
+      <P className='.project-content'>{description}</P>
     </StyledProjectDetail>
   )
 }

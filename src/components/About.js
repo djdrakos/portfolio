@@ -4,7 +4,7 @@ import SectionContent from './SectionContent'
 import { P } from './Typography';
 
 const StyledAbout = styled(SectionContent)`
-  --section-height: var(--section-med);
+  --section-height: var(--section-short);
   --stack-block: var(--stack-block400);
   z-index: 1;
   background-color: ${({ theme }) => theme.bg4 };
