@@ -70,7 +70,7 @@ const StyledSpiral = styled.div`
     }
   }
 
-  @media screen and (${breakpoints.large}) {
+  @media screen and ${breakpoints.large} {
     --pad: 12vw;
 
     .spiral-content {
@@ -78,7 +78,7 @@ const StyledSpiral = styled.div`
     }
   }
 
-  @media screen and (${breakpoints.medium}) {
+  @media screen and ${breakpoints.medium} {
     --pad: 3rem;
     
     .intersection-content { 
@@ -100,7 +100,7 @@ const StyledSpiral = styled.div`
     }
   }
 
-  @media screen and (${breakpoints.small}) {
+  @media screen and ${breakpoints.small} {
     --pad: 2rem;
   }
 

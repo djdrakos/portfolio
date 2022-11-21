@@ -14,11 +14,11 @@ const StyledMain = styled.main`
   padding-top: var(--gap200);
   padding-bottom: calc(100vh - var(--header100) - var(--stack-block400));
 
-  @media screen and (${breakpoints.large}) {
+  @media screen and ${breakpoints.large} {
     row-gap: var(--gap100);
   }
 
-  @media screen and (${breakpoints.medium}) {
+  @media screen and ${breakpoints.medium} {
     padding-top: var(--gap200);
   }
 `

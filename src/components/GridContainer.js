@@ -17,7 +17,7 @@ const StyledGridContainer = styled.div.attrs( props => ({ style:  props }))`
   top: var(--top-offset);
   height: var(--section-height);
 
-  @media screen and (${breakpoints.large}) {
+  @media screen and ${breakpoints.large} {
     --section-short: calc(31rem + var(--stack-block100));
     --section-med: calc(40rem + var(--stack-block100));
     --section-tall: calc(45rem + var(--stack-block100));
@@ -25,23 +25,24 @@ const StyledGridContainer = styled.div.attrs( props => ({ style:  props }))`
     padding-right: 16vw;
   }
   
-  @media screen and (${breakpoints.medium}) {
+  @media screen and ${breakpoints.medium} {
     --section-short: calc(32rem + var(--stack-block100));
     --section-med: calc(41rem + var(--stack-block100));
     --section-tall: calc(45rem + var(--stack-block100));
     padding-inline: 3rem;
     display: flex; 
     flex-direction: column;
+    column-gap: none;
   }
 
-  @media screen and (${breakpoints.small}) {
+  @media screen and ${breakpoints.small} {
     padding-inline: 2rem;
     --section-short: calc(38rem + var(--stack-block100));
     --section-med: calc(48rem + var(--stack-block100));
     --section-tall: calc(57rem + var(--stack-block100));
   }
 
-  @media screen and (${breakpoints.xSmall}) {
+  @media screen and ${breakpoints.xSmall} {
     --section-short: calc(48rem + var(--stack-block100));
     --section-med: calc(64rem + var(--stack-block100));
     --section-tall: calc(72rem + var(--stack-block100));

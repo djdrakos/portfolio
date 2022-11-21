@@ -9,10 +9,13 @@ const StyledSection = styled(GridContainer)`
   --stack-block: var(--stack-block100);
   position: sticky;
 
+  .grid-item-title {
+    justify-content: flex-end;
+  }
+
   .title {
     position: sticky; 
     top: calc(var(--stack-start) + var(--stack-block) - var(--stack-block100));
-    margin-left: auto;
     margin-bottom: 0;
     white-space: nowrap;
   }
@@ -21,29 +24,32 @@ const StyledSection = styled(GridContainer)`
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding-top: 3rem;
-    padding-left: 1rem;
+    padding-top: 48px;
+    padding-left: 16px;
     top: var(--top-offset);
     margin-bottom: var(--stack-block);
   }
 
-  @media screen and (${breakpoints.large}) {
+  @media screen and ${breakpoints.large} {
     .title {
       top: calc(var(--stack-start) + var(--stack-block) - var(--stack-block100) + .3rem);
     }
   }
 
-  @media screen and (${breakpoints.medium}) {
+  @media screen and ${breakpoints.medium} {
+    .grid-item-title {
+      justify-content: start;
+    }
+
     .title {
       position: unset;
       top: unset;
       width: 100%;
-      margin-left: 0;
       border-bottom: .1rem solid ${({ theme }) => theme.color};
     }
 
     .content {
-      padding-top: 1rem;
+      padding-top: 16px;
       padding-left: 0;
     }
   }
@@ -52,7 +58,7 @@ const StyledSection = styled(GridContainer)`
 const SectionContent = forwardRef(({ title, children, ...props }, ref) => {
   return (
     <StyledSection {...props}>
-      <GridItem m={3}>
+      <GridItem className="grid-item-title" m={3}>
         { title &&
         <H4 as="h2" className="title">
           {title}

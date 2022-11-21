@@ -89,7 +89,7 @@ const StyledBio = styled.div`
     top: 0;
   }
 
-  @media screen and (${breakpoints.large}) {
+  @media screen and ${breakpoints.large} {
     .tooltip-root{
       transform: translate(-1.2rem, -.9rem);
     }
@@ -99,7 +99,7 @@ const StyledBio = styled.div`
       font-size: 4rem;  
     }
   }
-  @media screen and (${breakpoints.large}) {
+  @media screen and ${breakpoints.large} {
     .tooltip-root{
       transform: translate(-1.2rem, -.9rem);
     }
