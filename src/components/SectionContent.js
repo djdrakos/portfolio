@@ -6,6 +6,7 @@ import GridItem from './GridItem';
 import breakpoints from '../styles/breakpoints';
 
 const StyledSection = styled(GridContainer)`
+  --stack-block: var(--stack-block100);
   position: sticky;
 
   .title {

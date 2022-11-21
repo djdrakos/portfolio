@@ -86,21 +86,17 @@ a:hover {
 
 :root {
   --header100: 4rem;
+  --section-height: 0;
+  --stack-block: 0;
   --stack-block100: 3rem;
   --stack-block200: calc(2 * var(--stack-block100));
   --stack-block300: calc(3 * var(--stack-block100));
   --stack-block400: calc(4 * var(--stack-block100));
-  --stack-block: var(--stack-block100);
   --stack-offset: .25rem;
   --stack-start: calc(var(--header100) + var(--stack-offset));
-  --section-short: calc(5 * var(--stack-block100));
-  --section-med: calc(12 * var(--stack-block100));
-  --section-tall: calc(15 * var(--stack-block100));
-  --section-height: var(--section-short);
   --gap100: var(--stack-block100);
   --gap50: calc(var(--gap100) / 2);
   --gap150: calc(1.5 * var(--gap100));
   --gap200: calc(2 * var(--gap100));
-  --gap300: calc(3 * var(--gap100));
 }
 `
