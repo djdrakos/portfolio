@@ -1,59 +1,57 @@
 import styled from 'styled-components'
 import SectionContent from './SectionContent'
+import { H5, P } from './Typography'
+import breakpoints from '../styles/breakpoints'
 
 const StyledTechStack = styled(SectionContent)`
-  --top-offset: calc(var(--stack-block200) + var(--header100) - var(--stack-offset));
   --section-height: var(--section-tall);
+  --stack-block: var(--stack-block200);
   z-index: 3;
-  top: calc(var(--stack-block200) + var(--header100) - var(--stack-offset) - var(--section-tall));
-  height: var(--section-height);
   background-color: ${({ theme }) => theme.bg2 };
   border-bottom: .05rem solid ${({ theme }) => theme.bg2 };
   border-bottom-left-radius: 1rem;
   
-  .content {
-    margin-bottom: var(--stack-block200);
-  }
-
-  h4 {
-    top: calc(var(--stack-start) + var(--stack-block100));
-  }
-
-  h5 {
-    font-size: 1rem;
+  .tool-header {
     margin-block: 0;
+  }
+
+  @media screen and (${breakpoints.medium}) {
+    --section-height: calc(var(--section-tall) + var(--stack-block100));
+    .tool-header {
+      font-size: 1rem;
+    }
   }
 `
 
 const TechStack = (props) => {
   return (
     <StyledTechStack {...props}>
-      <h5>Languages</h5>
-      <p>JavaScript ES6 / HTML5 / CSS3 / Sass</p>
+      <H5 as="h3" className="tool-header">Languages</H5>
+      <P>JavaScript ES6 / HTML5 / CSS3 / Sass</P>
 
-      <h5>Libraries & Frameworks</h5>
-      <p>React.js / Node.js / Express / styled-components</p>
+      <H5 as="h3" className="tool-header">Libraries & Frameworks</H5>
+      <P>React.js / Node.js / Express / styled-components</P>
 
-      <h5>Databases</h5>
-      <p>PostgreSQL / Sequelize / Supabase</p>
+      <H5 as="h3" className="tool-header">Databases</H5>
+      <P>PostgreSQL / Sequelize / Supabase</P>
 
-      <h5>Testing</h5>
-      <p>Jest / QUnit / Supertest / React Testing Library</p>
+      <H5 as="h3" className="tool-header">Testing</H5>
+      <P>Jest / QUnit / Supertest / React Testing Library</P>
 
-      <h5>Dev Tools</h5>
-      <p>Github / VSCode / Postman / pgAdmin </p>
+      <H5 as="h3" className="tool-header">Dev Tools</H5>
+      <P>Github / VSCode / Postman / pgAdmin </P>
 
-      <h5>Deployment</h5>
-      <p>Heroku / Netlify / Vercel</p>
+      <H5 as="h3" className="tool-header">Deployment</H5>
+      <P>Heroku / Netlify / Vercel</P>
 
-      <h5>Design</h5>
-      <p>Adobe Creative Suite / Sketch / Figma</p>
+      <H5 as="h3" className="tool-header">Design</H5>
+      <P>Adobe Creative Suite / Sketch / Figma</P>
 
-      <h5>Practices</h5>
-      <p>Agile, Pair Programming, RESTful APIs, Test Driven Development, Design Driven Development</p>
+      <H5 as="h3" className="tool-header">Practices</H5>
+      <P>Agile, Pair Programming, RESTful APIs, Test Driven Development, Design Driven Development</P>
 
-      <h5>Learning</h5>
-      <p>Typescript / GraphQL / Python</p>
+      <H5 as="h3" className="tool-header">Learning</H5>
+      <P>Typescript / GraphQL / Python</P>
     </StyledTechStack>
   )
 }

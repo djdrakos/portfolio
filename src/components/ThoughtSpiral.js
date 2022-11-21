@@ -1,21 +1,24 @@
 import styled from 'styled-components'
 import useIntersectionObserver from '../hooks/useIntersectionObserver'
 import * as Tooltip from '@radix-ui/react-tooltip';
+import { P } from './Typography';
+import breakpoints from '../styles/breakpoints';
 
 const StyledSpiral = styled.div`
   z-index: 10;
   position: absolute;
-  width: 7rem;
-  padding-left: 5.5rem;
-  padding-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(24, minmax(1rem, 3.4167rem));
+  padding-right: clamp(5rem, 15vw, 9rem);
+  
+  
+  .grid-content {
+    grid-column-start: 2;
+  }
 
   .spiral-trigger {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 3rem;
     width: 3rem; 
-    margin: 0;
     border: none;
     border-radius: 50%;
     opacity: .6;
@@ -23,7 +26,6 @@ const StyledSpiral = styled.div`
     font-family: 'Noto Emoji', sans-serif;
     font-size: 2rem;
     font-weight: 300;
-    cursor: pointer;
     -webkit-transition: opacity .1s ease-out;
     -moz-transition: opacity .1s ease-out;
     -o-transition: opacity .1s ease-out;
@@ -35,14 +37,11 @@ const StyledSpiral = styled.div`
   }
   
   .spiral-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     max-width: 10rem;
     padding-block: .6rem;
     padding-inline: 1rem;
     background-color: ${({ theme }) => theme.backgroundA };
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(2px);
     border: .1rem solid ${({ theme }) => theme.color };   
     border-radius: .5rem;
     
@@ -62,28 +61,56 @@ const StyledSpiral = styled.div`
 
   .fixed {
     position: fixed;
-    top: 0;
+    top: var(--stack-block400);
   }
+
+  @media screen and (${breakpoints.large}) {
+    padding-right: clamp(3rem, 12vw, 5rem);
+  }
+
+  @media screen and (${breakpoints.medium}) {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-right: 3rem;
+
+    .grid-content {
+      grid-column-start: 8;
+      /* grid-column-start: unset; */
+      /* margin-left: auto; */
+      /* margin-right: 12rem; */
+    }
+  }
+
+  @media screen and (${breakpoints.small}) {
+    padding-right: 2rem;
+
+    .spiral-trigger {
+      margin-right: 11rem;
+    }
+  }
+
 `
 
 export default function ThoughtSpiral() {
   const [ triggerRef, isIntersecting ] = useIntersectionObserver()
 
   return (
-    <StyledSpiral>
-      <Tooltip.Root asChild>
-        <div className="wrapper" ref={triggerRef}>
-          <div className={ isIntersecting ? 'intersection-content fixed' : 'intersection-content'}>
-            <Tooltip.Trigger className='spiral-trigger' >
-              🌀
-            </Tooltip.Trigger>
-            <Tooltip.Content className='spiral-content' align={'end'} side={'left'} sticky={'always'} avoidCollisions={false}>
-            <Tooltip.Arrow className='tooltip-arrow' />
-              <p>Coding... Coding...</p>
-            </Tooltip.Content>
+      <StyledSpiral>
+        <div className="grid-content">
+          <div className="intersection-trigger" ref={triggerRef} />
+          <div className={ isIntersecting ? 'fixed' : ''}>
+            <Tooltip.Root asChild>
+              <Tooltip.Trigger className='spiral-trigger' >
+                🌀
+              </Tooltip.Trigger>
+              <Tooltip.Content className='spiral-content' align={'end'} side={'left'} sticky={'always'} >
+              <Tooltip.Arrow className='tooltip-arrow' />
+                <P>Coding... Coding...</P>
+              </Tooltip.Content>
+            </Tooltip.Root>
           </div>
         </div>
-      </Tooltip.Root>
-    </StyledSpiral>
+      </StyledSpiral>
   )
 }

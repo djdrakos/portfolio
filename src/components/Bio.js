@@ -1,38 +1,37 @@
 import styled from 'styled-components'
-import ToggleThemeButton from './ToggleThemeButton'
+import { H1, P } from './Typography'
+import ToggleTheme from './ToggleTheme'
 import useIntersectionObserver from '../hooks/useIntersectionObserver'
 import * as Tooltip from '@radix-ui/react-tooltip'
+import breakpoints from '../styles/breakpoints'
 
 const StyledBio = styled.div`
+
   h1 {
-    display: inline
-  }
+    display: inline;
   
-  h1 strong {
-    display: inline-block;
-    font-family: 'Source Code Pro';
-    font-weight: 600;
-    letter-spacing: -.03em;
-    word-spacing: -.2em;
+    strong {
+      display: inline-block;
+      font-family: 'Source Code Pro';
+      font-weight: 600;
+      letter-spacing: -.03em;
+      word-spacing: -.2em;
+    }
   }
 
   p {
     font-weight: 500;
   }
 
-  .intersection-content {
+  .tooltip-root {
+    z-index: 10;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
     padding-top: .6rem;
     position: absolute;
     transform: translate(-1.9rem, -.7rem);
-  }
-
-  .tooltip-root {
-    display: block;
-  };
+  } 
   
   .tooltip-trigger {
     display: flex;
@@ -65,18 +64,17 @@ const StyledBio = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 10rem;
+    max-width: 15rem;
     padding-block: .6rem;
     padding-inline: 1rem;
+    backdrop-filter: blur(2px);
     background-color: ${({ theme }) => theme.backgroundA };
-    backdrop-filter: blur(1px);
     border: .1rem solid ${({ theme }) => theme.color };   
     border-radius: .5rem;
     
     p {
       margin: 0;
       font-family: 'Source Sans Pro', sans-serif; 
-      font-weight: 600;
       font-size: .8rem;
       line-height: 1;
     }
@@ -90,6 +88,27 @@ const StyledBio = styled.div`
     position: fixed;
     top: 0;
   }
+
+  @media screen and (${breakpoints.large}) {
+    .tooltip-root{
+      transform: translate(-1.2rem, -.9rem);
+    }
+    .tooltip-trigger {
+      height: 2rem;
+      width: 2rem; 
+      font-size: 4rem;  
+    }
+  }
+  @media screen and (${breakpoints.large}) {
+    .tooltip-root{
+      transform: translate(-1.2rem, -.9rem);
+    }
+    .tooltip-trigger {
+      height: 2rem;
+      width: 2rem; 
+      font-size: 4rem;  
+    }
+  }
 `
 
 export default function Bio({ toggleTheme }) {
@@ -97,39 +116,39 @@ export default function Bio({ toggleTheme }) {
 
   return (
     <StyledBio> 
-      <Tooltip.Root>
-        <div className='wrapper'>
-          <h1>
-            Hi, I’m 
-            <strong ref={triggerRef}>
-              &nbsp;DJ Drakos!
-            </strong> 
-          </h1>
-          <div className={isIntersecting ? 'intersection-content fixed' : 'intersection-content'}>
+      <div className='wrapper'>
+        <H1>
+          Hi, I’m 
+          <strong ref={triggerRef}>
+            &nbsp;DJ Drakos!
+          </strong> 
+        </H1>
+        <div className={isIntersecting ? 'tooltip-root fixed' : 'tooltip-root'}>
+          <Tooltip.Root>
             <Tooltip.Trigger className='tooltip-trigger'>
               *
             </Tooltip.Trigger>
             <Tooltip.Content className='tooltip-content' side={'bottom'} avoidCollisions={false} >
-              <p>
-                {isIntersecting ? '{key:value}' : '(they/them)'}
-              </p>
+              <P>
+                {isIntersecting ? 'looks like good coding weather today' : '(they/them)'}
+              </P>
               <Tooltip.Arrow className='tooltip-arrow'/>
             </Tooltip.Content>
-          </div>
+          </Tooltip.Root>
         </div>
-      </Tooltip.Root>
-        <p>
-          I’m a Fullstack Software Engineer/Creative
-          <br/ >
-          based in 
-          <ToggleThemeButton toggleTheme={toggleTheme} />
-          Portland, Oregon.
-        </p>
-        <p>
-          I love bringing well-crafted, accessible applications to life
-          <br/ >
-          using modern, scalable web technologies and design patterns.
-        </p>
-  </StyledBio>
+      </div>
+      <P>
+        I’m a Fullstack Software Engineer/Creative
+        <br/ >
+        based in&nbsp;
+        <ToggleTheme toggleTheme={toggleTheme} />
+        &nbsp;Portland, Oregon.
+      </P>
+      <P>
+        I love bringing well-crafted, accessible applications to life
+        <br/ >
+        using modern, scalable web technologies and design patterns.
+      </P>
+    </StyledBio>
   )
 }

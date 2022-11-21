@@ -1,13 +1,8 @@
 import styled from 'styled-components'
 
-const StyledToggle = styled.svg`
+const StyledSvg = styled.svg`
   width: 2.5rem;
-  padding-left: .02rem;
-  margin-top: .3rem;
-  position: absolute;
-  transform: translate(-2.3rem);
-  fill: ${({ theme }) => theme.weather};
-  mix-blend-mode: multiply;
+  fill: ${({ theme }) => theme.weather };
   opacity: ${({ theme }) => theme.type === 'dark' ? .4 : .5 };
   -webkit-transition: opacity .2s ease-out;
   -moz-transition: opacity .2s ease-out;
@@ -19,15 +14,15 @@ const StyledToggle = styled.svg`
   }
 `
 
-const ToggleWeatherIcon = ({ darkMode, className }) => {
+const ToggleWeatherIcon = ({ type, ...props }) => {
   return (
-    <StyledToggle 
+    <StyledSvg 
       id="weather_icon"
-      className={className}
+      {...props}
       xmlns="http://www.w3.org/2000/svg" 
-      viewBox="0 0 380 380">
+      viewBox="0 0 385 385">
 
-      { darkMode ?
+      { type === 'dark' ?
         <>  
           <path d="M0,176.65V0H384V176.65c-.44-.5-.52-1.11-.55-1.74-.33-7.11-1.6-14.09-3.04-21.04-7.61-36.73-24.72-68.47-50.76-95.4-12.74-13.17-27.21-24.16-43.18-33.21C261.09,10.88,233.8,2.71,204.74,.81c-12.32-.81-24.68-.49-37,1.12-19.46,2.54-38.13,7.74-55.9,15.97-33.2,15.39-60.01,38.35-80.27,68.76C15.06,111.44,4.93,138.66,1.16,168.22c-.36,2.8,0,5.73-1.16,8.43Z" style={{ fill: 'none' }}/>
           <path d="M207.75,384c2.7-1.16,5.64-.81,8.44-1.17,30.16-3.81,57.8-14.3,82.98-31.19,24.77-16.62,44.61-37.91,59.53-63.73,11.91-20.62,19.81-42.65,23.32-66.23,.67-4.53,1.32-9.06,1.99-13.59v175.91H207.75Z" style={{ fill: 'none' }}/>
@@ -62,7 +57,7 @@ const ToggleWeatherIcon = ({ darkMode, className }) => {
           <path d="M183.98,85.71c0-3.6-.1-7.2,0-10.7,.1-4,2.4-6.4,6.1-6.4s6,2.3,6,6.4c.1,7.3,.1,14.5,0,21.8,0,3.8-2.3,6.1-5.9,6.2-3.8,.1-6.1-2.2-6.2-6.2-.1-3.7,0-7.4,0-11.1h0Z"/>
         </>
       }
-    </StyledToggle>
+    </StyledSvg>
   )
 }
 

@@ -1,33 +1,67 @@
 import { forwardRef } from 'react';
 import styled from 'styled-components';
-import Section from './Section';
+import { H4 } from './Typography'
+import GridContainer from './GridContainer';
+import GridItem from './GridItem';
+import breakpoints from '../styles/breakpoints';
 
-const StyledSection = styled(Section)`
+const StyledSection = styled(GridContainer)`
   position: sticky;
 
-  h4 {
+  .title {
     position: sticky; 
+    top: calc(var(--stack-start) + var(--stack-block) - var(--stack-block100));
     margin-left: auto;
     margin-bottom: 0;
-    text-transform: capitalize;
+    white-space: nowrap;
   }
 
   .content {
     height: 100%;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     padding-top: 3rem;
+    top: var(--top-offset);
+    margin-bottom: var(--stack-block);
+  }
+
+  @media screen and (${breakpoints.large}) {
+    .title {
+      top: calc(var(--stack-start) + var(--stack-block) - var(--stack-block100) + .3rem);
+    }
+  }
+
+  @media screen and (${breakpoints.medium}) {
+
+    .title {
+      position: unset;
+      top: unset;
+      width: 100%;
+      margin-left: 0;
+      border-bottom: .1rem solid ${({ theme }) => theme.color};
+    }
+
+    .content {
+      padding-top: 1rem;
+    }
   }
 `
 
 const SectionContent = forwardRef(({ title, children, ...props }, ref) => {
   return (
     <StyledSection {...props}>
-      { title && <h4>{title}</h4> }
-      { children && 
-      <div className='content'>
+      <GridItem m={3}>
+        { title &&
+        <H4 as="h2" className="title">
+          {title}
+        </H4> }
+      </GridItem>
+      <GridItem m={9}>
+        { children && 
+        <div className='content'>
           {children}
-      </div> }
+        </div> }
+      </GridItem>
     </StyledSection>
   )
 })
