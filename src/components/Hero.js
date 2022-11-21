@@ -49,8 +49,8 @@ export default function Hero({ toggleTheme }) {
           <div className="wrapper-portrait">
             <img src={require("../assets/dj.jpg")} className="portrait" alt="DJ Drakos sitting on a couch, staring intently at something on their laptop" />
           </div>
-          <ThoughtSpiral/>
         </GridItem>
+        <ThoughtSpiral/>
         <GridItem m={9} justifyContent={'flex-start'}>
           <Bio toggleTheme={toggleTheme}/>
         </GridItem>
