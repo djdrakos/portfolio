@@ -7,6 +7,7 @@ const StyledGridContainer = styled.div.attrs( props => ({ style:  props }))`
   grid-template-columns: repeat(12, minmax(2rem, 4rem));
   column-gap: 2rem;
   align-items: stretch;
+  padding: clamp(1rem, 15vw, 5rem);
   min-height: var(--section-height);
   top: calc(var(--stack-block100) + var(--header100) - var(--stack-offset) - var(--section-med));
   

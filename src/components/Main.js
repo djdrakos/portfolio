@@ -6,8 +6,8 @@ import Projects from './Projects'
 import TechStack from './TechStack'
 
 const StyledMain = styled.main`
-  display: grid;
-  grid-template-columns: minmax(1rem, 5rem) auto minmax(1rem, 5rem);
+  display: flex;
+  flex-direction: column;
   align-items: stretch;
   row-gap: var(--gap300);
   padding-top: var(--gap300);
@@ -22,8 +22,8 @@ export default function Main({ toggleTheme }) {
   return (
     <StyledMain>
       <Hero toggleTheme={toggleTheme} />
-      {/* <Projects title="featured projects"/>
-      <TechStack title="Toolkit"/>
+      <Projects title="featured projects"/>
+      {/*<TechStack title="Toolkit"/>
       <Career title="career"/>
       <About title="Colophon" /> */}
     </StyledMain>

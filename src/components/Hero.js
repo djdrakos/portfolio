@@ -10,7 +10,7 @@ const StyledHero = styled(GridContainer)`
 
   .wrapper.portrait {
     max-width: var(--bio-pic100);
-    max-height: var(--bio-pic100);
+    aspect-ratio: 1;
     border-radius: 50%;
     background-color: ${({ theme }) => theme.type === 'dark' ? theme.color300 : 'none'};
     overflow: hidden;
@@ -22,7 +22,7 @@ const StyledHero = styled(GridContainer)`
     height: auto;
     filter: grayscale();
     mix-blend-mode: ${({ theme }) => theme.type === 'dark' ? 'overlay' : ''};
-    object-fit: cover;
+    object-fit: contain;
     object-position: calc( -1 * var(--gap100)) calc( -1 * var(--gap150));
     opacity: ${({ theme }) => theme.type === 'dark' ? .5 : .6 };
     }
