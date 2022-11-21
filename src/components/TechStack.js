@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import SectionContent from './SectionContent'
-import { H5, H6, P } from './Typography'
+import { H5, P } from './Typography'
 
 const StyledTechStack = styled(SectionContent)`
   --section-height: var(--section-tall);

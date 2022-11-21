@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import breakpoints from './breakpoints'
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -62,8 +61,6 @@ button, a {
   border: none;
 }
 
-
-
 h1, h2, h3, h4, h5 {
   margin: 3rem 0 1.38rem;
   font-family: 'Source Serif Pro', serif;
@@ -89,9 +86,6 @@ a:hover {
 
 :root {
   --header100: 4rem;
-  --bio-pic100: 15rem;
-  --bio-pic200: calc(2 * var(--bio-pic100));
-  --bio-pic300: calc(3 * var(--bio-pic100));
   --stack-block100: 3rem;
   --stack-block200: calc(2 * var(--stack-block100));
   --stack-block300: calc(3 * var(--stack-block100));
