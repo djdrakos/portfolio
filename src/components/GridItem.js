@@ -5,7 +5,7 @@ import breakpoints from '../styles/breakpoints';
 const StyledDiv = styled.div.attrs( props => ({ style:  props }))`
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  
   ${ ({ options }) => options && css`
     @media screen and ${breakpoints.desktop} {
       grid-column:  ${options.l.colStart} / ${options.l.colSpan};

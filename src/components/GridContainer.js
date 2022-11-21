@@ -7,12 +7,14 @@ const StyledGridContainer = styled.div.attrs( props => ({ style:  props }))`
   --stack-block: var(--stack-block100);
   --top-offset: calc(var(--stack-block) + var(--header100) - var(--stack-offset) - var(--section-height));
   display: grid;
-  grid-template-columns: repeat(12, minmax(1rem, 4rem));
-  column-gap: max(2rem, 3rem);
-  padding-inline: clamp(1rem, 15vw, 9rem);
+  grid-template-columns: repeat(12, minmax(1rem, 5rem));
+  column-gap: 2rem;
+  padding-inline: clamp(5rem, 15vw, 9rem);
   top: var(--top-offset);
   height: var(--section-height);
+
   @media screen and (${breakpoints.tablet}) {
+    padding-inline: clamp(3rem, 12vw, 5rem);
   }
 `
 

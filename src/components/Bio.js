@@ -67,8 +67,8 @@ const StyledBio = styled.div`
     max-width: 15rem;
     padding-block: .6rem;
     padding-inline: 1rem;
+    backdrop-filter: blur(2px);
     background-color: ${({ theme }) => theme.backgroundA };
-    backdrop-filter: blur(1px);
     border: .1rem solid ${({ theme }) => theme.color };   
     border-radius: .5rem;
     
