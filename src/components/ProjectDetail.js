@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { H5, P } from './Typography'
-import breakpoints from '../styles/breakpoints'
 
 const StyledProjectDetail = styled.div`
   display: flex;

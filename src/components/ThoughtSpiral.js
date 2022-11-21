@@ -66,7 +66,7 @@ const StyledSpiral = styled.div`
     top: var(--stack-block400);
 
     .spiral-content {
-
+      margin-top: .5rem;
     }
   }
 
@@ -75,10 +75,6 @@ const StyledSpiral = styled.div`
 
     .spiral-content {
       margin-top: -.3rem;
-    }
-
-    .fixed .spiral-content {
-      margin-top: .5rem;
     }
   }
 
@@ -95,26 +91,17 @@ const StyledSpiral = styled.div`
       display: block;
       grid-column-start: unset;
       margin-left: auto;
-      margin-right: .3rem;
-      margin-top: 1rem;
+      margin-left: 9rem;
+      /* margin-top: .5rem; */
     }
 
     .spiral-content {
       margin-top: -.3rem;
     }
-
-    .fixed .spiral-content {
-      margin-top: 0;
-    }
   }
 
   @media screen and (${breakpoints.small}) {
     --pad: 2rem;
-
-    .spiral-trigger {
-      margin-right: -.5rem;
-      margin-top: 1rem;
-    }
   }
 
 `
