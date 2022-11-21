@@ -10,7 +10,7 @@ const StyledHero = styled(GridContainer)`
   height: min-content;
 
   .wrapper-portrait {
-    max-width: 15rem;
+    width: 12rem;
     margin-left: auto;
     aspect-ratio: 1;
     border-radius: 50%;
@@ -26,6 +26,13 @@ const StyledHero = styled(GridContainer)`
     object-fit: contain;
     opacity: ${({ theme }) => theme.type === 'dark' ? .5 : .6 };
     }
+
+  .pad-left {
+    padding-left: 1rem;
+      @media screen and (${breakpoints.medium}) {
+        padding-left: 0;
+      } 
+  }
     
   .fixed {
     position: fixed;
@@ -33,15 +40,10 @@ const StyledHero = styled(GridContainer)`
   }
 
   @media screen and (${breakpoints.large}) {
-    .wrapper-portrait{
-      max-width: 11.55rem;
-      width: 100%;
-    }
   }
 
   @media screen and (${breakpoints.medium}) {
     .wrapper-portrait {
-      max-width: 15rem;
       margin-block: 1rem -5rem;
     }
   }
@@ -58,7 +60,7 @@ export default function Hero({ toggleTheme }) {
           </div>
         </GridItem>
         <ThoughtSpiral/>
-        <GridItem m={9} justifyContent={'flex-start'}>
+        <GridItem m={9} className="pad-left" justifyContent={'flex-start'}>
           <Bio toggleTheme={toggleTheme}/>
         </GridItem>
       </Tooltip.Provider>
