@@ -4,7 +4,7 @@ import breakpoints from '../styles/breakpoints';
 
 const StyledGridContainer = styled.div.attrs( props => ({ style:  props }))`
   --section-short: calc(29rem + var(--stack-block100));
-  --section-med: calc(34rem + var(--stack-block100));
+  --section-med: calc(36.8rem + var(--stack-block100));
   --section-tall: calc(45rem + var(--stack-block100));
   --section-height: var(--section-tall);
   --top-offset: calc(var(--stack-block) + var(--header100) - var(--stack-offset) - var(--section-height));
@@ -19,7 +19,7 @@ const StyledGridContainer = styled.div.attrs( props => ({ style:  props }))`
 
   @media screen and (${breakpoints.large}) {
     --section-short: calc(31rem + var(--stack-block100));
-    --section-med: calc(36rem + var(--stack-block100));
+    --section-med: calc(40rem + var(--stack-block100));
     --section-tall: calc(45rem + var(--stack-block100));
     padding-left: 10vw;
     padding-right: 16vw;
