@@ -5,9 +5,9 @@ const H1 = styled.h1`
   margin-top: 0;
   font-size: 3.052rem;
 
-  ${`@media screen and ${breakpoints.tablet}`} {font-size: 1.802rem;}
+  ${`@media screen and ${breakpoints.large}`} {font-size: 1.802rem;}
 
-  ${`@media screen and ${breakpoints.mobile}`} {
+  ${`@media screen and ${breakpoints.small}`} {
 
   }
 `
@@ -15,9 +15,9 @@ const H1 = styled.h1`
 const H2 = styled.h2`
   font-size: 2.441rem;
 
-  ${`@media screen and ${breakpoints.tablet}`} {font-size: 1.602rem;}
+  ${`@media screen and ${breakpoints.large}`} {font-size: 1.602rem;}
 
-  ${`@media screen and ${breakpoints.mobile}`} {
+  ${`@media screen and ${breakpoints.small}`} {
 
   }
 `
@@ -25,9 +25,9 @@ const H2 = styled.h2`
 const H3 = styled.h3`
   font-size: 1.953rem;
 
-  ${`@media screen and ${breakpoints.tablet}`} {font-size: 1.424rem;}
+  ${`@media screen and ${breakpoints.large}`} {font-size: 1.424rem;}
 
-  ${`@media screen and ${breakpoints.mobile}`} {
+  ${`@media screen and ${breakpoints.small}`} {
 
   }
 `
@@ -35,9 +35,9 @@ const H3 = styled.h3`
 const H4 = styled.h4`
   font-size: 1.563rem;
 
-  ${`@media screen and ${breakpoints.tablet}`} {font-size: 1.266rem;}
+  ${`@media screen and ${breakpoints.large}`} {font-size: 1.266rem;}
 
-  ${`@media screen and ${breakpoints.mobile}`} {
+  ${`@media screen and ${breakpoints.small}`} {
 
   }
 `
@@ -45,15 +45,15 @@ const H4 = styled.h4`
 const H5 = styled.h5`
   font-size: 1.25rem;
 
-  ${`@media screen and ${breakpoints.tablet}`} {font-size: 1.125rem;}
+  ${`@media screen and ${breakpoints.large}`} {font-size: 1.125rem;}
 `
 
 const H6 = styled.h6`
 
 
-  ${`@media screen and ${breakpoints.tablet}`} {font-size: 1rem;}
+  ${`@media screen and ${breakpoints.large}`} {font-size: 1rem;}
 
-  ${`@media screen and ${breakpoints.mobile}`} {
+  ${`@media screen and ${breakpoints.small}`} {
 
   }
 `
@@ -61,7 +61,7 @@ const H6 = styled.h6`
 const P = styled.p`
   margin-bottom: 1rem;
 
-  ${`@media screen and ${breakpoints.mobile}`} {
+  ${`@media screen and ${breakpoints.small}`} {
 
   }
 `

@@ -64,7 +64,7 @@ const StyledSpiral = styled.div`
     top: var(--stack-block400);
   }
 
-    @media screen and (${breakpoints.tablet}) {
+    @media screen and (${breakpoints.large}) {
     padding-right: clamp(3rem, 12vw, 5rem);
   }
 `

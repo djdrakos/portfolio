@@ -7,30 +7,37 @@ const StyledDiv = styled.div.attrs( props => ({ style:  props }))`
   align-items: flex-start;
   
   ${ ({ options }) => options && css`
-    @media screen and ${breakpoints.desktop} {
-      grid-column:  ${options.l.colStart} / ${options.l.colSpan};
+    @media screen and ${breakpoints.xLarge} {
+      grid-column:  ${options.xl.colStart} / ${options.xl.colSpan};
     }
   `}
 
   ${ ({ options }) => options && css`
-    @media screen and ${breakpoints.tablet} {
+    @media screen and ${breakpoints.large} {
+      grid-column: ${options.l.colStart} / ${options.l.colSpan};
+    }
+  `}
+
+  ${ ({ options }) => options && css`
+    @media screen and ${breakpoints.medium} {
       grid-column: ${options.m.colStart} / ${options.m.colSpan};
     }
   `}
 
   ${ ({ options }) => options && css`
-    @media screen and ${breakpoints.mobile} {
+    @media screen and ${breakpoints.small} {
       grid-column: ${options.s.colStart} / ${options.s.colSpan};
     }
   `}
 `
 
-const GridItem = forwardRef(({children, s, m, l, ...props}, forwardedRef) => {
+const GridItem = forwardRef(({children, s, m, l, xl,...props}, forwardedRef) => {
 
 const sizePropsArray = [ 
     { s }, 
     { m }, 
     { l }, 
+    { xl }, 
   ]
 
 const createGridOptions = (sizeProps) => {

@@ -14,7 +14,7 @@ const StyledMain = styled.main`
   padding-top: var(--gap300);
   padding-bottom: calc(100vh - var(--header100) - var(--stack-block400));
 
-  @media screen and (${breakpoints.tablet}) {
+  @media screen and (${breakpoints.large}) {
     row-gap: var(--gap100);
   }
 `

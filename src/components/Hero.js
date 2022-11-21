@@ -32,7 +32,7 @@ const StyledHero = styled(GridContainer)`
     top: 0;
   }
 
-  @media screen and (${breakpoints.tablet}) {
+  @media screen and (${breakpoints.large}) {
     .wrapper-portrait{
       max-width: 12.75rem;
       width: 100%;

@@ -13,7 +13,7 @@ const StyledGridContainer = styled.div.attrs( props => ({ style:  props }))`
   top: var(--top-offset);
   height: var(--section-height);
 
-  @media screen and (${breakpoints.tablet}) {
+  @media screen and (${breakpoints.large}) {
     padding-inline: clamp(3rem, 12vw, 5rem);
   }
 `
