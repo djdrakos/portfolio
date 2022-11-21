@@ -92,20 +92,21 @@ a:hover {
   --bio-pic100: 15rem;
   --bio-pic200: calc(2 * var(--bio-pic100));
   --bio-pic300: calc(3 * var(--bio-pic100));
-  --gap100: 3rem;
-  --gap50: calc(var(--gap100) / 2);
-  --gap150: calc(1.5 * var(--gap100));
-  --gap200: calc(2 * var(--gap100));
-  --gap300: calc(3 * var(--gap100));
   --stack-block100: 3rem;
   --stack-block200: calc(2 * var(--stack-block100));
   --stack-block300: calc(3 * var(--stack-block100));
   --stack-block400: calc(4 * var(--stack-block100));
+  --stack-block: var(--stack-block100);
   --stack-offset: .25rem;
   --stack-start: calc(var(--header100) + var(--stack-offset));
-  --section-short: var(--bio-pic100);
-  --section-med: var(--bio-pic200);
-  --section-tall: var(--bio-pic300);
+  --section-short: calc(5 * var(--stack-block100));
+  --section-med: calc(12 * var(--stack-block100));
+  --section-tall: calc(15 * var(--stack-block100));
   --section-height: var(--section-short);
+  --gap100: var(--stack-block100);
+  --gap50: calc(var(--gap100) / 2);
+  --gap150: calc(1.5 * var(--gap100));
+  --gap200: calc(2 * var(--gap100));
+  --gap300: calc(3 * var(--gap100));
 }
 `

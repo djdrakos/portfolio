@@ -6,7 +6,7 @@ import * as Tooltip from '@radix-ui/react-tooltip'
 import GridItem from './GridItem'
 
 const StyledHero = styled(GridContainer)`
-  min-height: var(--section-short);
+  height: min-content;
 
   .wrapper.portrait {
     max-width: var(--bio-pic100);

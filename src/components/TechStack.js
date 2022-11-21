@@ -3,23 +3,13 @@ import SectionContent from './SectionContent'
 import { H5, H6, P } from './Typography'
 
 const StyledTechStack = styled(SectionContent)`
-  --top-offset: calc(var(--stack-block200) + var(--header100) - var(--stack-offset));
   --section-height: var(--section-tall);
+  --stack-block: var(--stack-block200);
   z-index: 3;
-  top: calc(var(--stack-block200) + var(--header100) - var(--stack-offset) - var(--section-tall));
-  height: var(--section-height);
   background-color: ${({ theme }) => theme.bg2 };
   border-bottom: .05rem solid ${({ theme }) => theme.bg2 };
   border-bottom-left-radius: 1rem;
   
-  .content {
-    margin-bottom: var(--stack-block200);
-  }
-
-  h2 {
-    top: calc(var(--stack-start) + var(--stack-block100));
-  }
-
   h3 {
     margin-block: 0;
   }

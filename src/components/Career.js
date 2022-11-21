@@ -7,23 +7,13 @@ import {ReactComponent as EmailIcon} from '../assets/email.svg'
 import { P } from './Typography';
 
 const StyledCareer = styled(SectionContent)`
-  --top-offset: calc(var(--stack-block300) + var(--header100) - var(--stack-offset));
   --section-height: var(--section-tall);
+  --stack-block: var(--stack-block300);
   z-index: 2;
-  top: calc(var(--stack-block300) + var(--header100) - var(--stack-offset) - var(--section-tall));
-  height: var(--section-height);
   background-color: ${({ theme }) => theme.bg3 };
   border-bottom: .05rem solid ${({ theme }) => theme.bg3 };
   border-bottom-left-radius: 1rem;
   
-  h2 {
-    top: calc(var(--stack-start) + var(--stack-block200));
-  }
-  
-  .content {
-    margin-bottom: var(--stackblock300);
-  }
-
   .social {
     position: sticky; 
     top: calc(var(--header100) + var(--stack-block200));

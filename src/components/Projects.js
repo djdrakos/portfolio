@@ -6,27 +6,17 @@ import projectData from './projectData';
 import { P } from './Typography';
 
 const StyledProjects = styled(SectionContent)`
-  --top-offset: var(--header100);
   --section-height: var(--section-tall);
+  --stack-block: var(--stack-block100);
   z-index: 4;
-  top: calc(var(--stack-block100) + var(--header100) - var(--stack-offset) - var(--section-tall));
-  height: var(--section-height);
   background-color: ${({ theme }) => theme.bg1 };
   border-bottom: .05rem solid ${({ theme }) => theme.bg1 };
   border-bottom-left-radius: 1rem;
 
-  h2 {
-    top: var(--stack-start);
-    }
-
   p {
     margin-top: 0;
     margin-bottom: 0;
-    padding-bottom: var(--stack-offset);
-  }
-
-  .tab-content {
-    margin-bottom: var(--stack-block100)
+    padding-bottom: .25rem;
   }
 
   .tab-trigger {

@@ -4,14 +4,19 @@ import Career from './Career'
 import Hero from './Hero'
 import Projects from './Projects'
 import TechStack from './TechStack'
+import breakpoints from '../styles/breakpoints'
 
 const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  row-gap: var(--gap300);
+  row-gap: var(--gap200);
   padding-top: var(--gap300);
   padding-bottom: calc(100vh - var(--header100) - var(--stack-block400));
+
+  @media screen and (${breakpoints.tablet}) {
+    row-gap: var(--gap100);
+  }
 `
 
 export default function Main({ toggleTheme }) {
