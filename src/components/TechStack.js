@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import SectionContent from './SectionContent'
 import { H5, P } from './Typography'
+import breakpoints from '../styles/breakpoints'
 
 const StyledTechStack = styled(SectionContent)`
   --section-height: var(--section-tall);
@@ -10,39 +11,46 @@ const StyledTechStack = styled(SectionContent)`
   border-bottom: .05rem solid ${({ theme }) => theme.bg2 };
   border-bottom-left-radius: 1rem;
   
-  h3 {
+  .tool-header {
     margin-block: 0;
+  }
+
+  @media screen and (${breakpoints.medium}) {
+    --section-height: calc(var(--section-tall) + var(--stack-block100));
+    .tool-header {
+      font-size: 1rem;
+    }
   }
 `
 
 const TechStack = (props) => {
   return (
     <StyledTechStack {...props}>
-      <H5 as="h3">Languages</H5>
+      <H5 as="h3" className="tool-header">Languages</H5>
       <P>JavaScript ES6 / HTML5 / CSS3 / Sass</P>
 
-      <H5 as="h3">Libraries & Frameworks</H5>
+      <H5 as="h3" className="tool-header">Libraries & Frameworks</H5>
       <P>React.js / Node.js / Express / styled-components</P>
 
-      <H5 as="h3">Databases</H5>
+      <H5 as="h3" className="tool-header">Databases</H5>
       <P>PostgreSQL / Sequelize / Supabase</P>
 
-      <H5 as="h3">Testing</H5>
+      <H5 as="h3" className="tool-header">Testing</H5>
       <P>Jest / QUnit / Supertest / React Testing Library</P>
 
-      <H5 as="h3">Dev Tools</H5>
+      <H5 as="h3" className="tool-header">Dev Tools</H5>
       <P>Github / VSCode / Postman / pgAdmin </P>
 
-      <H5 as="h3">Deployment</H5>
+      <H5 as="h3" className="tool-header">Deployment</H5>
       <P>Heroku / Netlify / Vercel</P>
 
-      <H5 as="h3">Design</H5>
+      <H5 as="h3" className="tool-header">Design</H5>
       <P>Adobe Creative Suite / Sketch / Figma</P>
 
-      <H5 as="h3">Practices</H5>
+      <H5 as="h3" className="tool-header">Practices</H5>
       <P>Agile, Pair Programming, RESTful APIs, Test Driven Development, Design Driven Development</P>
 
-      <H5 as="h3">Learning</H5>
+      <H5 as="h3" className="tool-header">Learning</H5>
       <P>Typescript / GraphQL / Python</P>
     </StyledTechStack>
   )

@@ -8,7 +8,7 @@ import breakpoints from '../styles/breakpoints';
 const StyledSection = styled(GridContainer)`
   position: sticky;
 
-  h2 {
+  .title {
     position: sticky; 
     top: calc(var(--stack-start) + var(--stack-block) - var(--stack-block100));
     margin-left: auto;
@@ -26,8 +26,23 @@ const StyledSection = styled(GridContainer)`
   }
 
   @media screen and (${breakpoints.large}) {
-    h2 {
+    .title {
       top: calc(var(--stack-start) + var(--stack-block) - var(--stack-block100) + .3rem);
+    }
+  }
+
+  @media screen and (${breakpoints.medium}) {
+
+    .title {
+      position: unset;
+      top: unset;
+      width: 100%;
+      margin-left: 0;
+      border-bottom: .1rem solid ${({ theme }) => theme.color};
+    }
+
+    .content {
+      padding-top: 1rem;
     }
   }
 `

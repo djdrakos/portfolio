@@ -8,7 +8,7 @@ const StyledSpiral = styled.div`
   z-index: 10;
   position: absolute;
   display: grid;
-  grid-template-columns: repeat(24, minmax(1rem, 3.5rem));
+  grid-template-columns: repeat(24, minmax(1rem, 3.4167rem));
   padding-right: clamp(5rem, 15vw, 9rem);
   
   
@@ -64,9 +64,32 @@ const StyledSpiral = styled.div`
     top: var(--stack-block400);
   }
 
-    @media screen and (${breakpoints.large}) {
+  @media screen and (${breakpoints.large}) {
     padding-right: clamp(3rem, 12vw, 5rem);
   }
+
+  @media screen and (${breakpoints.medium}) {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-right: 3rem;
+
+    .grid-content {
+      grid-column-start: 8;
+      /* grid-column-start: unset; */
+      /* margin-left: auto; */
+      /* margin-right: 12rem; */
+    }
+  }
+
+  @media screen and (${breakpoints.small}) {
+    padding-right: 2rem;
+
+    .spiral-trigger {
+      margin-right: 11rem;
+    }
+  }
+
 `
 
 export default function ThoughtSpiral() {

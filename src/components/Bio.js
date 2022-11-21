@@ -99,6 +99,16 @@ const StyledBio = styled.div`
       font-size: 4rem;  
     }
   }
+  @media screen and (${breakpoints.large}) {
+    .tooltip-root{
+      transform: translate(-1.2rem, -.9rem);
+    }
+    .tooltip-trigger {
+      height: 2rem;
+      width: 2rem; 
+      font-size: 4rem;  
+    }
+  }
 `
 
 export default function Bio({ toggleTheme }) {

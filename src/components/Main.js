@@ -11,11 +11,15 @@ const StyledMain = styled.main`
   flex-direction: column;
   align-items: stretch;
   row-gap: var(--gap200);
-  padding-top: var(--gap300);
+  padding-top: var(--gap200);
   padding-bottom: calc(100vh - var(--header100) - var(--stack-block400));
 
   @media screen and (${breakpoints.large}) {
     row-gap: var(--gap100);
+  }
+
+  @media screen and (${breakpoints.medium}) {
+    padding-top: var(--gap200);
   }
 `
 

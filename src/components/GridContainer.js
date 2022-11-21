@@ -14,7 +14,21 @@ const StyledGridContainer = styled.div.attrs( props => ({ style:  props }))`
   height: var(--section-height);
 
   @media screen and (${breakpoints.large}) {
-    padding-inline: clamp(3rem, 12vw, 5rem);
+    padding-inline: clamp(3rem, 9vw, 5rem);
+  }
+
+  @media screen and (${breakpoints.medium}) {
+    padding-inline: clamp(2rem, 5vw, 3rem);
+    display: flex; 
+    flex-direction: column;
+  }
+
+  @media screen and (${breakpoints.medium}) {
+    padding-inline: 3rem;
+  }
+
+  @media screen and (${breakpoints.small}) {
+    padding-inline: 2rem;
   }
 `
 

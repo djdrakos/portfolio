@@ -39,7 +39,7 @@ const StyledProjects = styled(SectionContent)`
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 `
 

@@ -10,7 +10,7 @@ const StyledHero = styled(GridContainer)`
   height: min-content;
 
   .wrapper-portrait {
-    width: 15rem;
+    max-width: 15rem;
     margin-left: auto;
     aspect-ratio: 1;
     border-radius: 50%;
@@ -34,8 +34,15 @@ const StyledHero = styled(GridContainer)`
 
   @media screen and (${breakpoints.large}) {
     .wrapper-portrait{
-      max-width: 12.75rem;
+      max-width: 11.55rem;
       width: 100%;
+    }
+  }
+
+  @media screen and (${breakpoints.medium}) {
+    .wrapper-portrait {
+      max-width: 15rem;
+      margin-block: 1rem -5rem;
     }
   }
   `
@@ -45,7 +52,7 @@ export default function Hero({ toggleTheme }) {
   return (
     <StyledHero>
       <Tooltip.Provider delayDuration={100}>
-        <GridItem m={3}>
+        <GridItem s={3} m={3}>
           <div className="wrapper-portrait">
             <img src={require("../assets/dj.jpg")} className="portrait" alt="DJ Drakos sitting on a couch, staring intently at something on their laptop" />
           </div>

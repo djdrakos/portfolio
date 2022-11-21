@@ -5,6 +5,7 @@ import {ReactComponent as GithubIcon} from '../assets/github.svg'
 import {ReactComponent as LinkedInIcon} from '../assets/linkedin.svg'
 import {ReactComponent as EmailIcon} from '../assets/email.svg'
 import { P } from './Typography';
+import breakpoints from '../styles/breakpoints';
 
 const StyledCareer = styled(SectionContent)`
   --section-height: var(--section-tall);
@@ -63,6 +64,12 @@ const StyledCareer = styled(SectionContent)`
       :hover {
       border-bottom: .1rem ${({ theme }) => theme.color } solid;
       }
+    }
+  }
+
+  @media screen and (${breakpoints.medium}) {
+    .social {
+      position: static;
     }
   }
 
