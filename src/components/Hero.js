@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 import Bio from './Bio'
-import Section from './Section'
+import GridContainer from './GridContainer'
 import ThoughtSpiral from './ThoughtSpiral'
 import * as Tooltip from '@radix-ui/react-tooltip'
+import GridItem from './GridItem'
 
-const StyledHero = styled(Section)`
+const StyledHero = styled(GridContainer)`
   min-height: var(--section-short);
 
   .wrapper.portrait {
@@ -37,11 +38,15 @@ export default function Hero({ toggleTheme }) {
   return (
     <StyledHero>
       <Tooltip.Provider delayDuration={100}>
-        <div className="wrapper portrait">
-          <img src={require("../assets/dj.jpg")} className="portrait" alt="DJ Drakos sitting on a couch, staring intently at something on their laptop" />
-        </div>
-        <ThoughtSpiral />
-        <Bio toggleTheme={toggleTheme}/>
+        <GridItem m={4} justifyContent={'center'}>
+          <div className="wrapper portrait">
+            <img src={require("../assets/dj.jpg")} className="portrait" alt="DJ Drakos sitting on a couch, staring intently at something on their laptop" />
+          </div>
+          <ThoughtSpiral/>
+        </GridItem>
+        <GridItem m={8} justifyContent={'flex-start'}>
+          <Bio toggleTheme={toggleTheme}/>
+        </GridItem>
       </Tooltip.Provider>
     </StyledHero>
   )

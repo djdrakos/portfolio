@@ -1,9 +1,9 @@
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 import { H4 } from './Typography'
-import Section from './Section';
+import GridContainer from './GridContainer';
 
-const StyledSection = styled(Section)`
+const StyledSection = styled(GridContainer)`
   position: sticky;
 
   h2 {

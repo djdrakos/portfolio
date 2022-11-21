@@ -3,6 +3,8 @@ import { forwardRef } from 'react'
 import breakpoints from '../styles/breakpoints';
 
 const StyledDiv = styled.div.attrs( props => ({ style:  props }))`
+  display: flex;
+  
   ${ ({ options }) => options && css`
     @media screen and ${breakpoints.desktop} {
       grid-column:  ${options.l.colStart} / ${options.l.colSpan};

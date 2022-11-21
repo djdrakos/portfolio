@@ -7,8 +7,8 @@ const StyledSpiral = styled.div`
   z-index: 10;
   position: absolute;
   width: 7rem;
-  padding-left: 5.5rem;
-  padding-top: 1.5rem;
+  padding-left: 1.8rem;
+  padding-top: 2rem;
 
   .spiral-trigger {
     height: 3rem;
