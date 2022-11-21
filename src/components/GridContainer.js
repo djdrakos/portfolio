@@ -4,10 +4,10 @@ import breakpoints from '../styles/breakpoints';
 
 const StyledGridContainer = styled.div.attrs( props => ({ style:  props }))`
   display: grid;
-  grid-template-columns: repeat(12, minmax(2rem, 4rem));
-  column-gap: 2rem;
+  grid-template-columns: repeat(12, minmax(1rem, 4rem));
+  column-gap: max(2rem, 3rem);
   align-items: stretch;
-  padding: clamp(1rem, 15vw, 5rem);
+  padding-inline: clamp(1rem, 15vw, 9rem);
   min-height: var(--section-height);
   top: calc(var(--stack-block100) + var(--header100) - var(--stack-offset) - var(--section-med));
   

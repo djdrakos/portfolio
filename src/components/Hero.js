@@ -38,13 +38,13 @@ export default function Hero({ toggleTheme }) {
   return (
     <StyledHero>
       <Tooltip.Provider delayDuration={100}>
-        <GridItem m={4} justifyContent={'center'}>
+        <GridItem m={3} justifyContent={'flex-end'}>
           <div className="wrapper portrait">
             <img src={require("../assets/dj.jpg")} className="portrait" alt="DJ Drakos sitting on a couch, staring intently at something on their laptop" />
           </div>
           <ThoughtSpiral/>
         </GridItem>
-        <GridItem m={8} justifyContent={'flex-start'}>
+        <GridItem m={9} justifyContent={'flex-start'}>
           <Bio toggleTheme={toggleTheme}/>
         </GridItem>
       </Tooltip.Provider>
