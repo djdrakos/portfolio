@@ -39,8 +39,7 @@ const StyledProjects = styled(SectionContent)`
   .project-titles {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
   @media screen and ${breakpoints.small} {

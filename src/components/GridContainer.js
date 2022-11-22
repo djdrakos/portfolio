@@ -22,7 +22,7 @@ const StyledGridContainer = styled.div.attrs( props => ({ style:  props }))`
     --section-med: calc(40rem + var(--stack-block100));
     --section-tall: calc(45rem + var(--stack-block100));
     padding-left: 10vw;
-    padding-right: 16vw;
+    padding-right: 12vw;
   }
   
   @media screen and ${breakpoints.medium} {

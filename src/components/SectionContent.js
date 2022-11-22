@@ -24,8 +24,8 @@ const StyledSection = styled(GridContainer)`
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding-top: 48px;
-    padding-left: 16px;
+    padding-top: 3rem;
+    padding-left: 1rem;
     top: var(--top-offset);
     margin-bottom: var(--stack-block);
   }
@@ -49,7 +49,7 @@ const StyledSection = styled(GridContainer)`
     }
 
     .content {
-      padding-top: 16px;
+      padding-top: 1rem;
       padding-left: 0;
     }
   }

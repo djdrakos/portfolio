@@ -46,9 +46,6 @@ const StyledHero = styled(GridContainer)`
       margin-left: 0;
     }
   }
-
-  @media screen and ${breakpoints.xSmall} {
-  }
   `
 
 export default function Hero({ toggleTheme }) {
