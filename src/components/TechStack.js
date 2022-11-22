@@ -15,7 +15,7 @@ const StyledTechStack = styled(SectionContent)`
     margin-block: 0;
   }
 
-  @media screen and (${breakpoints.small}){
+  @media screen and ${breakpoints.small} {
     --section-height: var(--section-med);
   }
 `

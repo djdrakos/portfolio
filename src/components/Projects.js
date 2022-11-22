@@ -39,17 +39,16 @@ const StyledProjects = styled(SectionContent)`
   .project-titles {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
-  @media screen and (${breakpoints.small}) {
+  @media screen and ${breakpoints.small} {
     p {
       margin-top: .5rem;
     }
     
     .project-titles {
-      flex-direction:column;
+      flex-direction: column;
       align-items: flex-start;
 
       button[data-state='active'] > p:before {

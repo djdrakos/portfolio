@@ -29,7 +29,7 @@ const StyledHero = styled(GridContainer)`
 
   .pad-left {
     padding-left: 1rem;
-      @media screen and (${breakpoints.medium}) {
+      @media screen and ${breakpoints.medium} {
         padding-left: 0;
       } 
   }
@@ -40,15 +40,10 @@ const StyledHero = styled(GridContainer)`
   }
 
   
-  @media screen and (${breakpoints.medium}) {
+  @media screen and ${breakpoints.medium} {
     .wrapper-portrait {
       margin-bottom: 1.38rem;
       margin-left: 0;
-    }
-  }
-
-  @media screen and (${breakpoints.xSmall}) {
-    .wrapper-portrait {
     }
   }
   `

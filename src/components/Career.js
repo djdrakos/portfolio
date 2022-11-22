@@ -78,7 +78,7 @@ const StyledCareer = styled(SectionContent)`
     }
   }
 
-  @media screen and (${breakpoints.medium}) {
+  @media screen and ${breakpoints.medium} {
     .social {
       margin-top: 1rem;
       position: static;
@@ -86,15 +86,17 @@ const StyledCareer = styled(SectionContent)`
     }
   }
 
-  @media screen and (${breakpoints.small}) {
+  @media screen and ${breakpoints.small} {
     .social {
       margin-left: 0;
       justify-content: flex-start;
     }
   }
 
-  @media screen and (${breakpoints.xSmall}) {
-    --section-height: var(--section-tall);
+  @media screen and ${breakpoints.xSmall} {
+    & {
+      --section-height: var(--section-tall);
+    }
   }
 `
 
