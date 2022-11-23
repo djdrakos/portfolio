@@ -17,14 +17,14 @@ const StyledProjectDetail = styled.div`
     align-items: baseline;
   }
 
-  .project-title, .project-content{
+  .project-title, .project-content {
     margin-block-end: 0;
-
-    a {
-      text-transform: capitalize;
-    }
   }
   
+  .project-link {
+    text-transform: capitalize;
+  }
+
   .project-title {
     text-transform: capitalize;
     border-bottom: .1rem solid ${({ theme }) => theme.color };
@@ -42,12 +42,12 @@ export default function ProjectDetail({project}) {
       <img src={`/screenshots/${img}`} alt='' />
       <H5 as ="h3" className="project-title">{title}</H5>
       <P className='.project-content'>
-        <a href={liveUrl} target="_blank" rel="noreferrer">Live Site</a>
+        <a className="project-link" href={liveUrl} target="_blank" rel="noreferrer">Live Site</a>
         
         { repoUrl.map(({ label, url }) => {
         return (
           <>
-            &nbsp;|&nbsp;<a href={url} target="_blank" rel="noreferrer">{label}</a>
+            &nbsp;|&nbsp;<a className="project-link" href={url} target="_blank" rel="noreferrer">{label}</a>
           </>
         )}) }
       </P>
