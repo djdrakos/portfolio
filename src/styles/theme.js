@@ -2,7 +2,7 @@ const themes = {
 light: {
   type: 'light',
   background: 'hsl(51, 39%, 93%)',
-  backgroundA: 'hsla(51, 39%, 93%, .8)',
+  backgroundA: 'hsla(51, 39%, 93%, .6)',
   bg1: 'hsla(92, 59%, 82%, .5)',
   bg2: 'hsla(139, 54%, 84%, .5)',
   bg3: 'hsla(191, 41%, 82%, .5)',

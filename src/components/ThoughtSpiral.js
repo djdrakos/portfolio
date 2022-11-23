@@ -1,14 +1,24 @@
 import styled from 'styled-components'
+import { useState } from 'react'
 import useIntersectionObserver from '../hooks/useIntersectionObserver'
-import * as Tooltip from '@radix-ui/react-tooltip';
 import { P } from './Typography';
+import * as Tooltip from '@radix-ui/react-tooltip';
 import breakpoints from '../styles/breakpoints';
+import tooltipData from './TooltipData';
 
 const StyledSpiral = styled.div`
   --pad: 15vw;
-  z-index: 10;
   position: absolute;
-  
+  z-index: 10;
+
+  &:has(.spiral-trigger[data-state="delayed-open"]) {
+    z-index: 11;
+    
+  }
+  &:has(.spiral-trigger[data-state="instant-open"]) {
+    z-index: 11;
+  }
+
   .intersection-content {
     width: calc(100vw - (2* var(--pad)));
     display: grid;
@@ -39,7 +49,6 @@ const StyledSpiral = styled.div`
   }
   
   .spiral-content {
-    max-width: 10rem;
     padding-block: .6rem;
     padding-inline: 1rem;
     background-color: ${({ theme }) => theme.backgroundA };
@@ -52,7 +61,6 @@ const StyledSpiral = styled.div`
       font-weight: 600;
       font-size: .8rem;
       line-height: 1;
-      text-transform: uppercase;
       margin: 0;
     }
   }
@@ -92,7 +100,6 @@ const StyledSpiral = styled.div`
       grid-column-start: unset;
       margin-left: auto;
       margin-left: 9rem;
-      /* margin-top: .5rem; */
     }
 
     .spiral-content {
@@ -108,18 +115,26 @@ const StyledSpiral = styled.div`
 
 export default function ThoughtSpiral() {
   const [ triggerRef, isIntersecting ] = useIntersectionObserver()
+  const [ content, setContent ] = useState(tooltipData[Math.floor(Math.random() * tooltipData.length)])
+
+  const handlePointerOut = () => {
+    const randomIndex = Math.floor(Math.random() * tooltipData.length)
+    setTimeout(() => {
+      setContent(tooltipData[randomIndex])
+    }, 100)
+  }
 
   return (
       <StyledSpiral>
         <div className="intersection-trigger" ref={triggerRef} />
         <div className={ isIntersecting ? 'intersection-content fixed' : 'intersection-content'}>
           <Tooltip.Root asChild>
-            <Tooltip.Trigger className='spiral-trigger' >
+            <Tooltip.Trigger className='spiral-trigger' onPointerOut={handlePointerOut}>
               🌀
             </Tooltip.Trigger>
             <Tooltip.Content className='spiral-content' align={'start'} side={'left'} sticky={'always'} >
             <Tooltip.Arrow className='tooltip-arrow' />
-              <P>Coding... Coding...</P>
+              <P>{content}</P>
             </Tooltip.Content>
           </Tooltip.Root>
         </div>
