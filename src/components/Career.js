@@ -124,7 +124,7 @@ const Career = (props) => {
       </P>
 
       <div className="social">
-        <a className="resume" href="https://www.dropbox.com/s/y7i3001iydza7sf/dj-drakos-resume.pdf?dl=0" target="blank">
+        <a className="resume" href={process.env.REACT_APP_PORTFOLIO_URL} target="blank">
           Resume PDF
         </a>
         <div className="wrapper-social-icon">
