@@ -9,14 +9,6 @@ const StyledBio = styled.div`
 
   h1 {
     display: inline;
-  
-    strong {
-      display: inline-block;
-      font-family: 'Source Code Pro';
-      font-weight: 600;
-      letter-spacing: -.03em;
-      word-spacing: -.2em;
-    }
   }
 
   p {
@@ -117,11 +109,8 @@ export default function Bio({ toggleTheme }) {
   return (
     <StyledBio> 
       <div className='wrapper'>
-        <H1>
-          Hi, I’m&nbsp;
-          <strong ref={triggerRef}>
-            DJ Drakos!
-          </strong> 
+        <H1 ref={triggerRef}>
+          Hi, I’m DJ Drakos!
         </H1>
         <div className={isIntersecting ? 'tooltip-root fixed' : 'tooltip-root'}>
           <Tooltip.Root>
