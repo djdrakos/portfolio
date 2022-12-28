@@ -128,12 +128,12 @@ const Career = (props) => {
           Resume PDF
         </a>
         <div className="wrapper-social-icon">
-          <a className="social-icon" href="https://github.com/dj-drakos" rel="noreferrer" target="_blank">
-            <AccessibleIcon.Root label='Github Profile'>
+          <a className="social-icon" href="https://github.com/djdrakos" rel="noreferrer" target="_blank">
+            <AccessibleIcon.Root label='GitHub Profile'>
               <GithubIcon />
             </AccessibleIcon.Root>
           </a>
-          <a className="social-icon" href="https://www.linkedin.com/in/dj-drakos/" rel="noreferrer" target="_blank">
+          <a className="social-icon" href="https://www.linkedin.com/in/djdrakos/" rel="noreferrer" target="_blank">
             <AccessibleIcon.Root className="social-icon" label='LinkedIn Profile'>
               <LinkedInIcon/>
             </AccessibleIcon.Root>

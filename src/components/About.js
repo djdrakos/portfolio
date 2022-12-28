@@ -25,7 +25,7 @@ const About = (props) => {
       
       <P>Typographic direction aided by <a href="https://type-scale.com/" target="_blank" rel="noreferrer">Type Scale</a>.</P>
       
-      <P>Icon Credits: <a href="https://www.flaticon.com/authors/syafii5758" rel="noreferrer" target="_blank">Weather</a> | <a href="https://www.flaticon.com/" rel="noreferrer" target="_blank">Github</a> | <a href="https://www.flaticon.com/" rel="noreferrer" target="_blank">LinkedIn</a> |  <a href="https://icons8.com/icons/authors/p8VPlvrruECd/inipagistudio" rel="noreferrer" target="_blank">Email</a></P>
+      <P>Icon Credits: <a href="https://www.flaticon.com/authors/syafii5758" rel="noreferrer" target="_blank">Weather</a> | <a href="https://www.flaticon.com/" rel="noreferrer" target="_blank">GitHub</a> | <a href="https://www.flaticon.com/" rel="noreferrer" target="_blank">LinkedIn</a> |  <a href="https://icons8.com/icons/authors/p8VPlvrruECd/inipagistudio" rel="noreferrer" target="_blank">Email</a></P>
 
 
       <P>{ themeContext.type === 'dark' ? '🤍' :  '🖤'} to the <a href="https://radious.pro/" rel="noreferrer" target="_blank">Radious</a> crew for the bio pic and workspace for the day</P>
