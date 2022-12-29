@@ -120,25 +120,25 @@ const Career = (props) => {
       </P>
 
       <P>
-        I'm currently looking for my next fullstack opportunity with a preference toward front-end development in React.
+        I'm currently looking for my next opportunity with a preference toward front-end development in React.
       </P>
 
       <div className="social">
-        <a className="resume" href={process.env.REACT_APP_PORTFOLIO_URL} target="blank">
+        <a className="resume" href="./dj-drakos-resume.pdf" target="blank">
           Resume PDF
         </a>
         <div className="wrapper-social-icon">
-          <a className="social-icon" href="https://github.com/dj-drakos" rel="noreferrer" target="_blank">
-            <AccessibleIcon.Root label='Github Profile'>
+          <a className="social-icon" href="https://github.com/djdrakos" rel="noreferrer" target="_blank">
+            <AccessibleIcon.Root label='GitHub Profile'>
               <GithubIcon />
             </AccessibleIcon.Root>
           </a>
-          <a className="social-icon" href="https://www.linkedin.com/in/dj-drakos/" rel="noreferrer" target="_blank">
+          <a className="social-icon" href="https://www.linkedin.com/in/djdrakos/" rel="noreferrer" target="_blank">
             <AccessibleIcon.Root className="social-icon" label='LinkedIn Profile'>
               <LinkedInIcon/>
             </AccessibleIcon.Root>
           </a>
-          <a className="social-icon" href="mailto:devin.josi.drakos+portfolio@gmail.com?subject=I saw your portfolio, let's chat!">
+          <a className="social-icon" href="mailto:d.josi.drakos+portfolio@gmail.com?subject=I saw your portfolio, let's chat!">
             <AccessibleIcon.Root className="social-icon" label='Send an Email'>
               <EmailIcon/>
             </AccessibleIcon.Root>

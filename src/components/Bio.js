@@ -127,7 +127,7 @@ export default function Bio({ toggleTheme }) {
         </div>
       </div>
       <P>
-        I’m a Fullstack Software Engineer/Creative
+        I’m a Software Developer
         <br/ >
         based in&nbsp;
         <ToggleTheme toggleTheme={toggleTheme} />
