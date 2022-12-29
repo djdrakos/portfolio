@@ -22,7 +22,7 @@ const projectData = [
       }
     ],
     toolkit: ['React.js', 'Superagent', 'Session Storage', 'Node.js', 'Express', 'PostgreSQL', 'HTML', 'CSS', 'APIS: 7Timer, LocationIQ, NASA APOD, Le Systeme Solaire'],
-    description: 'Originally developed with my team in a 1 week sprint at my software dev program, I wanted to maintain the project. The frontend was updated to React v18 and React Router v6. On the backend, I cleaned up the SQL tables, added integration tests, Express router-level middleware to auth, and error boundaries, then refactored all API routes to follow a controller → model → service pattern.'
+    description: 'Originally developed with my team in a 1 week sprint at my software dev program, I wanted to maintain the project. The front end was updated to React v18 and React Router v6. On the back end, I cleaned up the SQL tables, added integration tests, Express router-level middleware to auth, and error boundaries, then refactored all API routes to follow a controller → model → service pattern.'
   }, {
     id: 'project3',
     img: 'screenshot_advice_dice.png',

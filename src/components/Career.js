@@ -120,11 +120,11 @@ const Career = (props) => {
       </P>
 
       <P>
-        I'm currently looking for my next fullstack opportunity with a preference toward front-end development in React.
+        I'm currently looking for my next opportunity with a preference toward front-end development in React.
       </P>
 
       <div className="social">
-        <a className="resume" href={process.env.REACT_APP_PORTFOLIO_URL} target="blank">
+        <a className="resume" href="./dj-drakos-resume.pdf" target="blank">
           Resume PDF
         </a>
         <div className="wrapper-social-icon">
@@ -138,7 +138,7 @@ const Career = (props) => {
               <LinkedInIcon/>
             </AccessibleIcon.Root>
           </a>
-          <a className="social-icon" href="mailto:devin.josi.drakos+portfolio@gmail.com?subject=I saw your portfolio, let's chat!">
+          <a className="social-icon" href="mailto:d.josi.drakos+portfolio@gmail.com?subject=I saw your portfolio, let's chat!">
             <AccessibleIcon.Root className="social-icon" label='Send an Email'>
               <EmailIcon/>
             </AccessibleIcon.Root>
