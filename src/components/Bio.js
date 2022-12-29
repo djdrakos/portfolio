@@ -127,9 +127,7 @@ export default function Bio({ toggleTheme }) {
         </div>
       </div>
       <P>
-        I’m a Software Developer
-        <br/ >
-        based in&nbsp;
+        I’m a Software Developer based in&nbsp;
         <ToggleTheme toggleTheme={toggleTheme} />
         &nbsp;Portland, Oregon.
       </P>

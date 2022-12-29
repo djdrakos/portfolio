@@ -42,8 +42,8 @@ const StyledCareer = styled(SectionContent)`
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      height: 3rem;
-      width: 3rem;
+      height: 2.9rem;
+      width: 2.9rem;
       
       svg {
         width: 1.9rem;
