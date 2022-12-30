@@ -10,6 +10,7 @@ import tooltipData from './TooltipData';
 
 const StyledSpiral = styled.div`
   --pad: 15vw;
+  position: absolute;
   z-index: 10;
   pointer-events: none;
 
