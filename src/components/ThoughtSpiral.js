@@ -6,17 +6,16 @@ import * as Tooltip from '@radix-ui/react-tooltip';
 import breakpoints from '../styles/breakpoints';
 import tooltipData from './TooltipData';
 
+//Remember: this component has some extremely tricky alignment puzzles that you solved with a responsive grid applied at certain breakpoints. When you have time, come up with a better solution that is responsive, preserves tab order, and doesn't need hacky workarounds for z-index wars. Portals with a ref stored context, maybe? Anyway, the pointer-events and z-index on hover are to make sure the tooltip content renders about other elements. 
+
 const StyledSpiral = styled.div`
   --pad: 15vw;
   position: absolute;
   z-index: 10;
+  pointer-events: none;
 
-  &:has(.spiral-trigger[data-state="delayed-open"]) {
-    z-index: 11;
-  }
-
-  &:has(.spiral-trigger[data-state="instant-open"]) {
-    z-index: 11;
+  &:hover {
+    z-index: 12;
   }
 
   .intersection-content {
@@ -27,6 +26,7 @@ const StyledSpiral = styled.div`
   }
   
   .spiral-trigger {
+    pointer-events: auto;
     grid-column-start: 3;
     margin-left: auto;
     height: 3rem;
@@ -120,6 +120,7 @@ export default function ThoughtSpiral() {
         <div className="intersection-trigger" ref={triggerRef} />
         <div className={ isIntersecting ? 'intersection-content fixed' : 'intersection-content'}>
           <Tooltip.Root asChild>
+            <div className="spiral-root">
             <Tooltip.Trigger className='spiral-trigger' onPointerOut={handlePointerOut}>
               🌀
             </Tooltip.Trigger>
@@ -127,6 +128,7 @@ export default function ThoughtSpiral() {
             <Tooltip.Arrow className='tooltip-arrow' />
               <P>{content}</P>
             </Tooltip.Content>
+            </div>
           </Tooltip.Root>
         </div>
       </StyledSpiral>

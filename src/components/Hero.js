@@ -7,7 +7,7 @@ import GridItem from './GridItem'
 import breakpoints from '../styles/breakpoints'
 
 const StyledHero = styled(GridContainer)`
-  --section-height: (min-content);
+  --section-height: min-content;
 
   .wrapper-portrait {
     width: 12rem;
