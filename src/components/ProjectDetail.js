@@ -55,7 +55,7 @@ const StyledProjectDetail = styled.div`
 `
 
 const ProjectDetail = forwardRef(({project, ...props}, ref) => {
-  const { img, title, liveUrl, repoUrl, toolkit, description } = project
+  const { img, title, liveUrl, login, repoUrl, toolkit, description } = project
   return (
     <StyledProjectDetail {...props} ref={ref}>
       <a className="img-link" href={liveUrl} target="_blank" rel="noreferrer">
@@ -72,6 +72,13 @@ const ProjectDetail = forwardRef(({project, ...props}, ref) => {
           </span>
         )}) }
       </P>
+
+      { login && 
+        <P className=".project-content">
+          <strong>Username & Password: </strong> {login.username}, {login.password}
+      </P>
+      }
+
       <P className='.project-content'>
         <strong>
           Toolkit:
@@ -82,6 +89,7 @@ const ProjectDetail = forwardRef(({project, ...props}, ref) => {
           })
         }
       </P>
+
       <P className='.project-content'>{description}</P>
     </StyledProjectDetail>
   )

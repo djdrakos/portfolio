@@ -8,7 +8,7 @@ import breakpoints from '../styles/breakpoints';
 import { forwardRef } from 'react';
 
 const StyledProjects = styled(SectionContent)`
-  --section-height: var(--section-tall);
+  --section-height: var(--section-xtall);
   --stack-block: var(--stack-block100);
   z-index: 4;
   background-color: ${({ theme }) => theme.bg1 };
@@ -25,6 +25,7 @@ const StyledProjects = styled(SectionContent)`
     border: .1rem solid transparent;
     
     &:hover {
+      cursor: pointer;
       border-bottom: .1rem solid ${({ theme }) => theme.color};
       -webkit-transition: all .1s ease-out;
       -moz-transition: all .1s ease-out;
