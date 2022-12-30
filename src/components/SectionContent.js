@@ -57,7 +57,7 @@ const StyledSection = styled(GridContainer)`
 
 const SectionContent = forwardRef(({ title, children, ...props }, ref) => {
   return (
-    <StyledSection {...props}>
+    <StyledSection {...props} ref={ref}>
       <GridItem className="grid-item-title" m={3}>
         { title &&
         <H4 as="h2" className="title">

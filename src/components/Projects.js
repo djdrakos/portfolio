@@ -5,6 +5,7 @@ import ProjectDetail from './ProjectDetail';
 import projectData from './projectData';
 import { P } from './Typography';
 import breakpoints from '../styles/breakpoints';
+import { forwardRef } from 'react';
 
 const StyledProjects = styled(SectionContent)`
   --section-height: var(--section-tall);
@@ -62,14 +63,14 @@ const StyledProjects = styled(SectionContent)`
   }
 `
 
-const Projects = (props) => {
+const Projects = forwardRef(({projects, ...props}, ref) => {
   return (
-    <StyledProjects {...props}>
+    <StyledProjects {...props} ref={ref}>
       <Tabs.Root defaultValue={projectData[0].id}>
         <Tabs.List className='project-titles'>
           { projectData.map(project => {
           return (
-            <Tabs.Trigger className='tab-trigger' key={project.id} value={project.id}>
+            <Tabs.Trigger asChild className='tab-trigger' key={project.id} value={project.id}>
               <P>{project.title}</P>
             </Tabs.Trigger>
               )
@@ -79,16 +80,15 @@ const Projects = (props) => {
 
       { projectData.map(project => {
         return (
-          <Tabs.Content className='tab-content' key={project.id} value={project.id}>
+          <Tabs.Content asChild className='tab-content' key={project.id} value={project.id}>
             <ProjectDetail project={project}/>
           </Tabs.Content>
           )
         })
       }
-
       </Tabs.Root>
     </StyledProjects>
   )
-}
+})
 
 export default Projects

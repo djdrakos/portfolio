@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { H5, P } from './Typography'
+import { forwardRef } from 'react'
 
 const StyledProjectDetail = styled.div`
   display: flex;
@@ -53,10 +54,10 @@ const StyledProjectDetail = styled.div`
   }
 `
 
-export default function ProjectDetail({project}) {
+const ProjectDetail = forwardRef(({project, ...props}, ref) => {
   const { img, title, liveUrl, repoUrl, toolkit, description } = project
   return (
-    <StyledProjectDetail>
+    <StyledProjectDetail {...props} ref={ref}>
       <a className="img-link" href={liveUrl} target="_blank" rel="noreferrer">
         <img src={`/screenshots/${img}`} alt='' />
       </a>
@@ -64,11 +65,11 @@ export default function ProjectDetail({project}) {
       <P className='.project-content'>
         <a className="project-link" href={liveUrl} target="_blank" rel="noreferrer">Live Site</a>
         
-        { repoUrl.map(({ label, url }) => {
+        { repoUrl.map(({ label, url }, index) => {
         return (
-          <>
+          <span key={index}>
             &nbsp;|&nbsp;<a className="project-link" href={url} target="_blank" rel="noreferrer">{label}</a>
-          </>
+          </span>
         )}) }
       </P>
       <P className='.project-content'>
@@ -84,4 +85,6 @@ export default function ProjectDetail({project}) {
       <P className='.project-content'>{description}</P>
     </StyledProjectDetail>
   )
-}
+})
+
+export default ProjectDetail
