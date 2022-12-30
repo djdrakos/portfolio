@@ -6,11 +6,29 @@ const StyledProjectDetail = styled.div`
   flex-direction: column;
 
   img {
-    align-self: center;
     margin-block-start: 2rem;
-    width: 100%;
-    max-width: 25rem;
+    height: 200px;
+    width: auto;
     border-radius: .5rem;
+    opacity: .7;
+    filter: grayscale(100%);
+    -webkit-transition: all .1s ease-out;
+    -moz-transition: all .1s ease-out;
+    -o-transition: all .1s ease-out;
+    transition: all .1s ease-out;
+
+    &:hover {
+      opacity: 1;
+      filter: brightness(110%);
+    }
+  }
+
+  .img-link {
+      margin-inline: auto;
+
+    &:hover {
+      border-bottom: unset;
+    }
   }
 
   .wrapper {
@@ -39,8 +57,10 @@ export default function ProjectDetail({project}) {
   const { img, title, liveUrl, repoUrl, toolkit, description } = project
   return (
     <StyledProjectDetail>
-      <img src={`/screenshots/${img}`} alt='' />
-      <H5 as ="h3" className="project-title">{title}</H5>
+      <a className="img-link" href={liveUrl} target="_blank" rel="noreferrer">
+        <img src={`/screenshots/${img}`} alt='' />
+      </a>
+      <H5 as="h3" className="project-title">{title}</H5>
       <P className='.project-content'>
         <a className="project-link" href={liveUrl} target="_blank" rel="noreferrer">Live Site</a>
         
