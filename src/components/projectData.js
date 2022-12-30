@@ -11,7 +11,7 @@ const projectData = [
     id: 'project2',
     img: 'screenshot_dark_sky_observer.png',
     title: 'Dark Sky Observer',
-    liveUrl: 'https://dark-sky-log.netlify.app/signup',
+    liveUrl: 'https://dark-sky-log.netlify.app',
     repoUrl: [
       { 
         label: 'front end',
@@ -21,6 +21,10 @@ const projectData = [
         url: 'https://github.com/djdrakos/darksky-be'
       }
     ],
+    login: { 
+      username: 'guest@guest.com',
+      password: 'guest',
+    },
     toolkit: ['React.js', 'Superagent', 'Session Storage', 'Node.js', 'Express', 'PostgreSQL', 'HTML', 'CSS', 'APIS: 7Timer, LocationIQ, NASA APOD, Le Systeme Solaire'],
     description: 'This was a full stack amateur astronomer app developed with my team in a 1 week sprint. I wanted to maintain the project, so I refactored the front end to run on new major versions of React.js and React Router. On the back end, I improved testing quality and coverage, cleaned up the SQL tables, added Express router-level authentication middleware, and refactored all API routes to follow a standard controller → model → service pattern. My next tasks are to design a great UI and expand the journaling feature.'
   }, {
