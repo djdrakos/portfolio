@@ -7,7 +7,7 @@ import breakpoints from '../styles/breakpoints'
 
 const StyledBio = styled.div`
   .tooltip-root {
-      //need higher z-index to stack above grid that is positioning the ThoughtSpiral intersection observer hook
+    //need higher z-index to stack above grid that is positioning the ThoughtSpiral intersection observer hook
     z-index: 11;
     display: inline-flex;
     align-items: center;
