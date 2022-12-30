@@ -39,7 +39,7 @@ const TechStack = (props) => {
       <P>Git / GitHub / VSCode / Postman / pgAdmin </P>
 
       <H5 as="h3" className="tool-header">Deployment</H5>
-      <P>Heroku / Netlify / Vercel</P>
+      <P>Netlify / Vercel / Heroku / Cyclic</P>
 
       <H5 as="h3" className="tool-header">Design</H5>
       <P>Adobe Creative Suite / Sketch / Figma</P>
