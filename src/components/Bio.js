@@ -7,21 +7,14 @@ import breakpoints from '../styles/breakpoints'
 
 const StyledBio = styled.div`
   .tooltip-root {
-    z-index: 10;
+      //need higher z-index to stack above grid that is positioning the ThoughtSpiral intersection observer hook
+    z-index: 11;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding-top: .6rem;
     position: absolute;
     transform: translate(-1.6rem, -.7rem);
-
-    &:has(.tooltip-trigger[data-state="delayed-open"]) {
-      z-index: 11;
-    }
-
-    &:has(.tooltip-trigger[data-state="instant-open"]) {
-      z-index: 11;
-    }
   } 
   
   .tooltip-trigger {
@@ -102,8 +95,8 @@ export default function Bio({ toggleTheme }) {
         <H1 ref={triggerRef}>
           Hi, I’m DJ Drakos!
         </H1>
-        <div className={isIntersecting ? 'tooltip-root fixed' : 'tooltip-root'}>
-          <Tooltip.Root asChild>
+        <Tooltip.Root asChild>
+          <div className={isIntersecting ? 'tooltip-root fixed' : 'tooltip-root'}>
             <Tooltip.Trigger className='tooltip-trigger'>
               *
             </Tooltip.Trigger>
@@ -113,8 +106,8 @@ export default function Bio({ toggleTheme }) {
                 {isIntersecting ? 'looks like good coding weather today' : '(they/them)'}
               </P>
             </Tooltip.Content>
-          </Tooltip.Root>
-        </div>
+          </div>
+        </Tooltip.Root>
       </div>
       <P>
         I’m a Software Developer based in&nbsp;
