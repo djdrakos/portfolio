@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import breakpoints from '../styles/breakpoints'
 
 const H1 = styled.h1`
+  display: inline;
   margin-top: 0;
   font-size: 3.052rem;
 

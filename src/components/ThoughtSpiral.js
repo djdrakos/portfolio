@@ -13,8 +13,8 @@ const StyledSpiral = styled.div`
 
   &:has(.spiral-trigger[data-state="delayed-open"]) {
     z-index: 11;
-    
   }
+
   &:has(.spiral-trigger[data-state="instant-open"]) {
     z-index: 11;
   }
@@ -43,7 +43,7 @@ const StyledSpiral = styled.div`
     -o-transition: opacity .1s ease-out;
     transition: opacity .1s ease-out;
 
-    :hover {
+    &:hover {
       opacity: 1;
     }
   }
@@ -52,8 +52,7 @@ const StyledSpiral = styled.div`
     padding-block: .6rem;
     padding-inline: 1rem;
     background-color: ${({ theme }) => theme.backgroundA };
-    backdrop-filter: blur(2px);
-    border: .1rem solid ${({ theme }) => theme.color };   
+    border: .1rem solid ${({ theme }) => theme.color };
     border-radius: .5rem;
     
     p {
@@ -80,10 +79,6 @@ const StyledSpiral = styled.div`
 
   @media screen and ${breakpoints.large} {
     --pad: 12vw;
-
-    .spiral-content {
-      margin-top: -.3rem;
-    }
   }
 
   @media screen and ${breakpoints.medium} {
@@ -100,10 +95,6 @@ const StyledSpiral = styled.div`
       grid-column-start: unset;
       margin-left: auto;
       margin-left: 9rem;
-    }
-
-    .spiral-content {
-      margin-top: -.3rem;
     }
   }
 
@@ -132,7 +123,7 @@ export default function ThoughtSpiral() {
             <Tooltip.Trigger className='spiral-trigger' onPointerOut={handlePointerOut}>
               🌀
             </Tooltip.Trigger>
-            <Tooltip.Content className='spiral-content' align={'start'} side={'left'} sticky={'always'} >
+            <Tooltip.Content className='spiral-content' align={'start'} side={'left'}>
             <Tooltip.Arrow className='tooltip-arrow' />
               <P>{content}</P>
             </Tooltip.Content>
