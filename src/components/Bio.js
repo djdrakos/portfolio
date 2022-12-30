@@ -6,15 +6,6 @@ import * as Tooltip from '@radix-ui/react-tooltip'
 import breakpoints from '../styles/breakpoints'
 
 const StyledBio = styled.div`
-
-  h1 {
-    display: inline;
-  }
-
-  p {
-    font-weight: 500;
-  }
-
   .tooltip-root {
     z-index: 10;
     display: inline-flex;
@@ -22,7 +13,15 @@ const StyledBio = styled.div`
     justify-content: center;
     padding-top: .6rem;
     position: absolute;
-    transform: translate(-1.9rem, -.7rem);
+    transform: translate(-1.6rem, -.7rem);
+
+    &:has(.tooltip-trigger[data-state="delayed-open"]) {
+      z-index: 11;
+    }
+
+    &:has(.tooltip-trigger[data-state="instant-open"]) {
+      z-index: 11;
+    }
   } 
   
   .tooltip-trigger {
@@ -59,9 +58,8 @@ const StyledBio = styled.div`
     max-width: 15rem;
     padding-block: .6rem;
     padding-inline: 1rem;
-    backdrop-filter: blur(2px);
-    background-color: ${({ theme }) => theme.backgroundA };
-    border: .1rem solid ${({ theme }) => theme.color };   
+    background: ${({ theme }) => theme.backgroundA };
+    border: .1rem solid ${({ theme }) => theme.color };
     border-radius: .5rem;
     
     p {
@@ -69,6 +67,7 @@ const StyledBio = styled.div`
       font-family: 'Source Sans Pro', sans-serif; 
       font-size: .8rem;
       line-height: 1;
+      font-weight: 600;
     }
   }
   
@@ -82,19 +81,10 @@ const StyledBio = styled.div`
   }
 
   @media screen and ${breakpoints.large} {
-    .tooltip-root{
-      transform: translate(-1.2rem, -.9rem);
+    .tooltip-root {
+      transform: translate(-1rem, -.9rem);
     }
-    .tooltip-trigger {
-      height: 2rem;
-      width: 2rem; 
-      font-size: 4rem;  
-    }
-  }
-  @media screen and ${breakpoints.large} {
-    .tooltip-root{
-      transform: translate(-1.2rem, -.9rem);
-    }
+
     .tooltip-trigger {
       height: 2rem;
       width: 2rem; 
@@ -113,23 +103,21 @@ export default function Bio({ toggleTheme }) {
           Hi, I’m DJ Drakos!
         </H1>
         <div className={isIntersecting ? 'tooltip-root fixed' : 'tooltip-root'}>
-          <Tooltip.Root>
+          <Tooltip.Root asChild>
             <Tooltip.Trigger className='tooltip-trigger'>
               *
             </Tooltip.Trigger>
-            <Tooltip.Content className='tooltip-content' side={'bottom'} avoidCollisions={false} >
+            <Tooltip.Content className='tooltip-content' align={'center'} side={'bottom'}>
+              <Tooltip.Arrow className='tooltip-arrow'/>
               <P>
                 {isIntersecting ? 'looks like good coding weather today' : '(they/them)'}
               </P>
-              <Tooltip.Arrow className='tooltip-arrow'/>
             </Tooltip.Content>
           </Tooltip.Root>
         </div>
       </div>
       <P>
-        I’m a Software Developer
-        <br/ >
-        based in&nbsp;
+        I’m a Software Developer based in&nbsp;
         <ToggleTheme toggleTheme={toggleTheme} />
         &nbsp;Portland, Oregon.
       </P>

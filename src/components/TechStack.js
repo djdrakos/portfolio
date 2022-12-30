@@ -36,16 +36,16 @@ const TechStack = (props) => {
       <P>Jest / QUnit / Supertest / React Testing Library</P>
 
       <H5 as="h3" className="tool-header">Dev Tools</H5>
-      <P>GitHub / VSCode / Postman / pgAdmin </P>
+      <P>Git / GitHub / VSCode / Postman / pgAdmin </P>
 
       <H5 as="h3" className="tool-header">Deployment</H5>
-      <P>Heroku / Netlify / Vercel</P>
+      <P>Netlify / Vercel / Heroku / Cyclic</P>
 
       <H5 as="h3" className="tool-header">Design</H5>
       <P>Adobe Creative Suite / Sketch / Figma</P>
 
       <H5 as="h3" className="tool-header">Practices</H5>
-      <P>Agile, Pair Programming, RESTful APIs, Test Driven Development, Design Driven Development</P>
+      <P>Agile / CI/CD / Pair Programming / RESTful APIs / Test-Driven Development</P>
 
       <H5 as="h3" className="tool-header">Learning</H5>
       <P>Typescript / GraphQL / Python</P>

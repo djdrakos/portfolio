@@ -42,16 +42,16 @@ const StyledCareer = styled(SectionContent)`
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      height: 3rem;
-      width: 3rem;
+      height: 2.9rem;
+      width: 2.9rem;
       
       svg {
         width: 1.9rem;
         fill: ${({ theme }) => theme.color };
-        -webkit-transition: all .25s;
-        -moz-transition: all .25s;
-        -o-transition: all .25s;
-        transition: all .25s;
+        -webkit-transition: all .1s ease-out;
+        -moz-transition: all .1s ease-out;
+        -o-transition: all .1s ease-out;
+        transition: all .1s ease-out;
 
         .st1 {
           fill: ${({ theme }) => theme.weather };

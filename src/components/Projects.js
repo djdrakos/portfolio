@@ -25,10 +25,10 @@ const StyledProjects = styled(SectionContent)`
     
     &:hover {
       border-bottom: .1rem solid ${({ theme }) => theme.color};
-      -webkit-transition: all .1s;
-      -moz-transition: all .1s;
-      -o-transition: all .1s;
-      transition: all .1s;
+      -webkit-transition: all .1s ease-out;
+      -moz-transition: all .1s ease-out;
+      -o-transition: all .1s ease-out;
+      transition: all .1s ease-out;
     }
     
     &[data-state='active'] {
