@@ -12,12 +12,17 @@ const StyledHeader = styled.header`
   background: ${({ theme }) => theme.background};
   padding-left: calc(var(--gap100) / 3);
   border-bottom-left-radius: var(--gap50);
+
+  .logo {
+    cursor: pointer;
+  }
 `
 
 export default function Header() {
+
   return (
     <StyledHeader>
-      <Logo />
+      <Logo className="logo" onClick={() => window.scrollTo({ behavior: 'smooth', top: 0, left: 0 })}/>
     </StyledHeader>
   )
 }
