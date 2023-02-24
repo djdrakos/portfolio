@@ -64,9 +64,10 @@ const StyledProjects = styled(SectionContent)`
   }
 `
 
-const Projects = forwardRef(({projects, ...props}, ref) => {
+const Projects = forwardRef((props, ref) => {
+  const TOP_OFFSET=68
   return (
-    <StyledProjects {...props} ref={ref}>
+    <StyledProjects {...props} topOffset={TOP_OFFSET} ref={ref}>
       <Tabs.Root defaultValue={projectData[0].id}>
         <Tabs.List className='project-titles'>
           { projectData.map(project => {

@@ -1,5 +1,5 @@
-import { forwardRef } from 'react';
 import styled from 'styled-components';
+import { paramCase } from 'change-case';
 import { H4 } from './Typography'
 import GridContainer from './GridContainer';
 import GridItem from './GridItem';
@@ -18,6 +18,15 @@ const StyledSection = styled(GridContainer)`
     top: calc(var(--stack-start) + var(--stack-block) - var(--stack-block100));
     margin-bottom: 0;
     white-space: nowrap;
+    transition: all .1s;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration-line: underline;
+      text-decoration-skip-ink: all;
+      text-decoration-thickness: .1rem;
+      text-underline-offset: 13%;
+    }
   }
 
   .content {
@@ -55,23 +64,42 @@ const StyledSection = styled(GridContainer)`
   }
 `
 
-const SectionContent = forwardRef(({ title, children, ...props }, ref) => {
+const SectionContent = ({ title, topOffset, children, ...props }) => {
+  const ID = `${paramCase(title)}-section-anchor`
+  
+  const handleScroll = () => {
+    const doesUserPreferReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const behavior = doesUserPreferReducedMotion.matches ? 'auto' : 'smooth'
+    const el = document.querySelector(`#${ID}`)
+    const boundingClientRect = el.getBoundingClientRect()
+    const top = window.scrollY + boundingClientRect.top - topOffset
+    window.scrollTo({
+      behavior,
+      top ,
+      left: 0
+    })
+  }
+
   return (
-    <StyledSection {...props} ref={ref}>
-      <GridItem className="grid-item-title" m={3}>
-        { title &&
-        <H4 as="h2" className="title">
-          {title}
-        </H4> }
-      </GridItem>
-      <GridItem m={9}>
-        { children && 
-        <div className='content'>
-          {children}
-        </div> }
-      </GridItem>
-    </StyledSection>
+    <>
+      <div id={ID} className="hidden"/>
+      <StyledSection {...props}>
+        <GridItem className="grid-item-title" m={3}>
+          { title &&
+            <H4 as="h2" className="title" onClick={handleScroll}>
+              {title}
+            </H4> 
+            }
+        </GridItem>
+        <GridItem m={9}>
+          { children && 
+          <div className='content'>
+            {children}
+          </div> }
+        </GridItem>
+      </StyledSection>
+    </>
   )
-})
+}
 
 export default SectionContent

@@ -27,7 +27,6 @@ body {
   font-family: 'Source Serif Pro', 'serif';
   font-weight: 400;
   line-height: 1.5;
-  scroll-behavior: smooth;
   -webkit-transition: background-color .25s ease-out, color .25s ease-out;
   -moz-transition: background-color .25s ease-out, color .25s ease-out;
   -o-transition: background-color .25s ease-out, color .25s ease-out;
@@ -80,8 +79,10 @@ a {
 }
 
 a:hover {
-  border-bottom-style: solid; 
-  border-bottom-width: .1rem;
+    text-decoration-line: underline;
+    text-decoration-skip-ink: all;
+    text-decoration-thickness: .1rem;
+    text-underline-offset: 13%;
 }
 
 :root {

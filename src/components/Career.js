@@ -70,13 +70,16 @@ const StyledCareer = styled(SectionContent)`
       font-family: 'Source Code Pro', monospace;
       font-weight: 600;
       text-transform: uppercase;
-      border: .1rem solid transparent;
 
       :hover {
-      border-bottom: .1rem ${({ theme }) => theme.color } solid;
+        text-decoration-color: ${({ theme }) => theme.color };
+        text-decoration-line: underline;
+        text-decoration-skip-ink: all;
+        text-decoration-thickness: .1rem;
+        text-underline-offset: 13%;
       }
     }
-  }
+
 
   @media screen and ${breakpoints.medium} {
     .social {
@@ -101,8 +104,9 @@ const StyledCareer = styled(SectionContent)`
 `
 
 const Career = (props) => {
+  const TOP_OFFSET=156
   return (
-    <StyledCareer {...props}>
+    <StyledCareer topOffset={TOP_OFFSET} {...props}>
       <P>
         As a kid, I coded for fun, but didn't see a career in it. So, naturally, I went to <a href="https://pnca.willamette.edu" rel="noreferrer" target="_blank">art school</a> instead.
       </P>
