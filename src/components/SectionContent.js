@@ -39,13 +39,13 @@ const StyledSection = styled(GridContainer)`
     margin-bottom: var(--stack-block);
   }
 
-  @media screen and ${breakpoints.large} {
+  ${`@media screen and ${breakpoints.large}`} {
     .title {
       top: calc(var(--stack-start) + var(--stack-block) - var(--stack-block100) + .3rem);
     }
   }
 
-  @media screen and ${breakpoints.medium} {
+  ${`@media screen and ${breakpoints.medium}`} {
     .grid-item-title {
       justify-content: start;
     }

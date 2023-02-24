@@ -44,7 +44,7 @@ const StyledProjects = styled(SectionContent)`
     justify-content: space-around;
 }
 
-  @media screen and ${breakpoints.small} {
+  ${`@media screen and ${breakpoints.small}`} {
     p {
       margin-top: .5rem;
     }

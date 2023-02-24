@@ -12,6 +12,7 @@ const StyledHeader = styled.header`
   background: ${({ theme }) => theme.background};
   padding-left: calc(var(--gap100) / 3);
   border-bottom-left-radius: var(--gap50);
+  
   .logo {
     cursor: pointer;
   }

@@ -28,60 +28,57 @@ const StyledCareer = styled(SectionContent)`
     column-gap: var(--gap50);
   }
 
+  .wrapper-social-icon {
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 2.9rem;
+    width: 2.9rem;
     
-    .wrapper-social-icon {
-      display: flex; 
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
+    svg {
+      width: 1.9rem;
+      fill: ${({ theme }) => theme.color };
+      -webkit-transition: all .1s ease-out;
+      -moz-transition: all .1s ease-out;
+      -o-transition: all .1s ease-out;
+      transition: all .1s ease-out;
 
-    .social-icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      height: 2.9rem;
-      width: 2.9rem;
-      
-      svg {
-        width: 1.9rem;
-        fill: ${({ theme }) => theme.color };
-        -webkit-transition: all .1s ease-out;
-        -moz-transition: all .1s ease-out;
-        -o-transition: all .1s ease-out;
-        transition: all .1s ease-out;
-
-        .st1 {
-          fill: ${({ theme }) => theme.weather };
-        }
-      }
-
-      &:hover:not(.resume) {
-        border: .1rem ${({ theme }) => theme.color } solid;
+      .st1 {
+        fill: ${({ theme }) => theme.weather };
       }
     }
 
-
-    .resume {
-      color: inherit;
-      font-size: larger;
-      font-family: 'Source Code Pro', monospace;
-      font-weight: 600;
-      text-transform: uppercase;
-
-      :hover {
-        text-decoration-color: ${({ theme }) => theme.color };
-        text-decoration-line: underline;
-        text-decoration-skip-ink: all;
-        text-decoration-thickness: .1rem;
-        text-underline-offset: 13%;
-      }
+    &:hover:not(.resume) {
+      border: .1rem ${({ theme }) => theme.color } solid;
     }
+  }
 
+  .resume {
+    color: inherit;
+    font-size: larger;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+    text-transform: uppercase;
 
-  @media screen and ${breakpoints.medium} {
+    :hover {
+      text-decoration-color: ${({ theme }) => theme.color };
+      text-decoration-line: underline;
+      text-decoration-skip-ink: all;
+      text-decoration-thickness: .1rem;
+      text-underline-offset: 13%;
+    }
+  }
+
+  ${`@media screen and ${breakpoints.medium}`} {
     .social {
       margin-top: 1rem;
       position: static;
@@ -89,14 +86,14 @@ const StyledCareer = styled(SectionContent)`
     }
   }
 
-  @media screen and ${breakpoints.small} {
+  ${`@media screen and ${breakpoints.small}`} {
     .social {
       margin-left: 0;
       justify-content: flex-start;
     }
   }
 
-  @media screen and ${breakpoints.xSmall} {
+  ${`@media screen and ${breakpoints.xSmall}`} {
     & {
       --section-height: var(--section-tall);
     }
