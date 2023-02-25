@@ -27,10 +27,6 @@ body {
   font-family: 'Source Serif Pro', 'serif';
   font-weight: 400;
   line-height: 1.5;
-  -webkit-transition: background-color .25s ease-out, color .25s ease-out;
-  -moz-transition: background-color .25s ease-out, color .25s ease-out;
-  -o-transition: background-color .25s ease-out, color .25s ease-out;
-  transition: background-color .25s ease-out, color .25s ease-out;
 }
 
 #root {
