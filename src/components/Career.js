@@ -28,57 +28,58 @@ const StyledCareer = styled(SectionContent)`
     column-gap: var(--gap50);
   }
 
+  .wrapper-social-icon {
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 2.9rem;
+    width: 2.9rem;
     
-    .wrapper-social-icon {
-      display: flex; 
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
+    svg {
+      width: 1.9rem;
+      fill: ${({ theme }) => theme.color };
+      -webkit-transition: all .1s ease-out;
+      -moz-transition: all .1s ease-out;
+      -o-transition: all .1s ease-out;
+      transition: all .1s ease-out;
 
-    .social-icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      height: 2.9rem;
-      width: 2.9rem;
-      
-      svg {
-        width: 1.9rem;
-        fill: ${({ theme }) => theme.color };
-        -webkit-transition: all .1s ease-out;
-        -moz-transition: all .1s ease-out;
-        -o-transition: all .1s ease-out;
-        transition: all .1s ease-out;
-
-        .st1 {
-          fill: ${({ theme }) => theme.weather };
-        }
-      }
-
-      &:hover:not(.resume) {
-        border: .1rem ${({ theme }) => theme.color } solid;
+      .st1 {
+        fill: ${({ theme }) => theme.weather };
       }
     }
 
-
-    .resume {
-      color: inherit;
-      font-size: larger;
-      font-family: 'Source Code Pro', monospace;
-      font-weight: 600;
-      text-transform: uppercase;
-      border: .1rem solid transparent;
-
-      :hover {
-      border-bottom: .1rem ${({ theme }) => theme.color } solid;
-      }
+    &:hover:not(.resume) {
+      border: .1em ${({ theme }) => theme.color } solid;
     }
   }
 
-  @media screen and ${breakpoints.medium} {
+  .resume {
+    color: inherit;
+    font-size: larger;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-underline-offset: .13em;
+    text-decoration-thickness: .095em;
+
+    :hover {
+      text-decoration-color: ${({ theme }) => theme.color };
+      text-decoration-line: underline;
+      text-decoration-skip-ink: all;
+      text-decoration-thickness: .095em;
+    }
+  }
+
+  ${`@media screen and ${breakpoints.medium}`} {
     .social {
       margin-top: 1rem;
       position: static;
@@ -86,14 +87,14 @@ const StyledCareer = styled(SectionContent)`
     }
   }
 
-  @media screen and ${breakpoints.small} {
+  ${`@media screen and ${breakpoints.small}`} {
     .social {
       margin-left: 0;
       justify-content: flex-start;
     }
   }
 
-  @media screen and ${breakpoints.xSmall} {
+  ${`@media screen and ${breakpoints.xSmall}`} {
     & {
       --section-height: var(--section-tall);
     }
@@ -101,8 +102,9 @@ const StyledCareer = styled(SectionContent)`
 `
 
 const Career = (props) => {
+  const TOP_OFFSET=156
   return (
-    <StyledCareer {...props}>
+    <StyledCareer topOffset={TOP_OFFSET} {...props}>
       <P>
         As a kid, I coded for fun, but didn't see a career in it. So, naturally, I went to <a href="https://pnca.willamette.edu" rel="noreferrer" target="_blank">art school</a> instead.
       </P>
@@ -119,6 +121,8 @@ const Career = (props) => {
         In April 2021, I enrolled in <a href="https://www.alchemycodelab.com/" target="_blank" rel="noreferrer">Alchemy Code Lab</a> to study fullstack software development, then was hired onto the instruction team after graduation.
       </P>
 
+    {/* TODO: add current position blurb */}
+
       <P>
         I'm currently looking for my next opportunity with a preference toward front-end development in React.
       </P>
@@ -129,7 +133,7 @@ const Career = (props) => {
         </a>
         <div className="wrapper-social-icon">
           <a className="social-icon" href="https://github.com/djdrakos" rel="noreferrer" target="_blank">
-            <AccessibleIcon.Root label='GitHub Profile'>
+            <AccessibleIcon.Root className="social-icon" label='GitHub Profile'>
               <GithubIcon />
             </AccessibleIcon.Root>
           </a>

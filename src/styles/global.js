@@ -27,7 +27,6 @@ body {
   font-family: 'Source Serif Pro', 'serif';
   font-weight: 400;
   line-height: 1.5;
-  scroll-behavior: smooth;
   -webkit-transition: background-color .25s ease-out, color .25s ease-out;
   -moz-transition: background-color .25s ease-out, color .25s ease-out;
   -o-transition: background-color .25s ease-out, color .25s ease-out;
@@ -70,18 +69,22 @@ h1, h2, h3, h4, h5 {
 }
 
 a {
-  text-decoration: none;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   -webkit-transition: all .1s;
   -moz-transition: all .1s;
   -o-transition: all .1s;
   transition: all .1s;
+  text-underline-offset: .12em;
+  /* Set text-decoration props on non-hover state to avoid Safari loading text-underline-offset during hover*/
+  text-decoration-thickness: .095em;
+  text-decoration: none;
 }
 
 a:hover {
-  border-bottom-style: solid; 
-  border-bottom-width: .1rem;
+    text-decoration: underline;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: .095em;
 }
 
 :root {

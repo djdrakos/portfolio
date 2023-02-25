@@ -42,6 +42,7 @@ const StyledSpiral = styled.div`
     -moz-transition: opacity .1s ease-out;
     -o-transition: opacity .1s ease-out;
     transition: opacity .1s ease-out;
+    cursor: unset;
 
     &:hover {
       opacity: 1;

@@ -15,14 +15,15 @@ const StyledTechStack = styled(SectionContent)`
     margin-block: 0;
   }
 
-  @media screen and ${breakpoints.small} {
+  ${`@media screen and ${breakpoints.small}`} {
     --section-height: var(--section-med);
   }
 `
 
 const TechStack = (props) => {
+  const TOP_OFFSET=108
   return (
-    <StyledTechStack {...props}>
+    <StyledTechStack topOffset={TOP_OFFSET} {...props}>
       <H5 as="h3" className="tool-header">Languages</H5>
       <P>JavaScript ES6 / HTML5 / CSS3 / Sass</P>
 
