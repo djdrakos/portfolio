@@ -17,6 +17,26 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+      (function () {
+        function setTheme(newTheme) {
+          document.body.className = newTheme;
+          window.__theme = newTheme;
+          window.__onThemeChange(newTheme);
+        }
+        window.__onThemeChange = function () {};
+        window.__setPreferredTheme = function (newTheme) {
+          setTheme(newTheme);
+          try {
+            localStorage.setItem('theme', JSON.stringify(window.__theme));
+          } catch (err) {}
+        };
+
+        const darkQuery = window.matchMedia
+
+
+      })
+    </script>
     <div id="root"></div>
   </body>
 </html>

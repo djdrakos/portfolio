@@ -1,22 +1,23 @@
 
 import { ThemeProvider } from 'styled-components'
-import themes  from '../../styles/theme'
+import { darkTheme, lightTheme }  from '../../styles/theme'
 import { GlobalStyles } from '../../styles/global';
 import useDarkMode from '../../hooks/useDarkMode';
 import Header from '../Header';
 import Main from '../Main';
 
 export default function App() {
-const [currentTheme, toggleTheme] = useDarkMode()
-let themeMode = themes[currentTheme]
+const { currentTheme, mounted, toggleTheme } = useDarkMode()
 
   return (
-    <ThemeProvider theme={themeMode}>
-    <>
+    <ThemeProvider theme={currentTheme === 'dark' ? darkTheme : lightTheme}>
       <GlobalStyles />
-        <Header />
-        <Main toggleTheme={toggleTheme} />
-      </>
+        { mounted &&
+          <>
+            <Header />
+            <Main toggleTheme={toggleTheme} />
+          </>
+        }
     </ThemeProvider>
   );
 }

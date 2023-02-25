@@ -1,5 +1,4 @@
-const themes = {
-light: {
+export const lightTheme = {
   type: 'light',
   background: 'hsl(51, 39%, 93%)',
   backgroundA: 'hsla(51, 39%, 93%, 1)',
@@ -15,9 +14,9 @@ light: {
   spiral: 'peru',
   tip: 'hsl(54, 68%, 49%)',
   weather: 'hsl(43, 88%, 46%)',
-  }, 
+  }
 
-dark: {
+export const darkTheme = {
   type: 'dark',
   background: 'hsl(210, 1%, 13%)',
   backgroundA: 'hsla(210, 1%, 13%, 1)',
@@ -30,10 +29,7 @@ dark: {
   color200: 'hsl(240, 1%, 78%)',
   color300: 'hsl(210, 2%, 47%)',
   color400: 'hsl(216, 5%, 21%)',
-  weather: 'hsl(213, 60%, 70%)',
   spiral: 'lightcyan',
-  tip: 'hsl(222, 97%, 46%)'
+  tip: 'hsl(222, 97%, 46%)',
+  weather: 'hsl(213, 60%, 70%)',
   }
-}
-
-export default themes
