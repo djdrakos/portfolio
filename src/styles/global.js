@@ -65,6 +65,7 @@ h1, h2, h3, h4, h5 {
 }
 
 a {
+  color: inherit;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
   -webkit-transition: all .1s;

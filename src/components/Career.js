@@ -8,12 +8,10 @@ import { P } from './Typography';
 import breakpoints from '../styles/breakpoints';
 
 const StyledCareer = styled(SectionContent)`
+  --background-color: ${({ theme }) => theme.bg3 };
   --section-height: var(--section-med);
   --stack-block: var(--stack-block300);
   z-index: 2;
-  background-color: ${({ theme }) => theme.bg3 };
-  border-bottom: .05rem solid ${({ theme }) => theme.bg3 };
-  border-bottom-left-radius: 1rem;
   
   .social {
     position: sticky; 
@@ -63,20 +61,9 @@ const StyledCareer = styled(SectionContent)`
   }
 
   .resume {
-    color: inherit;
     font-size: larger;
     font-family: 'Source Code Pro', monospace;
-    font-weight: 600;
     text-transform: uppercase;
-    text-underline-offset: .13em;
-    text-decoration-thickness: .095em;
-
-    :hover {
-      text-decoration-color: ${({ theme }) => theme.color };
-      text-decoration-line: underline;
-      text-decoration-skip-ink: all;
-      text-decoration-thickness: .095em;
-    }
   }
 
   ${`@media screen and ${breakpoints.medium}`} {
@@ -114,17 +101,15 @@ const Career = (props) => {
       </P>
 
       <P>
-        After ten years, I was ready to hang up my apron, hand off the passwords to my hand-rolled MRP tools, and return to code. 
+        After ten years, I was ready to hang up my apron, hand off the passwords to my hand-rolled MRP tools, and return to code. In April 2021, I enrolled in <a href="https://www.alchemycodelab.com/" target="_blank" rel="noreferrer">Alchemy Code Lab</a> to study fullstack software development, then was hired onto the instruction team after graduation.
       </P>
 
       <P>
-        In April 2021, I enrolled in <a href="https://www.alchemycodelab.com/" target="_blank" rel="noreferrer">Alchemy Code Lab</a> to study fullstack software development, then was hired onto the instruction team after graduation.
+        I'm currently part of the nimble team at <a href="https://kickstand.work/" target="blank">Kickstand</a>, working across the stack to migrate an enterprise vendor management system from Django to Typescript, React, and Chakra.ui ahead of its international launch.
       </P>
 
-    {/* TODO: add current position blurb */}
-
       <P>
-        I'm currently looking for my next opportunity with a preference toward front-end development in React.
+        Have a project idea? Just want to chat? Get in touch! I'd love to hear from you.
       </P>
 
       <div className="social">
