@@ -7,13 +7,13 @@ import Header from '../Header';
 import Main from '../Main';
 
 export default function App() {
-const { currentTheme, mounted, toggleTheme } = useDarkMode()
+const { currentTheme, loading, toggleTheme } = useDarkMode()
 
   return (
     <ThemeProvider theme={currentTheme === 'dark' ? darkTheme : lightTheme}>
-      <GlobalStyles />
-        { mounted &&
+        { !loading &&
           <>
+            <GlobalStyles />
             <Header />
             <Main toggleTheme={toggleTheme} />
           </>
