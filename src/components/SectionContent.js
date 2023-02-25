@@ -20,12 +20,13 @@ const StyledSection = styled(GridContainer)`
     white-space: nowrap;
     transition: all .1s;
     cursor: pointer;
-
+    text-underline-offset: .14em;
+    text-decoration-thickness: .095em;
+    
     &:hover {
-      text-decoration-line: underline;
-      text-decoration-skip-ink: all;
-      text-decoration-thickness: .1rem;
-      text-underline-offset: 13%;
+      text-decoration: underline;
+      text-decoration-thickness: .075em;
+      text-decoration-skip-ink: auto;
     }
   }
 

@@ -58,7 +58,7 @@ const StyledCareer = styled(SectionContent)`
     }
 
     &:hover:not(.resume) {
-      border: .1rem ${({ theme }) => theme.color } solid;
+      border: .1em ${({ theme }) => theme.color } solid;
     }
   }
 
@@ -68,13 +68,14 @@ const StyledCareer = styled(SectionContent)`
     font-family: 'Source Code Pro', monospace;
     font-weight: 600;
     text-transform: uppercase;
+    text-underline-offset: .13em;
+    text-decoration-thickness: .095em;
 
     :hover {
       text-decoration-color: ${({ theme }) => theme.color };
       text-decoration-line: underline;
       text-decoration-skip-ink: all;
-      text-decoration-thickness: .1rem;
-      text-underline-offset: 13%;
+      text-decoration-thickness: .095em;
     }
   }
 
@@ -120,6 +121,8 @@ const Career = (props) => {
         In April 2021, I enrolled in <a href="https://www.alchemycodelab.com/" target="_blank" rel="noreferrer">Alchemy Code Lab</a> to study fullstack software development, then was hired onto the instruction team after graduation.
       </P>
 
+    {/* TODO: add current position blurb */}
+
       <P>
         I'm currently looking for my next opportunity with a preference toward front-end development in React.
       </P>
@@ -130,7 +133,7 @@ const Career = (props) => {
         </a>
         <div className="wrapper-social-icon">
           <a className="social-icon" href="https://github.com/djdrakos" rel="noreferrer" target="_blank">
-            <AccessibleIcon.Root label='GitHub Profile'>
+            <AccessibleIcon.Root className="social-icon" label='GitHub Profile'>
               <GithubIcon />
             </AccessibleIcon.Root>
           </a>
