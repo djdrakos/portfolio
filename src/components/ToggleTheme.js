@@ -16,11 +16,18 @@ const StyledSpan= styled.span`
   -moz-transition: color .15s  ease-out;
   -o-transition: color .15s  ease-out;
   transition: color .15s ease-out;
-
+  mix-blend-mode: ${({ theme }) => theme.type === 'dark' ? 'lighten' : 'multiply' };
+  
   &:hover {
     color: ${({ theme }) => theme.type === 'dark' ? theme.color300 : theme.color400 };
   }
-
+  
+  .weather {
+    isolation: isolate;
+    z-index: 1;
+    mix-blend-mode: normal;
+  }
+  
   .toggle-theme {
     border-radius: 50%;
     border: none;
@@ -31,7 +38,6 @@ const StyledSpan= styled.span`
     margin-top: .3rem;
     padding: .5rem;
     transform: translate(.5rem, -.5rem);
-    mix-blend-mode: ${({ theme }) => theme.type === 'dark' ? 'lighten' : 'multiply' };
   }
 
   .fixed {
@@ -49,7 +55,9 @@ const ToggleTheme = ({ toggleTheme, ...props }) => {
       <Toggle.Root className={isIntersecting ? 'toggle-theme fixed' : 'toggle-theme'} aria-label='Toggle theme' pressed={type === 'dark'} onPressedChange={toggleTheme}>
         <ToggleWeatherIcon type={type} />
       </Toggle.Root>
-      {type === 'dark' ? 'rainy' : 'sunny'}
+      <span className='weather'>
+        {type === 'dark' ? 'rainy' : 'sunny'}
+      </span>
     </StyledSpan>
   )
 }
