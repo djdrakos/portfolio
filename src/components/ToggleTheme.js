@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import styled, { ThemeContext } from 'styled-components'
-import ToggleWeatherIcon from './ToggleWeatherIcon'
+import ToggleThemeIcon from './ToggleThemeIcon'
 import useIntersectionObserver from '../hooks/useIntersectionObserver'
 import * as Toggle from '@radix-ui/react-toggle'
 
@@ -16,14 +16,12 @@ const StyledSpan= styled.span`
   -moz-transition: color .15s  ease-out;
   -o-transition: color .15s  ease-out;
   transition: color .15s ease-out;
-
+  
   &:hover {
     color: ${({ theme }) => theme.type === 'dark' ? theme.color300 : theme.color400 };
   }
-
+  
   .toggle-theme {
-    border-radius: 50%;
-    border: none;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -31,7 +29,6 @@ const StyledSpan= styled.span`
     margin-top: .3rem;
     padding: .5rem;
     transform: translate(.5rem, -.5rem);
-    mix-blend-mode: ${({ theme }) => theme.type === 'dark' ? 'lighten' : 'multiply' };
   }
 
   .fixed {
@@ -47,7 +44,7 @@ const ToggleTheme = ({ toggleTheme, ...props }) => {
   return (
     <StyledSpan ref={triggerRef} {...props}>
       <Toggle.Root className={isIntersecting ? 'toggle-theme fixed' : 'toggle-theme'} aria-label='Toggle theme' pressed={type === 'dark'} onPressedChange={toggleTheme}>
-        <ToggleWeatherIcon type={type} />
+        <ToggleThemeIcon type={type} />
       </Toggle.Root>
       {type === 'dark' ? 'rainy' : 'sunny'}
     </StyledSpan>

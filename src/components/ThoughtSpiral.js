@@ -1,12 +1,13 @@
 import styled from 'styled-components'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import useIntersectionObserver from '../hooks/useIntersectionObserver'
 import { P } from './Typography';
 import * as Tooltip from '@radix-ui/react-tooltip';
 import breakpoints from '../styles/breakpoints';
-import tooltipData from './TooltipData';
+import randomThoughts from './Thoughts';
 
-//Remember: this component has some extremely tricky alignment puzzles that you solved with a responsive grid applied at certain breakpoints. When you have time, come up with a better solution that is responsive, preserves tab order, and doesn't need hacky workarounds for z-index wars. Portals with a ref stored context, maybe? Anyway, the pointer-events and z-index on hover are to make sure the tooltip content renders about other elements. 
+
+//Remember: this component has some extremely tricky alignment puzzles that you solved with a responsive grid applied at certain breakpoints. When you have time, come up with a better solution that is responsive, preserves tab order, and doesn't need hacky workarounds for z-index wars. Portals with a ref stored in context, maybe? Anyway, the pointer-events and z-index on hover are to make sure the tooltip content renders above other elements. 
 
 const StyledSpiral = styled.div`
   --pad: 15vw;
@@ -78,11 +79,11 @@ const StyledSpiral = styled.div`
     }
   }
 
-  @media screen and ${breakpoints.large} {
+  ${`@media screen and ${breakpoints.large}`} {
     --pad: 12vw;
   }
 
-  @media screen and ${breakpoints.medium} {
+  ${`@media screen and ${breakpoints.medium}`} {
     --pad: 3rem;
     
     .intersection-content { 
@@ -99,7 +100,7 @@ const StyledSpiral = styled.div`
     }
   }
 
-  @media screen and ${breakpoints.small} {
+  ${`@media screen and ${breakpoints.small}`} {
     --pad: 2rem;
   }
 
@@ -107,14 +108,20 @@ const StyledSpiral = styled.div`
 
 export default function ThoughtSpiral() {
   const [ triggerRef, isIntersecting ] = useIntersectionObserver()
-  const [ content, setContent ] = useState(tooltipData[Math.floor(Math.random() * tooltipData.length)])
-
+  const [ counter, setCounter ] = useState(0)
+  const [ thought, setThought ] = useState(randomThoughts[counter])
+  
   const handlePointerOut = () => {
-    const randomIndex = Math.floor(Math.random() * tooltipData.length)
     setTimeout(() => {
-      setContent(tooltipData[randomIndex])
+      if(counter < randomThoughts.length - 1) {
+        setCounter((num) => num + 1)
+      } else setCounter(0)
     }, 100)
   }
+  
+  useEffect(() => {
+    setThought(randomThoughts[counter])
+  }, [counter])
 
   return (
       <StyledSpiral>
@@ -127,7 +134,7 @@ export default function ThoughtSpiral() {
             </Tooltip.Trigger>
             <Tooltip.Content className='spiral-content' align={'start'} side={'left'}>
             <Tooltip.Arrow className='tooltip-arrow' />
-              <P>{content}</P>
+              <P>{thought}</P>
             </Tooltip.Content>
             </div>
           </Tooltip.Root>

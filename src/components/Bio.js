@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import { useContext } from 'react'
+import styled, { ThemeContext } from 'styled-components'
 import { H1, P } from './Typography'
 import ToggleTheme from './ToggleTheme'
 import useIntersectionObserver from '../hooks/useIntersectionObserver'
@@ -74,7 +75,7 @@ const StyledBio = styled.div`
     top: 0;
   }
 
-  @media screen and ${breakpoints.large} {
+  ${`@media screen and ${breakpoints.large}`} {
     .tooltip-root {
       transform: translate(-1rem, -.9rem);
     }
@@ -89,6 +90,8 @@ const StyledBio = styled.div`
 
 export default function Bio({ toggleTheme }) {
   const [triggerRef, isIntersecting] = useIntersectionObserver()
+  const themeContext = useContext(ThemeContext)
+  const weatherEmoji = themeContext.type === 'dark' ? <span style={{ fontSize: '1rem'}}>💧</span> : <span style={{ fontSize: '1rem'}}>🔆</span>
 
   return (
     <StyledBio> 
@@ -101,10 +104,10 @@ export default function Bio({ toggleTheme }) {
             <Tooltip.Trigger className='tooltip-trigger'>
               *
             </Tooltip.Trigger>
-            <Tooltip.Content className='tooltip-content' align={'center'} side={'bottom'}>
+            <Tooltip.Content className='tooltip-content' align={'center'} side={'top'}>
               <Tooltip.Arrow className='tooltip-arrow'/>
               <P>
-                {isIntersecting ? 'looks like good coding weather today' : '(they/them)'}
+                {isIntersecting ? weatherEmoji : '(they/them)'}
               </P>
             </Tooltip.Content>
           </div>

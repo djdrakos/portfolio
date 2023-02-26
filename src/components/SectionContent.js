@@ -6,8 +6,12 @@ import GridItem from './GridItem';
 import breakpoints from '../styles/breakpoints';
 
 const StyledSection = styled(GridContainer)`
+  --background-color: none;
   --stack-block: var(--stack-block100);
   position: sticky;
+  background-color: var(--background-color);
+  border-bottom: .05rem solid var(--background-color);
+  border-bottom-left-radius: 1rem;
 
   .grid-item-title {
     justify-content: flex-end;
@@ -42,7 +46,7 @@ const StyledSection = styled(GridContainer)`
 
   ${`@media screen and ${breakpoints.large}`} {
     .title {
-      top: calc(var(--stack-start) + var(--stack-block) - var(--stack-block100) + .3rem);
+      top: calc(var(--stack-start) + var(--stack-block) - var(--stack-block100) + .25rem);
     }
   }
 

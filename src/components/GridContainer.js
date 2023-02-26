@@ -9,7 +9,7 @@ const StyledGridContainer = styled.div.attrs( props => ({ style:  props }))`
   --section-tall: calc(45rem + var(--stack-block100));
   --section-xtall: calc(45rem + var(--stack-block100));
   --section-height: var(--section-tall);
-  --top-offset: calc(var(--stack-block) + var(--header100) - var(--stack-offset) - var(--section-height));
+  --top-offset: calc(var(--stack-block) + var(--header100) - var(--section-height));
 
   display: grid;
   grid-template-columns: repeat(12, minmax(1rem, 6rem));

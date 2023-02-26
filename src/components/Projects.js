@@ -8,12 +8,10 @@ import breakpoints from '../styles/breakpoints';
 import { forwardRef } from 'react';
 
 const StyledProjects = styled(SectionContent)`
+  --background-color: ${({ theme }) => theme.bg1 };
   --section-height: var(--section-xtall);
   --stack-block: var(--stack-block100);
   z-index: 4;
-  background-color: ${({ theme }) => theme.bg1 };
-  border-bottom: .05rem solid ${({ theme }) => theme.bg1 };
-  border-bottom-left-radius: 1rem;
 
   p {
     margin-top: 0;
