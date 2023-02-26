@@ -107,7 +107,7 @@ export default function Bio({ toggleTheme }) {
             <Tooltip.Content className='tooltip-content' align={'center'} side={'top'}>
               <Tooltip.Arrow className='tooltip-arrow'/>
               <P>
-                {isIntersecting ? weatherEmoji : 'I use they/them pronouns!'}
+                {isIntersecting ? weatherEmoji : '(they/them)'}
               </P>
             </Tooltip.Content>
           </div>
