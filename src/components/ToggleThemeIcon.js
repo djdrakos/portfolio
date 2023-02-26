@@ -14,7 +14,8 @@ const StyledSvg = styled.svg`
   }
 `
 
-const ToggleWeatherIcon = ({ type, ...props }) => {
+const ToggleThemeIcon = ({ type, ...props }) => {
+
   return (
     <StyledSvg 
       id="weather_icon"
@@ -61,4 +62,4 @@ const ToggleWeatherIcon = ({ type, ...props }) => {
   )
 }
 
-export default ToggleWeatherIcon
+export default ToggleThemeIcon

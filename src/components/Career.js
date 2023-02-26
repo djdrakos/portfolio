@@ -43,7 +43,7 @@ const StyledCareer = styled(SectionContent)`
     width: 2.9rem;
     
     svg {
-      width: 1.9rem;
+      height: 1.9rem;
       fill: ${({ theme }) => theme.color };
       -webkit-transition: all .1s ease-out;
       -moz-transition: all .1s ease-out;
@@ -53,6 +53,10 @@ const StyledCareer = styled(SectionContent)`
       .st1 {
         fill: ${({ theme }) => theme.weather };
       }
+    }
+
+    .linkedin-icon {
+      height: 1.8rem;
     }
 
     &:hover:not(.resume) {
@@ -124,12 +128,12 @@ const Career = (props) => {
           </a>
           <a className="social-icon" href="https://www.linkedin.com/in/djdrakos/" rel="noreferrer" target="_blank">
             <AccessibleIcon.Root className="social-icon" label='LinkedIn Profile'>
-              <LinkedInIcon/>
+              <LinkedInIcon className="linkedin-icon"/>
             </AccessibleIcon.Root>
           </a>
           <a className="social-icon" href="mailto:d.josi.drakos+portfolio@gmail.com?subject=I saw your portfolio, let's chat!">
             <AccessibleIcon.Root className="social-icon" label='Send an Email'>
-              <EmailIcon/>
+              <EmailIcon className="email-icon"/>
             </AccessibleIcon.Root>
           </a>
         </div>
