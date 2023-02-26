@@ -92,7 +92,7 @@ a:hover {
   --stack-block200: calc(2 * var(--stack-block100));
   --stack-block300: calc(3 * var(--stack-block100));
   --stack-block400: calc(4 * var(--stack-block100));
-  --stack-offset: .25rem;
+  --stack-offset: .5rem;
   --stack-start: calc(var(--header100) + var(--stack-offset));
   --gap100: var(--stack-block100);
   --gap50: calc(var(--gap100) / 2);

@@ -46,7 +46,7 @@ const StyledSection = styled(GridContainer)`
 
   ${`@media screen and ${breakpoints.large}`} {
     .title {
-      top: calc(var(--stack-start) + var(--stack-block) - var(--stack-block100) + .3rem);
+      top: calc(var(--stack-start) + var(--stack-block) - var(--stack-block100) + .25rem);
     }
   }
 
