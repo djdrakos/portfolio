@@ -8,7 +8,7 @@ const StyledProjectDetail = styled.div`
 
   img {
     margin-block-start: 2rem;
-    height: 200px;
+    max-height: 200px;
     width: auto;
     border-radius: .5rem;
     opacity: .7;

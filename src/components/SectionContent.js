@@ -4,6 +4,7 @@ import { H4 } from './Typography'
 import GridContainer from './GridContainer';
 import GridItem from './GridItem';
 import breakpoints from '../styles/breakpoints';
+import useMediaQuery from '../hooks/useMediaQuery';
 
 const StyledSection = styled(GridContainer)`
   --background-color: none;
@@ -60,6 +61,11 @@ const StyledSection = styled(GridContainer)`
       top: unset;
       width: 100%;
       border-bottom: .1rem solid ${({ theme }) => theme.color};
+
+      &:hover {
+        cursor:  unset;
+        text-decoration:none;
+      }
     }
 
     .content {
@@ -70,6 +76,7 @@ const StyledSection = styled(GridContainer)`
 `
 
 const SectionContent = ({ title, topOffset, children, ...props }) => {
+  const isMaxMediumScreenSize = useMediaQuery('(max-width: 56.25em)')
   const ID = `${paramCase(title)}-section-anchor`
   
   const handleScroll = () => {
@@ -85,13 +92,17 @@ const SectionContent = ({ title, topOffset, children, ...props }) => {
     })
   }
 
+  const handleClick = () => {
+    !isMaxMediumScreenSize && handleScroll()
+  }
+
   return (
     <>
       <div id={ID} className="hidden"/>
       <StyledSection {...props}>
         <GridItem className="grid-item-title" m={3}>
           { title &&
-            <H4 as="h2" className="title" onClick={handleScroll}>
+            <H4 as="h2" className="title" onClick={handleClick}>
               {title}
             </H4> 
             }
