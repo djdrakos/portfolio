@@ -71,6 +71,7 @@ const StyledCareer = styled(SectionContent)`
   }
 
   ${`@media screen and ${breakpoints.medium}`} {
+    --section-height: var(--section-tall);
     .social {
       margin-top: 1rem;
       position: static;
@@ -86,9 +87,7 @@ const StyledCareer = styled(SectionContent)`
   }
 
   ${`@media screen and ${breakpoints.xSmall}`} {
-    & {
-      --section-height: var(--section-tall);
-    }
+    --section-height: var(--section-xtall);
   }
 `
 
@@ -101,7 +100,7 @@ const Career = (props) => {
       </P>
 
       <P>
-        I eventually found my place leading a <a href="https://wholesale.eggpress.com/" rel="noreferrer" target="_blank">team</a> of tireless, brilliant humans to revive the lost craft of letterpress printing at modern industry scale. The work demanded constant learning, ingenuity and reinvention. We were good at it, turning hundred-year-old machines headed to the scrap yard into the workhorses of a multi-million dollar factory.
+        I eventually found my place leading a <a href="https://wholesale.eggpress.com/" rel="noreferrer" target="_blank">team</a> of tireless, brilliant humans to revive the lost craft of letterpress printing at modern industry scale. The work demanded constant learning, ingenuity and reinvention.
       </P>
 
       <P>
