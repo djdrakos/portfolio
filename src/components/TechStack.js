@@ -26,7 +26,7 @@ const TechStack = (props) => {
       <P>JavaScript ES6 / TypeScript / HTML5 / CSS3 / Python / SQL</P>
 
       <H5 as="h3">Technologies</H5>
-      <P>React.js / Node.js / Docker / AWS</P>
+      <P>React.js / Node.js / WordPress / Docker / AWS</P>
 
       <H5 as="h3">Design</H5>
       <P>Adobe Creative Suite / Sketch / Figma</P>
