@@ -4,6 +4,7 @@ import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
 import {ReactComponent as GithubIcon} from '../assets/github.svg'
 import {ReactComponent as LinkedInIcon} from '../assets/linkedin.svg'
 import {ReactComponent as EmailIcon} from '../assets/email.svg'
+import Link from './Link';
 import { P } from './Typography';
 import breakpoints from '../styles/breakpoints';
 
@@ -96,23 +97,23 @@ const Career = (props) => {
   return (
     <StyledCareer topOffset={TOP_OFFSET} {...props}>
       <P>
-        As a kid, I coded for fun, but didn't see a career in it. So, naturally, I went to <a href="https://pnca.willamette.edu" rel="noreferrer" target="_blank">art school</a> instead.
+        As a kid, I coded for fun, but didn't see a career in it. So, naturally, I went to <Link href="https://pnca.willamette.edu">art school</Link> instead.
       </P>
 
       <P>
-        I eventually found my place leading a <a href="https://wholesale.eggpress.com/" rel="noreferrer" target="_blank">team</a> of tireless, brilliant humans to revive the lost craft of letterpress printing at modern industry scale. The work demanded constant learning, ingenuity and reinvention.
+        I eventually found my place leading a <Link href="https://wholesale.eggpress.com/">team</Link> of tireless, brilliant humans to revive the lost craft of letterpress printing at modern industry scale. The work demanded constant learning, ingenuity and reinvention.
       </P>
 
       <P>
-        After ten years, I was ready to hang up my apron, hand off the passwords to my hand-rolled MRP tools, and return to code. In April 2021, I enrolled in <a href="https://www.alchemycodelab.com/" target="_blank" rel="noreferrer">Alchemy Code Lab</a> to study fullstack software development, then was hired onto the instruction team after graduation.
+        After ten years, I was ready to hang up my apron, hand off the passwords to my hand-rolled MRP tools, and return to code. In April 2021, I enrolled in <Link href="https://www.alchemycodelab.com/">Alchemy Code Lab</Link> to study fullstack software development, then was hired onto the instruction team after graduation.
       </P>
 
       <P>
-        I worked across the stack as a part of the nimble team at <a href="https://kickstand.work/" target="blank" rel="noreferrer">Kickstand</a> to migrate an enterprise vendor management system from Django to Typescript, React, and Chakra.ui ahead of its international launch.
+        I worked across the stack as a part of the nimble team at <Link href="https://kickstand.work/">Kickstand</Link> to migrate an enterprise vendor management system from Django to Typescript, React, and Chakra.ui ahead of its international launch.
       </P>
 
       <P>
-        I'm currently working with <a href="https://variablewest.com/" target="blank" rel="noreferrer">Variable West</a> to expand their web platform as the organization moves its primary content pipelines away from social media. 
+        I'm currently working with <Link href="https://variablewest.com/">Variable West</Link> to expand their web platform as the organization moves its primary content pipelines away from social media. 
       </P>
 
       <P>
@@ -120,25 +121,25 @@ const Career = (props) => {
       </P>
 
       <div className="social">
-        <a className="resume" href="./dj-drakos-resume.pdf" target="blank">
+        <Link isInternal target='_blank' className="resume" href="./dj-drakos-resume.pdf">
           Resume PDF
-        </a>
+        </Link>
         <div className="wrapper-social-icon">
-          <a className="social-icon" href="https://github.com/djdrakos" rel="noreferrer" target="_blank">
+          <Link className="social-icon" href="https://github.com/djdrakos">
             <AccessibleIcon.Root className="social-icon" label='GitHub Profile'>
               <GithubIcon />
             </AccessibleIcon.Root>
-          </a>
-          <a className="social-icon" href="https://www.linkedin.com/in/djdrakos/" rel="noreferrer" target="_blank">
+          </Link>
+          <Link className="social-icon" href="https://www.linkedin.com/in/djdrakos/">
             <AccessibleIcon.Root className="social-icon" label='LinkedIn Profile'>
               <LinkedInIcon className="linkedin-icon"/>
             </AccessibleIcon.Root>
-          </a>
-          <a className="social-icon" href="mailto:d.josi.drakos+portfolio@gmail.com?subject=I saw your portfolio, let's chat!">
+          </Link>
+          <Link className="social-icon" href="mailto:d.josi.drakos+portfolio@gmail.com?subject=I saw your portfolio, let's chat!">
             <AccessibleIcon.Root className="social-icon" label='Send an Email'>
               <EmailIcon className="email-icon"/>
             </AccessibleIcon.Root>
-          </a>
+          </Link>
         </div>
       </div>
     </StyledCareer>
