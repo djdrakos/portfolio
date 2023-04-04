@@ -108,7 +108,11 @@ const Career = (props) => {
       </P>
 
       <P>
-        I'm currently part of the nimble team at <a href="https://kickstand.work/" target="blank">Kickstand</a>, working across the stack to migrate an enterprise vendor management system from Django to Typescript, React, and Chakra.ui ahead of its international launch.
+        I worked across the stack as a part of the nimble team at <a href="https://kickstand.work/" target="blank" rel="noreferrer">Kickstand</a> to migrate an enterprise vendor management system from Django to Typescript, React, and Chakra.ui ahead of its international launch.
+      </P>
+
+      <P>
+        I'm currently working with <a href="https://variablewest.com/" target="blank" rel="noreferrer">Variable West</a> to expand their web platform as the organization moves its primary content pipelines away from social media. 
       </P>
 
       <P>
