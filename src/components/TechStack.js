@@ -23,7 +23,7 @@ const TechStack = (props) => {
   return (
     <StyledTechStack topOffset={TOP_OFFSET} {...props}>
       <H5 as="h3">Languages</H5>
-      <P>JavaScript ES6 / TypeScript / HTML5 / CSS3 / Python / SQL</P>
+      <P>JavaScript ES6 / TypeScript / HTML5 / CSS3 / PHP / Python / SQL</P>
 
       <H5 as="h3">Technologies</H5>
       <P>React.js / Node.js / WordPress / Docker / AWS</P>

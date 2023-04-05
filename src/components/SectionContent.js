@@ -5,6 +5,7 @@ import GridContainer from './GridContainer';
 import GridItem from './GridItem';
 import breakpoints from '../styles/breakpoints';
 import useMediaQuery from '../hooks/useMediaQuery';
+import { useLayoutEffect } from 'react';
 
 const StyledSection = styled(GridContainer)`
   --background-color: none;
@@ -13,7 +14,6 @@ const StyledSection = styled(GridContainer)`
   background-color: var(--background-color);
   border-bottom: .05rem solid var(--background-color);
   border-bottom-left-radius: 1rem;
-
   .grid-item-title {
     justify-content: flex-end;
   }
@@ -76,13 +76,14 @@ const StyledSection = styled(GridContainer)`
 `
 
 const SectionContent = ({ title, topOffset, children, ...props }) => {
+
   const isMaxMediumScreenSize = useMediaQuery('(max-width: 56.25em)')
   const ID = `${paramCase(title)}-section-anchor`
   
-  const handleScroll = () => {
+  const handleScrollOnClick = (target) => {
     const doesUserPreferReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const behavior = doesUserPreferReducedMotion.matches ? 'auto' : 'smooth'
-    const el = document.querySelector(`#${ID}`)
+    const el = document.querySelector(`#${target}`)
     const boundingClientRect = el.getBoundingClientRect()
     const top = window.scrollY + boundingClientRect.top - topOffset
     window.scrollTo({
@@ -93,8 +94,26 @@ const SectionContent = ({ title, topOffset, children, ...props }) => {
   }
 
   const handleClick = () => {
-    !isMaxMediumScreenSize && handleScroll()
+    !isMaxMediumScreenSize && handleScrollOnClick(ID)
   }
+
+  useLayoutEffect(() => {
+    const handleScrollOnFocus = (e) => {
+      const boundingClientRect = e.target.getBoundingClientRect()
+      const top = window.scrollY + boundingClientRect.top - topOffset
+      if(boundingClientRect.top < topOffset) {
+        window.scrollTo({
+          behavior: 'instant',
+          top,
+          left: 0
+        })
+      }
+  }
+    document.addEventListener('focus', (e) => handleScrollOnFocus(e), true)
+
+    return () => document.removeEventListener('focus', (e) => handleScrollOnFocus(e), true)
+  }, [topOffset])
+
 
   return (
     <>
